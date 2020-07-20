@@ -17,8 +17,8 @@
 
   <ons-icon icon="fa-comment-medical" class="dashboard" [ngClass]="{'amber pulse':fa=='du','red pulsered':fa=='od','green':fa=='ok'}"></ons-icon></p>
   </ons-card > 
-  <ons-card *ngFor="let train of mandlist">
-    {{train.linkedModuleLabel}} {{train.expiry}}  
+  <ons-card *ngFor="let train of mandlist" [ngClass]="{'carddue':train.status==2,'cardoverdue':train.status==1,'cardok':train.status==}">
+    {{train.linkedModuleLabel}} <span *ngIf='train.status!=1'>expires on</span><span *ngIf='train.status==1'>expired on</span> {{train.expiry}} 
   </ons-card>
 	<br />
     </div>

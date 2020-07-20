@@ -57,7 +57,7 @@ export class MandatoryComponent implements OnInit {
     if (entry.mandCode=="FA"){entry.linkedModuleLabel = "First Aid"}
     if (entry.mandCode=="SG"){entry.linkedModuleLabel = "Safeguarding"}
     if (entry.mandCode=="SA"){entry.linkedModuleLabel = "Safety"}
-    return entry
+    return entry;
   }
 
   find_mandatory (mantype) {
@@ -95,7 +95,29 @@ export class MandatoryComponent implements OnInit {
   }
   return "ok"
   }
-
+  
+  return_gdpr(status) {
+    var expiry="1900-01-01"
+    var entry = {}
+  for(var i=0; i< this.globals.compassdata.object.roles.length; i++){
+    var role = this.globals.compassdata.object.roles[i].id;
+    for(var j=0; j< this.globals.compassdata.object.plps[role].length; j++){ 
+      var plp =  this.globals.compassdata.object.plps[role][j]
+      if (plp.code=="GDPR"&&plp.validatedDate>expiry) {
+        expiry = plp.validatedDate;
+        entry.linkedModuleCode = "GDPR";
+        entry.linkedModuleLabel = "GDPR Training";
+        entry.date = plp.validatedDate;
+        entry.expiry = plp.validatedDate;
+        if (status=='od') {entry.status = 1}
+        if (status=='du') {entry.status = 2}
+        if (status=='ok') {entry.status = 3}
+      }
+    }
+  }
+  console.log(expiry)
+  return entry
+  }
 
   find_gdpr() {
   // For GDPR we need to look at all roles  
@@ -139,6 +161,7 @@ export class MandatoryComponent implements OnInit {
    this.mandlist.push(this.return_mandatory("SG",this.sg))
   expiry = this.find_gdpr();
   this.gd = this.check_expiry_gdpr(date,expiry);  
+  this.mandlist.push(this.return_gdpr(this.sg))
   if (this.fa!="ok"||this.sg!="ok"||this.sf!="ok"||this.gd!="ok"){
     this.highman = true;
   }

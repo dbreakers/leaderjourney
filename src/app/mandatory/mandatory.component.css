@@ -8,6 +8,8 @@
 .headercard {color: white; background-color: var(--scoutpurple)}
 .background {background-color: var(--scoutteal)}
 .pulse {animation: pulse 2s  }
+.carddue {background-color:var(--scoutyellow)}
+.cardoverdue {background-color:var(--scoutred)}
 .pulsered {animation: pulsered 2s infinite }
 @keyframes pulsered {
 	0% {
