@@ -4,6 +4,8 @@
 .amber {color: var(--scoutyellow)}
 .red {color: var(--scoutred)}
 .mandatory {color:white; background-color:black;}
+.headercard {color: white; background-color: var(--scoutpurple)}
+.background {background-color: var(--scoutteal)}
 .pulse {animation: pulse 2s  }
 .pulsered {animation: pulsered 2s infinite }
 @keyframes pulsered {
