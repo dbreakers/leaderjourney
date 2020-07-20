@@ -19,7 +19,7 @@
 .pulsered {animation: pulsered 2s infinite }
 @keyframes pulsered {
 	0% {
-		transform: scale(0.5);
+		transform: scale(0.7);
 	}
 
  
@@ -29,7 +29,7 @@
 	}
    
 	100% {
-		transform: scale(0.5);
+		transform: scale(0.7);
 	 
 	}
 }
