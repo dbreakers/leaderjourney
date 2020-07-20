@@ -7,7 +7,9 @@
 .sc {background: grey; color: black}
 .mh {font-size: 1.5em; font-weight: 600}
 .sh {font-size: 1.2em; font-weight: 600}
-.bx {display: block; border-style: solid}
+.bx {display: block; border-style: solid; padding: 10px}
+.y {background-color: var(--scoutyellow)}
+.g {background-color: var(--scoutgreen)}
 .menubutton { border-radius: 10%; line-height: 50px; height: 50px; width:50px; text-align: center; margin-right: 10px; margin-bottom: 10px; }
 .menuicon {color:white;font-size: 1.5em;}
 .menuiconblk {color:black;font-size: 1.5em;}

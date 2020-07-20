@@ -6,17 +6,17 @@
 <div class="content">
 <ons-card>  
 <div class="menugrid">
-<div class="sg menubutton"><ons-icon class="menuiconblk" icon="fa-shield-alt"></ons-icon></div>
-<div class="al menubutton"><ons-icon  class="menuicon" icon="fa-glass-cheers"></ons-icon></div>
+<div (click)='do_sg()' class="sg menubutton"><ons-icon class="menuiconblk" icon="fa-shield-alt"></ons-icon></div>
+<div (click)='do_alcohol()' class="al menubutton"><ons-icon  class="menuicon" icon="fa-glass-cheers"></ons-icon></div>
 <div class="sf menubutton"><ons-icon icon="fa-exclamation-triangle"  class="menuicon"></ons-icon></div>
 <div class="sc menubutton"><ons-icon icon="fa-tasks"  class="menuicon"></ons-icon></div>
 <div class="yl menubutton"><span  class="menuicon">YL</span></div>  
 </div>  
 </ons-card>
-<ons-card>
+<ons-card [ngClass]="{y: color=='y','g': color=='g'}">
 
-<span *ngFor="let line of yellowcardl">
- <p *ngClass="{'mh': line.type=='mh'}" >{{line.text}}</p>
+<span *ngFor="let line of cardl">
+ <p [ngClass]="{'mh': line.type=='mh','sh': line.type=='sh','bx': line.type=='bx'}" >{{line.text}}</p> 
 </span>  
 
 </ons-card>  
