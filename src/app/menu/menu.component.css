@@ -13,5 +13,5 @@
 .headercard {color: white; background-color: var(--scoutpurple)}
 .mandatory {color:white; background-color:black;}
 .menubutton { border-radius: 10%; background-color: var(--scoutpurple); line-height: 50px; height: 50px; width:50px; text-align: center; }
-.menuicon {color:white;}
+.menuicon {color:white;font-size: 1.5em;}
 .menugrid {display:flex;}

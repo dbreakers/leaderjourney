@@ -20,7 +20,7 @@
   <ons-card class="menugrid">
    
   <div (click)="push()" class="menubutton"><ons-icon class="menuicon" icon="fa-chalkboard-teacher"></ons-icon></div>&nbsp;
-  <div (click)="push()" class="menubutton"><ons-icon class="menuicon" icon="fa-chalkboard-teacher"></ons-icon></div>
+  <div (click)="push()" class="menubutton"><ons-icon class="menuicon" icon="fa-balance-scale"></ons-icon></div>
   </ons-card>
   <!--
   <ons-card>
@@ -40,14 +40,14 @@
   <span *ngIf="!plpline.hasOwnProperty('validatedDate')"> <ons-icon icon="fa-times-circle" class="red"></ons-icon></span>
      Module {{plpline.code}}:{{plpline.name}}<br> 
      <span *ngIf="plpline.hasOwnProperty('validatedDate')">{{plpline.validatedDate}}</span>
-  </ons-card>-->
+  </ons-card>
 	<ons-list>
 		<ons-list-header>Tappable / Ripple</ons-list-header>
 		<ons-list-item tappable><ons-icon icon="fa-chalkboard-teacher"></ons-icon>&nbsp;My Training</ons-list-item>
 
 		<ons-list-header>Chevron</ons-list-header>
 		<ons-list-item modifier="chevron" tappable (click)="push()">Chevron</ons-list-item>
-	</ons-list>
+	</ons-list>-->
 
 	<br />
     </div>
