@@ -27,12 +27,14 @@ do_sg() {
   this.color = "y"
 }
 do_yl() {
-  this.cardl = JSON.parse(this.yellowcard);
+  this.cardl = JSON.parse(this.testcards);
+   this.cardl = this.cardl['orangecard']
   this.color = "o"
 }
 
 do_sf() {
-  this.cardl = JSON.parse(this.yellowcard);
+  this.cardl = JSON.parse(this.testcards);
+   this.cardl = this.cardl['purplecard']
   this.color = "p"
 }
   ngOnInit() {
