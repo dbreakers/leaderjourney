@@ -7,8 +7,8 @@
 <div class="content">
   
   <ons-card class="headercard"><p class="subhead">{{selected_role.title}}<br>{{selected_role.location}}</p>since {{selected_role.datefrom.substring(0,4)}}</ons-card>
-  <ons-card class="mandatory">
-  <p class="subhead">Mandatory Training&nbsp;
+  <ons-card class="mandatory" (click)='push2()'>
+  <p class="subhead">Mandatory Training Status&nbsp;
   <ons-icon icon="fa-exclamation-triangle" class="dashboard" [ngClass]="{'amber pulse':sf=='du','red pulsered':sf=='od','green':sf=='ok'}"></ons-icon>
  
   <ons-icon icon="fa-shield-alt" class="dashboard" [ngClass]="{'amber pulse':sg=='du','red pulsered':sg=='od','green':sg=='ok'}"></ons-icon>
