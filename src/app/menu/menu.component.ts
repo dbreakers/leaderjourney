@@ -64,7 +64,7 @@ export class MenuComponent implements OnInit {
   }
   return "ok"
   }
-  
+
   get_mandatory(){
   var date = this.formatDate()
   var expiry = this.find_mandatory("FA");
@@ -73,7 +73,7 @@ export class MenuComponent implements OnInit {
   this.sf =  this.check_expiry(date,expiry)
   expiry = this.find_mandatory("SG");
   this.sg =  this.check_expiry(date,expiry)
-    
+  this.gd = "ok"  
   }
   
   ngOnInit() {
