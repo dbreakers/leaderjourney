@@ -9,7 +9,7 @@ import { Globals } from '../globals';
   styleUrls: [ './card.component.css' ]
 })
 export class CardComponent implements OnInit {
-  ngOnInit {
-    
+  ngOnInit() {
+    console.log("hello");
   }
 } 
