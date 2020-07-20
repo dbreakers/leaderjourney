@@ -22,7 +22,7 @@
   <ons-card *ngFor="let plpline of plp"><span *ngIf="plpline.hasOwnProperty('validatedDate')"> <ons-icon icon="fa-check-circle" class="green"></ons-icon></span>
   <span *ngIf="!plpline.hasOwnProperty('validatedDate')"> <ons-icon icon="fa-times-circle" class="red"></ons-icon></span>
      Module {{plpline.code}}:{{plpline.name}}<br> 
-     <span *ngIf="plpline.hasOwnProperty('validatedDate')">{{plpline.validatedDate}}</span>
+     <span *ngIf="plpline.hasOwnProperty('validatedDate')">Validated {{plpline.validatedDate}}</span>
   </ons-card>
 	
 

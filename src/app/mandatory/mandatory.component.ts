@@ -74,7 +74,11 @@ export class MandatoryComponent implements OnInit {
   calc_date_value(d) {
     return (parseInt(d.substring(0,4)))*12 +parseInt(d.substring(5,7))-1;
   }
-
+  make_date_value(d) {
+    var year = Math.floor(d/12); 
+    var month = 1 + d-(year*12)
+    return (year+"-"+month+"-01")
+  }
   check_expiry(date,expiry){
     if (expiry < date) {
     return "od"; 
@@ -106,16 +110,16 @@ export class MandatoryComponent implements OnInit {
       if (plp.code=="GDPR"&&plp.validatedDate>expiry) {
         expiry = plp.validatedDate;
         entry.linkedModuleCode = "GDPR";
+        entry.mandCode = "GDPR"
         entry.linkedModuleLabel = "GDPR Training";
         entry.date = plp.validatedDate;
-        entry.expiry = plp.validatedDate;
+        entry.expiry = this.make_date_value(this.calc_date_value(entry.date)+36)
         if (status=='od') {entry.status = 1}
         if (status=='du') {entry.status = 2}
-        if (status=='ok') {entry.status = 2}
+        if (status=='ok') {entry.status = 3}
       }
     }
   }
-  console.log(expiry)
   return entry
   }
 
