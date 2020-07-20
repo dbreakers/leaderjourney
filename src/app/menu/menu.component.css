@@ -12,6 +12,23 @@
 .background {background-color: var(--scoutteal)}
 .headercard {color: white; background-color: var(--scoutpurple)}
 .mandatory {color:white; background-color:black;}
-.menubutton { border-radius: 10%; background-color: var(--scoutpurple); line-height: 50px; height: 50px; width:50px; text-align: center; }
+.menubutton { border-radius: 10%; background-color: var(--scoutdarkblue); line-height: 50px; height: 50px; width:50px; text-align: center; }
 .menuicon {color:white;font-size: 1.5em;}
 .menugrid {display:flex;}
+.pulse {animation: pulse 2s; animation-iteration-count: 1 }
+@keyframes pulse {
+	0% {
+		transform: scale(0.5);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.5);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
