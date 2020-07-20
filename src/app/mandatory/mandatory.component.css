@@ -3,7 +3,8 @@
 .green {color: var(--scoutgreen)}
 .amber {color: var(--scoutyellow)}
 .red {color: var(--scoutred)}
-.mandatory {color:white; background-color:black;}
+.mandatoryh {color:white; background-color:black;}
+.mandatory {color:black; background-color:white;}
 .headercard {color: white; background-color: var(--scoutpurple)}
 .background {background-color: var(--scoutteal)}
 .pulse {animation: pulse 2s  }

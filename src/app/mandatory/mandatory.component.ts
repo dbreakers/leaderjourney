@@ -15,6 +15,7 @@ export class MandatoryComponent implements OnInit {
   sf = "";
   sg = "";
   gd = "";
+  highman = false;
   
   constructor(private navi: OnsNavigator,
               private globals: Globals,) {
@@ -93,6 +94,7 @@ export class MandatoryComponent implements OnInit {
   }
 
   get_mandatory(){
+  this.highman = false;
   var date = this.formatDate()
   var expiry = this.find_mandatory("FA");
   this.fa = this.check_expiry(date,expiry)
@@ -102,6 +104,9 @@ export class MandatoryComponent implements OnInit {
   this.sg =  this.check_expiry(date,expiry);
   expiry = this.find_gdpr();
   this.gd = this.check_expiry_gdpr(date,expiry);  
+  if (this.fa!="ok"||this.sg!="ok"||this.sf!="ok"||this.gd!="ok"){
+    this.highman = true;
+  }
   }
   
   ngOnInit() {
