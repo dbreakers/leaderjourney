@@ -10,12 +10,13 @@ import { MenuComponent } from './menu/menu.component';
 import { RoleSelectComponent } from './roleselect/roleselect.component';
 import { LogonPageComponent } from './logonpage/logonpage.component';
 import { TrainingComponent } from './training/training.component';
+import { MandatoryComponent } from './mandatory/mandatory.component';
 import { Globals } from './globals';
 
 @NgModule({
   imports:         [ BrowserModule, FormsModule, OnsenModule, HttpClientModule ],
-  declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent ],
-  entryComponents: [ MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent ],
+  declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent ],
+  entryComponents: [ MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent ],
   schemas:         [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap:       [ AppComponent ],
    providers: [ Globals ]
