@@ -65,6 +65,22 @@ export class MenuComponent implements OnInit {
   return "ok"
   }
 
+  find_gdpr() {
+  // For GDPR we need to look at all roles  
+  var expiry="1900-01-01"
+  for(var i=0; i< this.globals.compassdata.object.roles.length; i++){
+    var role = this.globals.compassdata.object.roles[i].id;
+    for(var j=0; i< this.globals.compassdata.object.plps[role].length; j++){ 
+      var plp =  this.globals.compassdata.object.plps[role][j]
+      if (plp.code=="GDPR"&&plp.validatedDate>expiry) {
+        expiry = plp.validatedDate;
+      }
+    }
+  }
+  console.log(expiry)
+  return expiry
+  }
+
   get_mandatory(){
   var date = this.formatDate()
   var expiry = this.find_mandatory("FA");
@@ -72,8 +88,9 @@ export class MenuComponent implements OnInit {
   expiry = this.find_mandatory("SA");
   this.sf =  this.check_expiry(date,expiry)
   expiry = this.find_mandatory("SG");
-  this.sg =  this.check_expiry(date,expiry)
-  this.gd = "ok";  
+  this.sg =  this.check_expiry(date,expiry);
+  expiry = this.find_gdpr();
+  this.gd = this.check_expiry(date,expiry);  
   }
   
   ngOnInit() {
