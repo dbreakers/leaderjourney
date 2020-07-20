@@ -9,7 +9,9 @@
 .sh {font-size: 1.2em; font-weight: 600}
 .bx {display: block; border-style: solid; padding: 10px}
 .bd {font-weight: 600}
-.bl {}
+.bl { display: list-item;        
+    list-style-type: disc;      
+    list-style-position: outside;margin-left:10px}
 .y {background-color: var(--scoutyellow)}
 .g {background-color: var(--scoutgreen)}
 .p {background-color: var(--scoutpurple)}
