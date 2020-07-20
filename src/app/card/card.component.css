@@ -8,6 +8,8 @@
 .mh {font-size: 1.5em; font-weight: 600}
 .sh {font-size: 1.2em; font-weight: 600}
 .bx {display: block; border-style: solid; padding: 10px}
+.bd {font-weight: 600}
+.bl {}
 .y {background-color: var(--scoutyellow)}
 .g {background-color: var(--scoutgreen)}
 .p {background-color: var(--scoutpurple)}

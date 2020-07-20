@@ -15,11 +15,9 @@
 </ons-card>
 <ons-card [ngClass]="{y: color=='y','g': color=='g','o': color=='o','p': color=='p'}">
 
+ 
 <span *ngFor="let line of cardl">
- <p [ngClass]="{'mh': line.type=='mh','sh': line.type=='sh','bx': line.type=='bx'}" >{{line.text}}</p> 
-</span>  
-<span *ngFor="let line of cardl">
- <p [ngClass]="{'mh': line.type=='mh','sh': line.type=='sh','bx': line.type=='bx'}" >{{line.text}}</p> 
+ <p [ngClass]="{'mh': line.type=='mh','sh': line.type=='sh','bx': line.type=='bx','bd': line.type=='bd','bl': line.type=='bl'}" ><span *ngIf='line.type=="dn"'><b>Do not&nbsp;</b></span><span *ngIf='line.type=="do"'><b>Do&nbsp;</b></span>{{line.text}}</p> 
 </span> 
 </ons-card>  
 </div>  
