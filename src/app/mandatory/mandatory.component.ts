@@ -54,11 +54,10 @@ export class MandatoryComponent implements OnInit {
     if (status=='od') {entry.status = 1}
     if (status=='du') {entry.status = 2}
     if (status=='ok') {entry.status = 3}
-    if (entry.mantype=="FA"){entry.linkedModuleLabel = "First Aid"}
-
-    if (entry.mantype=="SG"){entry.linkedModuleLabel = "Safeguarding"}
-    if (entry.mantype=="SA"){entry.linkedModuleLabel = "Safety"}
-    return entry;
+    if (entry.mandCode=="FA"){entry.linkedModuleLabel = "First Aid"}
+    if (entry.mandCode=="SG"){entry.linkedModuleLabel = "Safeguarding"}
+    if (entry.mandCode=="SA"){entry.linkedModuleLabel = "Safety"}
+    return entry
   }
 
   find_mandatory (mantype) {
