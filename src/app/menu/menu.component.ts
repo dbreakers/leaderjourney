@@ -73,7 +73,7 @@ export class MenuComponent implements OnInit {
   this.sf =  this.check_expiry(date,expiry)
   expiry = this.find_mandatory("SG");
   this.sg =  this.check_expiry(date,expiry)
-  this.gd = "ok"  
+  this.gd = "ok";  
   }
   
   ngOnInit() {
