@@ -11,12 +11,13 @@ import { RoleSelectComponent } from './roleselect/roleselect.component';
 import { LogonPageComponent } from './logonpage/logonpage.component';
 import { TrainingComponent } from './training/training.component';
 import { MandatoryComponent } from './mandatory/mandatory.component';
+import { CardComponent } from './card/card.component';
 import { Globals } from './globals';
 
 @NgModule({
   imports:         [ BrowserModule, FormsModule, OnsenModule, HttpClientModule ],
-  declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent ],
-  entryComponents: [ MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent ],
+  declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent, CardComponent ],
+  entryComponents: [ MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent, CardComponent ],
   schemas:         [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap:       [ AppComponent ],
    providers: [ Globals ]
