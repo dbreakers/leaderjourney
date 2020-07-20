@@ -10,6 +10,8 @@
 .bx {display: block; border-style: solid; padding: 10px}
 .y {background-color: var(--scoutyellow)}
 .g {background-color: var(--scoutgreen)}
+.p {background-color: var(--scoutpurple)}
+.o {background-color: orange}
 .menubutton { border-radius: 10%; line-height: 50px; height: 50px; width:50px; text-align: center; margin-right: 10px; margin-bottom: 10px; }
 .menuicon {color:white;font-size: 1.5em;}
 .menuiconblk {color:black;font-size: 1.5em;}

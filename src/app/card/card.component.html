@@ -8,12 +8,12 @@
 <div class="menugrid">
 <div (click)='do_sg()' class="sg menubutton"><ons-icon class="menuiconblk" icon="fa-shield-alt"></ons-icon></div>
 <div (click)='do_alcohol()' class="al menubutton"><ons-icon  class="menuicon" icon="fa-glass-cheers"></ons-icon></div>
-<div class="sf menubutton"><ons-icon icon="fa-exclamation-triangle"  class="menuicon"></ons-icon></div>
-<div class="sc menubutton"><ons-icon icon="fa-tasks"  class="menuicon"></ons-icon></div>
-<div class="yl menubutton"><span  class="menuicon">YL</span></div>  
+<div (click)='do_sf()' class="sf menubutton"><ons-icon icon="fa-exclamation-triangle"  class="menuicon"></ons-icon></div>
+<div (click)='do_sg()' class="sc menubutton"><ons-icon icon="fa-tasks"  class="menuicon"></ons-icon></div>
+<div (click)='do_yl()' class="yl menubutton"><span  class="menuicon">YL</span></div>  
 </div>  
 </ons-card>
-<ons-card [ngClass]="{y: color=='y','g': color=='g'}">
+<ons-card [ngClass]="{y: color=='y','g': color=='g','o': color=='o','p': color=='p'}">
 
 <span *ngFor="let line of cardl">
  <p [ngClass]="{'mh': line.type=='mh','sh': line.type=='sh','bx': line.type=='bx'}" >{{line.text}}</p> 
