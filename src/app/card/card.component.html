@@ -16,7 +16,7 @@
 <ons-card>
 
 <span *ngFor="let line of yellowcardl">
-  {{line.text}}
+ <p [className]={{line.type}} >{{line.text}}</p>
 </span>  
 
 </ons-card>  
