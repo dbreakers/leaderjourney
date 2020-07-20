@@ -11,6 +11,7 @@ import { Globals } from '../globals';
 export class MandatoryComponent implements OnInit {
   selected_role = {};
   plp = [];
+  mandlist = [];
   fa = "";
   sf = "";
   sg = "";
@@ -39,6 +40,26 @@ export class MandatoryComponent implements OnInit {
         day = '0' + day;
     return [year, month, day].join('-');
 }
+
+  return_mandatory (mantype,status) {
+    var expiry="1900-01-01"
+    var entry = {}
+    for(var i=0;i<this.globals.compassdata.object.mandate.length; i++){
+      var item = this.globals.compassdata.object.mandate[i];
+      if(item.expiry>expiry&&item.mandCode==mantype) {
+         expiry = item.expiry;
+         entry = this.globals.compassdata.object.mandate[i];
+      }
+    } 
+    if (status=='od') {entry.status = 1}
+    if (status=='du') {entry.status = 2}
+    if (status=='ok') {entry.status = 3}
+    if (entry.mantype=="FA"){entry.linkedModuleLabel = "First Aid"}
+
+    if (entry.mantype=="SG"){entry.linkedModuleLabel = "Safeguarding"}
+    if (entry.mantype=="SA"){entry.linkedModuleLabel = "Safety"}
+    return entry;
+  }
 
   find_mandatory (mantype) {
     var expiry="1900-01-01"
@@ -93,20 +114,36 @@ export class MandatoryComponent implements OnInit {
   return expiry
   }
 
+ compare(a, b) {
+  // Use toUpperCase() to ignore character casing
+
+  let comparison = 0;
+  if (a.status > b.status) {
+    comparison = 1;
+  } else if (a.status < b.status) {
+    comparison = -1;
+  }
+  return comparison;
+}
+
   get_mandatory(){
   this.highman = false;
   var date = this.formatDate()
   var expiry = this.find_mandatory("FA");
   this.fa = this.check_expiry(date,expiry)
+  this.mandlist.push(this.return_mandatory("FA",this.fa))
   expiry = this.find_mandatory("SA");
   this.sf =  this.check_expiry(date,expiry)
+   this.mandlist.push(this.return_mandatory("SA",this.sf))
   expiry = this.find_mandatory("SG");
   this.sg =  this.check_expiry(date,expiry);
+   this.mandlist.push(this.return_mandatory("SG",this.sg))
   expiry = this.find_gdpr();
   this.gd = this.check_expiry_gdpr(date,expiry);  
   if (this.fa!="ok"||this.sg!="ok"||this.sf!="ok"||this.gd!="ok"){
     this.highman = true;
   }
+  this.mandlist.sort(this.compare)
   }
   
   ngOnInit() {
