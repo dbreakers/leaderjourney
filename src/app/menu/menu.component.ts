@@ -64,6 +64,7 @@ export class MenuComponent implements OnInit {
   }
   return "ok"
   }
+  
   get_mandatory(){
   var date = this.formatDate()
   var expiry = this.find_mandatory("FA");
