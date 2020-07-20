@@ -16,6 +16,7 @@
 .menubutton { border-radius: 10%; background-color: var(--scoutdarkblue); line-height: 50px; height: 50px; width:50px; text-align: center; margin-right: 10px; margin-bottom: 10px; }
 .menuicon {color:white;font-size: 1.5em;}
 .menugrid {display:flex;flex-wrap: wrap}
+
 .pulse {animation: pulse 2s  }
 .pulsered {animation: pulsered 2s infinite }
 @keyframes pulsered {

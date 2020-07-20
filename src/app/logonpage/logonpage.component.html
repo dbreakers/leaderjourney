@@ -36,6 +36,7 @@
       <ons-button *ngIf="validate2(username.value,password.value)==false" (click)="logon(username.value,password.value)" disabled>Sign in</ons-button>
 
     </p>
+    <ons-button  (click)="show_cards()" >Cards</ons-button>
     <div id="error">{{error_text}}</div>
    <div id="version">Version {{globals.version}}</div>
    

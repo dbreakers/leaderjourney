@@ -1,6 +1,7 @@
 //import { Component } from '@angular/core';
 //import { OnsNavigator } from 'ngx-onsenui';
 import { RoleSelectComponent } from '../roleselect/roleselect.component';
+import { CardComponent } from '../card/card.component';
 import { Globals } from '../globals';
 import { CallNetworkService } from '../callnetwork.service';
 
@@ -41,6 +42,9 @@ export class LogonPageComponent {
 
   validate(email,password) {
     return ""
+  }
+  show_cards() {
+    this.navi.nativeElement.pushPage(CardComponent);
   }
 post_logon(test){
 //console.log(test);
