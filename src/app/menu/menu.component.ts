@@ -3,6 +3,7 @@ import { OnsNavigator } from 'ngx-onsenui';
 import { Globals } from '../globals';
 //import { RoleSelectComponent } from '../roleselect/roleselect.component';
 import { TrainingComponent } from '../training/training.component';
+import { MandatoryComponent } from '../mandatory/mandatory.component';
 
 @Component({
   selector: 'ons-page[menu]',
@@ -25,6 +26,9 @@ export class MenuComponent implements OnInit {
   
   push() {
     this.navi.nativeElement.pushPage(TrainingComponent);
+  }
+   push2() {
+    this.navi.nativeElement.pushPage(MandatoryComponent);
   }
   
  formatDate() {
@@ -89,7 +93,6 @@ export class MenuComponent implements OnInit {
       }
     }
   }
-  console.log(expiry)
   return expiry
   }
 
