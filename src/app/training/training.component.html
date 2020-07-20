@@ -1,0 +1,30 @@
+
+<div class="background"></div>
+<ons-toolbar>
+  <div class="left"><ons-back-button> </ons-back-button></div>
+	<div class="center">My Training</div>
+</ons-toolbar>
+<div class="content">
+  <ons-card class="headercard"><p class="subhead">{{selected_role.title}}<br>{{selected_role.location}}</p>since {{selected_role.datefrom.substring(0,4)}}</ons-card>
+  <ons-card>
+   <p class="subhead">Wood Badge Training</p>
+   <span *ngIf="this.percent!=100">Target Completion {{targetmonth}} {{targetyear}}</span>
+   <span *ngIf="this.percent==100">Wood Badge awarded {{this.selected_role.completiondate.substring(0,4)}}</span>  
+   <div class="barbox">
+   <div class="outer" class="backchart">&nbsp;</div>  
+   <div id="barchart" [ngClass]="{'barchart_du':status=='du','barchart_od':status=='od','barchart_ok':status=='ok'}" class="barchart"  [style.width.%]="width"  ></div><br>{{count}}/{{ plp.length}} Modules Completed
+
+   </div>
+  </ons-card> 
+  <ons-card *ngIf="selected_role.hasOwnProperty('ta_name')&&selected_role.ta_name!=''">
+  My Training Advisor is {{selected_role.ta_name}}  
+  </ons-card>  
+  <ons-card *ngFor="let plpline of plp"><span *ngIf="plpline.hasOwnProperty('validatedDate')"> <ons-icon icon="fa-check-circle" class="green"></ons-icon></span>
+  <span *ngIf="!plpline.hasOwnProperty('validatedDate')"> <ons-icon icon="fa-times-circle" class="red"></ons-icon></span>
+     Module {{plpline.code}}:{{plpline.name}}<br> 
+     <span *ngIf="plpline.hasOwnProperty('validatedDate')">{{plpline.validatedDate}}</span>
+  </ons-card>
+	
+
+	<br />
+    </div>

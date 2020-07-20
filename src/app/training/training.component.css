@@ -1,0 +1,14 @@
+.dashboard {font-size: 1.5em; padding-right: 10px}
+.subhead {font-weight:600; margin: 0px;}
+.green {color: var(--scoutgreen)}
+.amber {color: var(--scoutyellow)}
+.red {color: var(--scoutred)}
+.barchart {height: 10px; position:absolute;}
+.barchart_ok {background: var(--scoutgreen);}
+.barchart_od {background: var(--scoutred);}
+.barchart_du {background: var(--scoutyellow);}
+.backchart {background:grey; height: 10px; position:absolute;width:90%}
+.barbox {margin-top: 10px;text-align: right;}
+.background {background-color: var(--scoutteal)}
+.headercard {color: white; background-color: var(--scoutpurple)}
+.mandatory {color:white; background-color:black;}

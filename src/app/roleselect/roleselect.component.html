@@ -1,0 +1,13 @@
+<div class="background"></div>
+<ons-toolbar>
+  <div class="left">
+    <ons-back-button></ons-back-button>
+  </div>
+  <div class="center">My Roles</div>
+</ons-toolbar>
+<div class="content">
+  <!--<ons-button (click)="pop()">Pop page</ons-button>-->
+  <ons-card *ngFor="let role of globals.compassdata.object.roles" (click)="select_role(role)" >
+  {{role.title}}
+  </ons-card>
+</div>

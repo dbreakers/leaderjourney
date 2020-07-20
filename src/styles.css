@@ -1,0 +1,13 @@
+:root {
+  --scoutpurple: #7413dc; 
+  --scoutteal: #00a794; 
+  --scoutgreen: #23a950; 
+  --scoutred: #e22e12; 
+  --scoutyellow: #ffe627;
+        --scoutblue: #006ddf; 
+        --scoutdarkblue: #003982;
+        --scoutpink: #ffb4e5;
+}
+.button { background: var(--scoutpurple)}
+
+.appheader {text-align: center}
