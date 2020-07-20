@@ -22,7 +22,7 @@
     <span *ngIf="train.mandCode=='SG'"><ons-icon icon="fa-shield-alt" class="dashboard"></ons-icon></span>
     <span *ngIf="train.mandCode=='SA'"><ons-icon icon="fa-exclamation-triangle" class="dashboard"></ons-icon></span>
     <span *ngIf="train.mandCode=='GDPR'"><ons-icon icon="fa-briefcase" class="dashboard"></ons-icon></span>
-    {{train.linkedModuleLabel}} <span *ngIf='train.status!=1'>expires on</span><span *ngIf='train.status==1'>expired on</span> {{train.expiry}} ({{train.date}})
+    {{train.linkedModuleLabel}} <span *ngIf='train.status!=1'>expires </span><span *ngIf='train.status==1'>expired in</span> {{monthlist[train.monthnumber-1]}} {{train.expiry.substring(0,4)}} 
   </ons-card>
 	<br />
     </div>

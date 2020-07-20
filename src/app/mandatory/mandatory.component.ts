@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OnsNavigator } from 'ngx-onsenui';
 import { Globals } from '../globals';
-//import { RoleSelectComponent } from '../roleselect/roleselect.component';
+ 
 
 @Component({
   selector: 'ons-page[mandatory]',
@@ -17,6 +17,7 @@ export class MandatoryComponent implements OnInit {
   sg = "";
   gd = "";
   highman = false;
+  monthlist = ['January','February','March','April','May','June','July','August','September','October','November','December']
   
   constructor(private navi: OnsNavigator,
               private globals: Globals,) {
@@ -57,6 +58,7 @@ export class MandatoryComponent implements OnInit {
     if (entry.mandCode=="FA"){entry.linkedModuleLabel = "First Aid"}
     if (entry.mandCode=="SG"){entry.linkedModuleLabel = "Safeguarding"}
     if (entry.mandCode=="SA"){entry.linkedModuleLabel = "Safety"}
+    entry.monthnumber = parseInt(entry.expiry.substring(5,7));
     return entry;
   }
 
@@ -117,6 +119,7 @@ export class MandatoryComponent implements OnInit {
         if (status=='od') {entry.status = 1}
         if (status=='du') {entry.status = 2}
         if (status=='ok') {entry.status = 3}
+        entry.monthnumber = parseInt(entry.expiry.substring(5,7));
       }
     }
   }

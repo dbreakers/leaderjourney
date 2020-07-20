@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OnsNavigator } from 'ngx-onsenui';
 import { Globals } from '../globals';
-//import { RoleSelectComponent } from '../roleselect/roleselect.component';
+ 
 
 @Component({
   selector: 'ons-page[training]',
