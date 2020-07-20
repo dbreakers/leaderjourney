@@ -9,7 +9,8 @@
 .background {background-color: var(--scoutteal)}
 .pulse {animation: pulse 2s  }
 .carddue {background-color:var(--scoutyellow)}
-.cardoverdue {background-color:var(--scoutred)}
+.cardoverdue {background-color:var(--scoutred); color: white;}
+.trainingcard {font-weight: 600}
 .pulsered {animation: pulsered 2s infinite }
 @keyframes pulsered {
 	0% {

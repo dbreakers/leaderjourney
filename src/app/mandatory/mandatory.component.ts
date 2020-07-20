@@ -111,7 +111,7 @@ export class MandatoryComponent implements OnInit {
         entry.expiry = plp.validatedDate;
         if (status=='od') {entry.status = 1}
         if (status=='du') {entry.status = 2}
-        if (status=='ok') {entry.status = 3}
+        if (status=='ok') {entry.status = 2}
       }
     }
   }
