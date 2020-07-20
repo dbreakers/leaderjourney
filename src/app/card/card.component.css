@@ -1,1 +1,10 @@
 .background {background-color: var(--scoutteal)}
+.sctcard { border: solid; padding: 10px}
+.sg {background: var(--scoutyellow); color: black;}
+.sf {background: var(--scoutpurple)}
+.al {background: var(--scoutgreen)}
+.yl {background: orange; color: black}
+.sc {background: gret; color: black}
+.menubutton { border-radius: 10%; line-height: 50px; height: 50px; width:50px; text-align: center; margin-right: 10px; margin-bottom: 10px; }
+.menuicon {color:white;font-size: 1.5em;}
+.menugrid {display:flex;flex-wrap: wrap}
