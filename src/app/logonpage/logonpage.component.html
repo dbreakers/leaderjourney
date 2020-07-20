@@ -35,8 +35,9 @@
       <ons-button *ngIf="validate2(username.value,password.value)==true" (click)="logon(username.value,password.value)">Sign in</ons-button>
       <ons-button *ngIf="validate2(username.value,password.value)==false" (click)="logon(username.value,password.value)" disabled>Sign in</ons-button>
 
-    </p>
-    <ons-button  (click)="show_cards()" >Cards</ons-button>
+    </p><br>
+    <ons-button  class="ql" (click)="show_cards()" ><ons-icon class="far menuicon" icon="fa-map"></ons-icon>&nbsp;Cards</ons-button>&nbsp;
+    <!--<ons-button class="ql" (click)="show_cards()" ><ons-icon class="menuicon" icon="fa-project-diagram"></ons-icon></ons-button>-->
     <div id="error">{{error_text}}</div>
    <div id="version">Version {{globals.version}}</div>
    
