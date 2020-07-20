@@ -2,7 +2,7 @@
 <div class="background"></div>
 <ons-toolbar>
   <div class="left"><ons-back-button> </ons-back-button></div>
-	<div class="center">My Leadership</div>
+	<div class="center">Mandatory Trainin</div>
 </ons-toolbar>
 <div class="content">
   
@@ -18,7 +18,7 @@
   <ons-icon icon="fa-comment-medical" class="dashboard" [ngClass]="{'amber pulse':fa=='du','red pulsered':fa=='od','green':fa=='ok'}"></ons-icon></p>
   </ons-card > 
   <ons-card *ngFor="let train of globals.compassdata.object.mandate">
-    {{train.linkedModuleLabel}} 
+    {{train.linkedModuleLabel}} {{train.expiry}} 
   </ons-card>
 	<br />
     </div>
