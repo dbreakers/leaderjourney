@@ -15,18 +15,40 @@
 .menubutton { border-radius: 10%; background-color: var(--scoutdarkblue); line-height: 50px; height: 50px; width:50px; text-align: center; }
 .menuicon {color:white;font-size: 1.5em;}
 .menugrid {display:flex;}
-.pulse {animation: pulse 2s; animation-iteration-count: 1 }
-@keyframes pulse {
+.pulse {animation: pulse 2s  }
+.pulsered {animation: pulsered 2s infinite }
+@keyframes pulsered {
 	0% {
-		transform: scale(1);
+		transform: scale(0.5);
 	 
 	}
 
-	50% {
+ 
+70% {
+		transform: scale(1);
+	 
+	}
+   
+	100% {
 		transform: scale(0.5);
-		 
+	 
+	}
+}
+@keyframes pulsere {
+	0% {
+		transform: scale(0.5);
+	 
 	}
 
+	 
+70% {
+		transform: scale(1);
+	 
+	}
+  90% {
+		transform: scale(1.1);
+	 
+	}
 	100% {
 		transform: scale(1);
 	 
