@@ -27,8 +27,8 @@ export class MenuComponent implements OnInit {
     this.navi.nativeElement.pushPage(TrainingComponent);
   }
   
- formatDate(date) {
-    var d = new Date(date),
+ formatDate() {
+    var d = new Date(),
         month = '' + (d.getMonth() + 1),
         day = '' + d.getDate(),
         year = d.getFullYear();
@@ -37,7 +37,6 @@ export class MenuComponent implements OnInit {
         month = '0' + month;
     if (day.length < 2) 
         day = '0' + day;
-
     return [year, month, day].join('-');
 }
 
@@ -52,12 +51,28 @@ export class MenuComponent implements OnInit {
     return expiry;
   }
 
+  calc_date_value(d) {
+    return (parseInt(d.substring(0,4)))*12 +parseInt(d.substring(5,7))-1;
+  }
+
+  check_expiry(date,expiry){
+    if (expiry < date) {
+    return "od"; 
+  }  
+  if (this.calc_date_value(expiry)-this.calc_date_value(date)<3) { 
+    return "du"
+  }
+  return "ok"
+  }
   get_mandatory(){
-  var date = this.formatDate("")
+  var date = this.formatDate()
   var expiry = this.find_mandatory("FA");
-  if (expiry < date) {
-    this.fa = "od"; 
-  }   
+  this.fa = this.check_expiry(date,expiry)
+  expiry = this.find_mandatory("SA");
+  this.sf =  this.check_expiry(date,expiry)
+  expiry = this.find_mandatory("SG");
+  this.sg =  this.check_expiry(date,expiry)
+    
   }
   
   ngOnInit() {
