@@ -1,5 +1,6 @@
 .background {background-color: var(--scoutteal)}
 .sctcard { border: solid; padding: 10px}
+.cardwidth {max-width: 500px; margin:auto}
 .sg {background: var(--scoutyellow); color: black;}
 .sf {background: var(--scoutpurple)}
 .al {background: var(--scoutgreen)}
