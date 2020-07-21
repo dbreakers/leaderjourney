@@ -10,6 +10,7 @@
   <span  *ngFor="let level of hier">
     <div class="level" *ngIf="level.level!=''">
     <span *ngIf='level.key!=""'>  
+      <ons-icon [attr.icon]="level.icon" class="permiticon"></ons-icon>
     <p class="subhead">{{level.level}}</p>  
     {{level.description}}
     </span>
