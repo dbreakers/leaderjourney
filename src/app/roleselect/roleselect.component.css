@@ -1,1 +1,3 @@
 .background {background-color: var(--scoutteal)}
+.closedcard {background-color: dimgrey; color: white;}
+.active {font-weight: 6--}

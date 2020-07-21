@@ -7,7 +7,14 @@
 </ons-toolbar>
 <div class="content">
   <!--<ons-button (click)="pop()">Pop page</ons-button>-->
-  <ons-card *ngFor="let role of globals.compassdata.object.roles" (click)="select_role(role)" >
-  {{role.title}}
+  <span *ngFor="let role of globals.compassdata.object.roles" >
+  <ons-card *ngIf="role.status!='Closed'"(click)="select_role(role)" >
+  <span class="active">{{role.title}}</span>
   </ons-card>
+  </span>
+   <span  *ngFor="let role of globals.compassdata.object.roles" >
+  <ons-card class="closedcard" *ngIf="role.status=='Closed'" (click)="select_role(role)" >
+  <span class="closed">{{role.title}}</span>
+  </ons-card>
+  </span>
 </div>
