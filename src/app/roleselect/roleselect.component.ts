@@ -20,14 +20,12 @@ export class RoleSelectComponent implements OnInit{
    // this.navi.nativeElement.popPage();
   }
   select_role(role) {
-       console.log("Hello"); 
-       this.globals.roleid = role.id;
+          this.globals.roleid = role.id;
        this.navi.nativeElement.pushPage(MenuComponent);
    //    this.navi.nativeElement.replacePage(MenuComponent);
   }
 ngOnInit() {
-    console.log("Hello"); 
-
+   
 }
 
   

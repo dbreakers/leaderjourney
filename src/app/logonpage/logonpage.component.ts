@@ -36,7 +36,7 @@ export class LogonPageComponent {
    validate2(user,password) {
  if (password=="") {return false} 
  if ( user=="") {return false}
- if (password.length<9) { return false}
+ //if (password.length<9) { return false}
   return true
   }
 
@@ -57,6 +57,7 @@ if (test.message == "Success"){
 }
 }  
 logon(username2,password2) {
+  this.globals.url = document.getElementById('u').value;
  this.callnetworkService.doLogon(username2,password2).subscribe(Security=> this.post_logon(Security));
 }
   
