@@ -57,7 +57,7 @@ if (test.message == "Success"){
 }
 }  
 logon(username2,password2) {
-  this.globals.url = document.getElementById('u').value;
+  this.globals.url = document.getElementById('u').value; 
  this.callnetworkService.doLogon(username2,password2).subscribe(Security=> this.post_logon(Security));
 }
   
