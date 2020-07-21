@@ -1,12 +1,18 @@
 <div class="background"></div>
 <ons-toolbar>
   <div class="left"><ons-back-button> </ons-back-button></div>
-	<div class="center">Mandatory Training</div>
+	<div class="center">My Permits</div>
 </ons-toolbar>
 <div class="content">
   
   <ons-card class="headercard"><p class="subhead">{{selected_role.title}}<br>{{selected_role.location}}</p>since {{selected_role.datefrom.substring(0,4)}}</ons-card>
   <ons-card *ngFor="let permit of globals.compassdata.object.permits">
-   <div class="menubutton"><ons-icon ng-attr-icon="{{permit.icon}"  class="menuicon"></ons-icon></div> {{permit.permittype}} <ons-icon icon={{permit.icon}}></ons-icon> {{permit.icon}}
+   <div class="permitgrid"><div [ngClass]="{'g':permit.status=='PERM_OK','r':permit.status!='PERM_OK'}" class="permitbutton"><ons-icon [attr.icon]="permit.icon" class="permiticon"></ons-icon></div>
+   <div><span  class="subhead">{{permit.permittype}}&nbsp;({{permit.category}})</span><br>
+   <span *ngIf="permit.status!='PERM_OK'">Expired on</span><span *ngIf="permit.status=='PERM_OK'">Expires on</span>&nbsp;{{permit.expires}}
+   </div></div> <div *ngIf="permit.restrictions!=''"><span class="subhead">Restrictions</span><br>{{permit.restrictions}}</div>
+    
+
+
   </ons-card>  
   </div>

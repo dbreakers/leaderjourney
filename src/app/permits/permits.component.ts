@@ -25,7 +25,7 @@ this.selected_role = this.globals.compassdata.object.roles.find(r=>r.id == this.
 this.permit_array = JSON.parse(this.permit_icons)
 if(!this.globals.compassdata.object.permits[1].hasOwnProperty("icon")){
   for(var i=0;this.globals.compassdata.object.permits.length;i++){
-    this.globals.compassdata.object.permits[i]['icon'] = "fa-"+this.permit_array.find(j=> j.name== this.globals.compassdata.object.permits[i].permittype).icon
+    this.globals.compassdata.object.permits[i]['icon'] =this.permit_array.find(j=> j.name== this.globals.compassdata.object.permits[i].permittype).icon
   }
 }
   }
