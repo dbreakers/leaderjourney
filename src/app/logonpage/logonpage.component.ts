@@ -51,7 +51,7 @@ post_logon(test){
 if (test.message == "Success"){
    this.error_text="";
    this.globals.compassdata=test;
-   this.navi.nativeElement.replacePage(RoleSelectComponent);
+   this.navi.nativeElement.pushPage(RoleSelectComponent);
 } else {
     this.error_text="Logon Failed - Check Password and ID"
 }
