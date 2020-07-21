@@ -65,6 +65,11 @@ export class MenuComponent implements OnInit {
          expiry = item.expiry;
       }
     } 
+    // We need to consider Module 1 and Module 1EX here for SA and SF
+    if(expiry=="1900-01-01") {
+      
+    }  
+    if(expiry=="1900-01-01") {expiry=""}
     return expiry;
   }
 
