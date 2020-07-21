@@ -13,6 +13,8 @@ export class HierComponent implements OnInit {
   selected_role={}
   hier = [];
 
+  hiericons= '[{"name":"","icon":"bullseye"},]'
+
 constructor(private navi: OnsNavigator,
               private globals: Globals,) {
   } 
