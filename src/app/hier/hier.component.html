@@ -1,0 +1,19 @@
+<div class="background"></div>
+<ons-toolbar>
+  <div class="left"><ons-back-button> </ons-back-button></div>
+	<div class="center">Mandatory Training</div>
+</ons-toolbar>
+<div class="content">
+  
+  <ons-card class="headercard"><p class="subhead">{{selected_role.title}}<br>{{selected_role.location}}</p>since {{selected_role.datefrom.substring(0,4)}}</ons-card>
+  <ons-card>
+  <span  *ngFor="let level of hier">
+    <div class="level" *ngIf="level.level!=''">
+    <span *ngIf='level.key!=""'>  
+    <p class="subhead">{{level.level}}</p>  
+    {{level.description}}
+    </span>
+    </div>
+    </span>  
+  </ons-card>  
+  </div>

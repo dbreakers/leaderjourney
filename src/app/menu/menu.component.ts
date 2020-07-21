@@ -6,6 +6,7 @@ import { TrainingComponent } from '../training/training.component';
 import { MandatoryComponent } from '../mandatory/mandatory.component';
 import { CardComponent } from '../card/card.component';
 import { PermitsComponent } from '../permits/permits.component';
+import { HierComponent } from '../hier/hier.component';
 
 @Component({
   selector: 'ons-page[menu]',
@@ -39,7 +40,10 @@ export class MenuComponent implements OnInit {
     push4() {
     this.navi.nativeElement.pushPage(PermitsComponent);
   }
-  
+  push5() {
+    this.navi.nativeElement.pushPage(HierComponent);
+  }
+
  formatDate() {
     var d = new Date(),
         month = '' + (d.getMonth() + 1),

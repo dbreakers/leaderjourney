@@ -13,12 +13,13 @@ import { TrainingComponent } from './training/training.component';
 import { MandatoryComponent } from './mandatory/mandatory.component';
 import { CardComponent } from './card/card.component';
 import { PermitsComponent } from './permits/permits.component';
+import { HierComponent } from './hier/hier.component';
 import { Globals } from './globals';
 
 @NgModule({
   imports:         [ BrowserModule, FormsModule, OnsenModule, HttpClientModule ],
-  declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent, CardComponent,PermitsComponent ],
-  entryComponents: [ MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent, CardComponent,PermitsComponent ],
+  declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent ],
+  entryComponents: [ MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent ],
   schemas:         [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap:       [ AppComponent ],
    providers: [ Globals ]

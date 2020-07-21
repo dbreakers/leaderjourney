@@ -1,0 +1,4 @@
+.subhead {font-weight:600; margin: 0px;}
+.background {background-color: var(--scoutteal)}
+.headercard {color: white; background-color: var(--scoutpurple)}
+.level {border:solid; margin-bottom: 20px;padding: 20px;}
