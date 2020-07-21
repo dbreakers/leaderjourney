@@ -1,0 +1,12 @@
+<div class="background"></div>
+<ons-toolbar>
+  <div class="left"><ons-back-button> </ons-back-button></div>
+	<div class="center">Mandatory Training</div>
+</ons-toolbar>
+<div class="content">
+  
+  <ons-card class="headercard"><p class="subhead">{{selected_role.title}}<br>{{selected_role.location}}</p>since {{selected_role.datefrom.substring(0,4)}}</ons-card>
+  <ons-card *ngFor="let permit of globals.compassdata.object.permits">
+    {{permit.permittype}} 
+  </ons-card>  
+  </div>

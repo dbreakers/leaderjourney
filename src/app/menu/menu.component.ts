@@ -5,6 +5,7 @@ import { Globals } from '../globals';
 import { TrainingComponent } from '../training/training.component';
 import { MandatoryComponent } from '../mandatory/mandatory.component';
 import { CardComponent } from '../card/card.component';
+import { PermitsComponent } from '../permits/permits.component';
 
 @Component({
   selector: 'ons-page[menu]',
@@ -34,6 +35,9 @@ export class MenuComponent implements OnInit {
   }
      push3() {
     this.navi.nativeElement.pushPage(CardComponent);
+  }
+    push4() {
+    this.navi.nativeElement.pushPage(PermitComponent);
   }
   
  formatDate() {
