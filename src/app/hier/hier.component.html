@@ -8,11 +8,13 @@
   <ons-card class="headercard"><p class="subhead">{{selected_role.title}}<br>{{selected_role.location}}</p>since {{selected_role.datefrom.substring(0,4)}}</ons-card>
   <ons-card>
   <span  *ngFor="let level of hier">
-    <div class="level" *ngIf="level.level!=''">
+    <div class="level" *ngIf="level.key!=''">
     <span *ngIf='level.key!=""'>  
-      <ons-icon [attr.icon]="level.icon" class="permiticon"></ons-icon>
-    <p class="subhead">{{level.level}}</p>  
-    {{level.description}}
+      <div class="levelflex">
+      <div  class="levelbutton"><ons-icon [attr.icon]="level.icon" class="levelicon"></ons-icon></div>
+    <div ><p class="subhead">{{level.level}}</p>  
+    {{level.description}}</div>
+    </div>
     </span>
     </div>
     </span>  

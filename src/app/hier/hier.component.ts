@@ -28,7 +28,7 @@ this.hier_array = JSON.parse(this.hier_icons)
 if(!this.hier[1].hasOwnProperty("icon")){
   for(var i=0;this.hier.length;i++){
     this.hier[i]['icon'] =this.hier_array.find(j=> j.level== this.hier[i]['level']).icon; 
-  }
+  } 
 }
   }
 
