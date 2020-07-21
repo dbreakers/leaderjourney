@@ -5,5 +5,5 @@ export class Globals {
   version: string = '1.0.0';
   compassdata: string ="";
   roleid: string = "";
-  url: string="https://2ndnewhawscouts.org.uk/osmr/compassread.php";
+  url: string="https://2ndnewhawscouts.org.uk/osmr/compassread2.php";
 }

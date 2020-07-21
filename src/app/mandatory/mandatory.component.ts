@@ -93,36 +93,44 @@ export class MandatoryComponent implements OnInit {
 
   check_expiry_gdpr(date,expiry){
 
-    if (this.calc_date_value(date)-this.calc_date_value(expiry)>36) {
-    return "od"; 
-  }  
-  if  (this.calc_date_value(date)-this.calc_date_value(expiry)>32) { 
-    return "du"
-  }
+  //  if (this.calc_date_value(date)-this.calc_date_value(expiry)>36) {
+  //  return "od"; 
+  //}  
+  //if  (this.calc_date_value(date)-this.calc_date_value(expiry)>32) { 
+  //  return "du"
+  //}
+  if(expiry=="") {return "od"}
   return "ok"
   }
   
   return_gdpr(status) {
     var expiry="1900-01-01"
     var entry = {}
+  entry.linkedModuleCode = "GDPR";
+  entry.mandCode = "GDPR"
+  entry.linkedModuleLabel = "GDPR Training";
+  entry.date =""
+  entry.monthnumber ="";
+  entry.expiry = ""
+  entry.status = 1
   for(var i=0; i< this.globals.compassdata.object.roles.length; i++){
     var role = this.globals.compassdata.object.roles[i].id;
     for(var j=0; j< this.globals.compassdata.object.plps[role].length; j++){ 
       var plp =  this.globals.compassdata.object.plps[role][j]
       if (plp.code=="GDPR"&&plp.validatedDate>expiry) {
         expiry = plp.validatedDate;
-        entry.linkedModuleCode = "GDPR";
-        entry.mandCode = "GDPR"
-        entry.linkedModuleLabel = "GDPR Training";
+        
         entry.date = plp.validatedDate;
-        entry.expiry = this.make_date_value(this.calc_date_value(entry.date)+36)
+       // entry.expiry = this.make_date_value(this.calc_date_value(entry.date)+36)
         if (status=='od') {entry.status = 1}
         if (status=='du') {entry.status = 2}
         if (status=='ok') {entry.status = 3}
-        entry.monthnumber = parseInt(entry.expiry.substring(5,7));
+        entry.monthnumber = parseInt(entry.date.substring(5,7));
       }
     }
   }
+ 
+
   return entry
   }
 
@@ -138,7 +146,8 @@ export class MandatoryComponent implements OnInit {
       }
     }
   }
-  console.log(expiry)
+  //console.log(expiry)
+  if(expiry=="1900-01-01") {expiry=""}
   return expiry
   }
 

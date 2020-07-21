@@ -84,13 +84,15 @@ export class MenuComponent implements OnInit {
 
   check_expiry_gdpr(date,expiry){
 
-    if (this.calc_date_value(date)-this.calc_date_value(expiry)>36) {
-    return "od"; 
-  }  
-  if  (this.calc_date_value(date)-this.calc_date_value(expiry)>32) { 
-    return "du"
-  }
+  //  if (this.calc_date_value(date)-this.calc_date_value(expiry)>36) {
+  //  return "od"; 
+  //}  
+  //if  (this.calc_date_value(date)-this.calc_date_value(expiry)>32) { 
+  //  return "du"
+  //}
+   if(expiry=="") {return "od"}
   return "ok"
+  
   }
 
 
@@ -106,6 +108,7 @@ export class MenuComponent implements OnInit {
       }
     }
   }
+   if(expiry=="1900-01-01") {expiry=""}
   return expiry
   }
 
