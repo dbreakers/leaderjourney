@@ -37,7 +37,7 @@ export class MenuComponent implements OnInit {
     this.navi.nativeElement.pushPage(CardComponent);
   }
     push4() {
-    this.navi.nativeElement.pushPage(PermitComponent);
+    this.navi.nativeElement.pushPage(PermitsComponent);
   }
   
  formatDate() {
