@@ -7,6 +7,6 @@
   
   <ons-card class="headercard"><p class="subhead">{{selected_role.title}}<br>{{selected_role.location}}</p>since {{selected_role.datefrom.substring(0,4)}}</ons-card>
   <ons-card *ngFor="let permit of globals.compassdata.object.permits">
-   <div class="menubutton"><ons-icon icon="{{permit.icon}}"  class="menuicon"></ons-icon></div> {{permit.permittype}} 
+   <div class="menubutton"><ons-icon icon="{{permit.icon}}"  class="menuicon"></ons-icon></div> {{permit.permittype}} {{}}
   </ons-card>  
   </div>
