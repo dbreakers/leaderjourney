@@ -52,9 +52,9 @@ export class MandatoryComponent implements OnInit {
          entry = this.globals.compassdata.object.mandate[i];
       }
     } 
-    if (entry={}) {
-      entry.expiry = "";
-      entry.mandCode = mantype
+    if (!entry.hasOwnProperty("mandC")) {
+      entry.expiry = ""; 
+      entry.mandCode = mantype;
     }
     if (status=='od') {entry.status = 1}
     if (status=='du') {entry.status = 2}
