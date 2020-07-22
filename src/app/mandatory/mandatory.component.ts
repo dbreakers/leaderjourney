@@ -52,6 +52,10 @@ export class MandatoryComponent implements OnInit {
          entry = this.globals.compassdata.object.mandate[i];
       }
     } 
+    if (entry={}) {
+      entry.expiry = "";
+      entry.mandCode = mantype
+    }
     if (status=='od') {entry.status = 1}
     if (status=='du') {entry.status = 2}
     if (status=='ok') {entry.status = 3}
@@ -177,7 +181,7 @@ export class MandatoryComponent implements OnInit {
    this.mandlist.push(this.return_mandatory("SG",this.sg))
   expiry = this.find_gdpr();
   this.gd = this.check_expiry_gdpr(date,expiry);  
-  this.mandlist.push(this.return_gdpr(this.sg))
+  this.mandlist.push(this.return_gdpr(this.gd))
   if (this.fa!="ok"||this.sg!="ok"||this.sf!="ok"||this.gd!="ok"){
     this.highman = true;
   }
