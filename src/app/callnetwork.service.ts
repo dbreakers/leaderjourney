@@ -30,7 +30,7 @@ export class CallNetworkService {
   slowhttp = true;
 
 getRoles(): Observable<any> {
-  if this.globals.compass_user=="") {
+  if (this.globals.compass_user=="") {
   return of("fdfdf")
   } else {
     let authURL =this.globals.urlroot +"activeroles";
