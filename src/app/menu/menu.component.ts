@@ -17,16 +17,14 @@ import { CallNetworkService } from '../callnetwork.service';
 export class MenuComponent implements OnInit {
   selected_role = {};
   
-  
   constructor(private navi: OnsNavigator,
               private callnetworkService: CallNetworkService, 
               private globals: Globals,) {
   } 
  
   
-  
   push() {
-    this.navi.nativeElement.pushPage(TrainingComponent);
+    this.navi.nativeElement.pushPage(TrainingComponent,{data: this.globals.compassuser});
   }
    push2() {
     this.navi.nativeElement.pushPage(MandatoryComponent);

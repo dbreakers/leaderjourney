@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OnsNavigator } from 'ngx-onsenui';
+import { OnsNavigator,  Params, } from 'ngx-onsenui';
 import { Globals } from '../globals';
  
 
@@ -10,7 +10,7 @@ import { Globals } from '../globals';
 })
 export class TrainingComponent implements OnInit {
   selected_role = {};
-  monthlist = ['January','February','March','April','May','June','July','August','September','October','November','December']
+  displayuser = []; 
   plp = [];
   percent = 0;
   targetmonth = "";
@@ -19,6 +19,7 @@ export class TrainingComponent implements OnInit {
   width = 0;
   status = "";
   constructor(private navi: OnsNavigator,
+              private _params: Params,
               private globals: Globals,) {
   } 
  
@@ -57,8 +58,9 @@ export class TrainingComponent implements OnInit {
   }
   
   ngOnInit() {
-this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
-this.plp = this.globals.compassuser[0].training[this.globals.roleid];
+ if (this._params.data) {this.displayuser=this._params.data}    
+this.selected_role = this.displayuser[0].find(r=>r.roleid == this.globals.roleid )
+this.plp = this.displayuser[0].training[this.globals.roleid];
 this.mandatory_find();
  
   }
