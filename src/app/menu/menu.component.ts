@@ -132,9 +132,13 @@ export class MenuComponent implements OnInit {
     this.highman = true;
   }
   }
+
+  get_role() {
+    this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
+  }
   
   ngOnInit() {
-this.selected_role = this.globals.compassar.find(r=>r.roleid == this.globals.roleid )
+this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
 //this.plp = this.globals.compassdata.object.plps[this.globals.roleid];
 //this.get_mandatory() 
   

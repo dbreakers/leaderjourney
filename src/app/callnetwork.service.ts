@@ -32,6 +32,11 @@ export class CallNetworkService {
               private globals: Globals ) {}
   slowhttp = true;
 
+clear() {
+  this.globals.compassdata=[];
+  this.globals.compassar = [];
+}
+
 getAllRoles(): Observable<any> {
   if (this.globals.compass_user=="") {
   return of(this.stubs.allroles)

@@ -66,6 +66,7 @@ if (test[0] == 0){
 }  
 logon(username2,password2) {
 //  this.globals.url = document.getElementById('u').value;
+this.callnetworkService.clear();
 this.globals.compass_user = username2;
 this.globals.compass_password = password2;
   modal.show();  
