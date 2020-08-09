@@ -134,7 +134,7 @@ export class MenuComponent implements OnInit {
   }
 
   get_role() {
-    returnthis.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
+    return this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
   }
   
   ngOnInit() {
