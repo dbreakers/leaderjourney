@@ -1,0 +1,44 @@
+.dashboard {font-size: 1.5em; padding-right: 10px}
+
+.mandatoryh {color:white; background-color:black;}
+.mandatory {color:black; background-color:white;}
+.pulsered {animation: pulsered 2s infinite }
+.green {color: var(--scoutgreen)}
+.amber {color: var(--scoutyellow)}
+.red {color: var(--scoutred)}
+@keyframes pulsered {
+	0% {
+		transform: scale(0.7);
+	}
+
+ 
+70% {
+		transform: scale(1);
+	 
+	}
+   
+	100% {
+		transform: scale(0.7);
+	 
+	}
+}
+@keyframes pulse {
+	0% {
+		transform: scale(0.5);
+	 
+	}
+
+	 
+70% {
+		transform: scale(1);
+	 
+	}
+  90% {
+		transform: scale(1.1);
+	 
+	}
+	100% {
+		transform: scale(1);
+	 
+	}
+}
