@@ -5,21 +5,16 @@
 </ons-toolbar>
 <div class="content">
   
-  <ons-card class="headercard"><p class="subhead">{{selected_role.title}}<br>{{selected_role.location}}</p>since {{selected_role.datefrom.substring(0,4)}}</ons-card>
-  <span *ngFor="let permit of globals.compassdata.object.permits">
-  <ons-card *ngIf="!permit.expired">
+  <ons-card class="headercard"><p class="subhead">{{selected_role.role}}<br>{{selected_role.location}}</p>since {{selected_role.start}}</ons-card>
+  <span *ngFor="let o of outer">
+  <span *ngFor="let permit of permits">
+ 
+  <ons-card *ngIf="(!permit.expired&&o=='V')||(permit.expired&&o=='E')">
    <div class="permitgrid"><div [ngClass]="{'g':!permit.expired,'r':permit.expired}" class="permitbutton"><ons-icon [attr.icon]="permit.icon" class="permiticon"></ons-icon></div>
-   <div><span  class="subhead">{{permit.permittype}}&nbsp;({{permit.category}})</span><br>
+   <div><span  class="subhead">{{permit.activity}}&nbsp;({{permit.category}})</span><br>
    <span *ngIf="permit.expired">Expired on</span><span *ngIf="!permit.expired">Expires on</span>&nbsp;{{permit.expires}}
    </div></div> <div *ngIf="permit.restrictions!=''"><span class="subhead">Restrictions</span><br>{{permit.restrictions}}</div>
   </ons-card>
   </span>  
-  <span *ngFor="let permit of globals.compassdata.object.permits">
-  <ons-card *ngIf="permit.expired">
-   <div class="permitgrid"><div [ngClass]="{'g':!permit.expired,'r':permit.expired}" class="permitbutton"><ons-icon [attr.icon]="permit.icon" class="permiticon"></ons-icon></div>
-   <div><span  class="subhead">{{permit.permittype}}&nbsp;({{permit.category}})</span><br>
-   <span *ngIf="permit.expired">Expired on</span><span *ngIf="!permit.expired">Expires on</span>&nbsp;{{permit.expires}}
-   </div></div> <div *ngIf="permit.restrictions!=''"><span class="subhead">Restrictions</span><br>{{permit.restrictions}}</div>
-  </ons-card>
-  </span>  
+  </span>
   </div>

@@ -35,6 +35,7 @@ export class CallNetworkService {
 clear() {
   this.globals.compassdata=[];
   this.globals.compassar = [];
+    this.globals.compassuser = [];
 }
 
 

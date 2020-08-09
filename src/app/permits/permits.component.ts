@@ -11,7 +11,8 @@ import { Globals } from '../globals';
 export class PermitsComponent implements OnInit {
 
 selected_role = {}; 
-
+permits = {}
+outer = []
   constructor(private navi: OnsNavigator,
               private globals: Globals,) {
   }
@@ -23,10 +24,13 @@ permit_array =[]
 ngOnInit() {
 this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
 this.permit_array = JSON.parse(this.permit_icons)
-if(!this.globals.compassuser[0]['permits'].object.permits[1].hasOwnProperty("icon")){
-  for(var i=0;this.globals.compassdata.object.permits.length;i++){
-    this.globals.compassdata.object.permits[i]['icon'] =this.permit_array.find(j=> j.name== this.globals.compassdata.object.permits[i].permittype).icon
-  }
+this.permits = this.globals.compassuser[0]['permits'];
+if(!this.permits.hasOwnProperty("icon")){
+  for(var i=0;i<this.permits.length;i++){
+    this.permits[i]['icon'] =this.permit_array.find(j=> j.name== this.permits[i].activity).icon
+  } 
 }
+this.outer = ["V","E"]
+ 
   }
 }
