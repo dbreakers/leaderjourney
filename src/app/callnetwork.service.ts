@@ -14,6 +14,7 @@ import { Observable, forkJoin, of, from } from "rxjs";
 //import { Security } from "./security";
 import { map, concatMap, catchError,tap } from "rxjs/operators";
 import { Globals } from './globals';
+import { Stubs } from './stubs';
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"
@@ -26,7 +27,9 @@ const httpOptions = {
 
 export class CallNetworkService {
 
-  constructor(private http: HttpClient, private globals: Globals ) {}
+  constructor(private http: HttpClient, 
+              private stubs: Stubs
+              private globals: Globals ) {}
   slowhttp = true;
 
 getRoles(): Observable<any> {
