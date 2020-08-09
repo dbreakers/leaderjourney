@@ -15,6 +15,7 @@ import {
 import { Input } from '@angular/core';
 import { Globals } from '../globals';
 import { Role } from '../role';
+import { MandatoryComponent } from '../mandatory/mandatory.component';
 
 @Component({
   selector: 'app-mandatoryheader',
@@ -28,13 +29,18 @@ export class MandatoryHeaderComponent implements OnInit {
   sg = "";
   gd = "";
   highman = false;  
-constructor( private globals: Globals) {}
+constructor( private globals: Globals,) {}
+
+  push2() {
+    this.navi.nativeElement.pushPage(MandatoryComponent);
+  }
 
 calc_date_value(d) {
     return (parseInt(d.substring(0,4)))*12 +parseInt(d.substring(5,7))-1;
 }
 
 compass_date(longdate) {
+  if (longdate.split(" ").length<3) { return ""}
   return longdate.split(" ")[2]+"-"+
                     (this.globals.months.indexOf( longdate.split(" ")[1])+1)
                     + "-" +longdate.split(" ")[0];
@@ -49,11 +55,11 @@ find_gdpr() {
       var plp =  this.globals.compassuser[0].training[role][j]
 
       if (plp.courseid=="GDPR"&&this.compass_date(plp.validated_on)>expiry) {
-        expiry = plp.validatedDate;
+        expiry = this.compass_date(plp.validated_on);
       }
     }
   }
-   if(expiry!="1900-01-01") {return 'ok'} else {return 'du'}
+   if(expiry!="1900-01-01") {return 'ok'} else {return 'du'} 
   
   }
 

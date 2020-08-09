@@ -189,7 +189,7 @@ export class MandatoryComponent implements OnInit {
   }
   
   ngOnInit() {
-this.selected_role = this.globals.compassdata.object.roles.find(r=>r.id == this.globals.roleid )
+this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
 this.plp = this.globals.compassdata.object.plps[this.globals.roleid];
 this.get_mandatory() 
  
