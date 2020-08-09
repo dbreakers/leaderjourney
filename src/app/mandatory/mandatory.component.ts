@@ -168,13 +168,14 @@ compass_date(longdate) {
     var role = this.globals.compassuser[0].roles[i].roleid;
     for(var j=0; j< this.globals.compassuser[0].training[role].length; j++){ 
       var plp =  this.globals.compassuser[0].training[role][j]
-     console.log(plp.courseid,expiry, this.compass_date(plp.validated_on),this.compass_date(plp.validated_on)>expiry)
-     console.log(plp)
+     //console.log(plp.courseid,expiry, this.compass_date(plp.validated_on),this.compass_date(plp.validated_on)>expiry)
+    // console.log(plp)
       if (plp.courseid=="GDPR"&&this.compass_date(plp.validated_on)>expiry) {
            var gdpr = plp;
-           console.log(gdpr)
-        /*var expiry = this.compass_date(plp.validated_on);
-     
+           gdpr.status = 3
+            console.log(gdpr)
+          var expiry = this.compass_date(plp.validated_on);
+     /*
         gdpr.expired = expiry;
         gdpr.monthnumber = parseInt(expiry(5,7));
         gdpr.linkedModuleCode = "GDPR";
@@ -198,8 +199,8 @@ compass_date(longdate) {
     }
   }
   
-  if(expiry="1900-01-01") {
-    return {"expired":"","linkedModuleCode" : "GDPR","linkedModuleLabel" : "GDPR Training"}
+  if(gdprexpiry=="1900-01-01") { 
+    return {"expired":"","linkedModuleCode" : "GDPR","linkedModuleLabel" : "GDPR Training","status":1}
     } else {return gdpr} 
   return gdpr;
   }
