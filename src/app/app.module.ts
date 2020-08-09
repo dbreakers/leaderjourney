@@ -17,10 +17,11 @@ import { HierComponent } from './hier/hier.component';
 import { Globals } from './globals';
 import { Stubs } from './stubs';
 import {RoleHeaderComponent } from './roleheader/roleheader.component';
+import {MandatoryHeaderComponent } from './mandatoryheader/mandatoryheader.component';
 
 @NgModule({
   imports:         [ BrowserModule, FormsModule, OnsenModule, HttpClientModule ],
-  declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent,RoleHeaderComponent ],
+  declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent,RoleHeaderComponent,MandatoryHeaderComponent ],
   entryComponents: [ MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent ],
   schemas:         [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap:       [ AppComponent ],

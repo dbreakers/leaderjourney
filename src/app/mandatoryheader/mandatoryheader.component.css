@@ -1,5 +1,5 @@
 .dashboard {font-size: 1.5em; padding-right: 10px}
-
+.subhead {font-weight:600; margin: 0px;}
 .mandatoryh {color:white; background-color:black;}
 .mandatory {color:black; background-color:white;}
 .pulsered {animation: pulsered 2s infinite }
