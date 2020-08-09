@@ -65,7 +65,17 @@ compass_date(longdate) {
       entry.expiry = ""; 
       entry.mandCode = mantype;
     }
-    entry.status = ""
+    var date = this.formatDate()
+    status =  "ok"
+      
+    if (this.calc_date_value(entry.expired)-this.calc_date_value(date)<3) { 
+    status = "du"
+  }
+  if (entry.expired < date) {
+    status= "od"; 
+    }
+  
+  
     if (status=='od') {entry.status = 1}
     if (status=='du') {entry.status = 2}
     if (status=='ok') {entry.status = 3}
@@ -151,19 +161,47 @@ compass_date(longdate) {
 
   find_gdpr() {
   // For GDPR we need to look at all roles  
+  debugger; 
   var expiry="1900-01-01"
-  for(var i=0; i< this.globals.compassdata.object.roles.length; i++){
-    var role = this.globals.compassdata.object.roles[i].id;
-    for(var j=0; j< this.globals.compassdata.object.plps[role].length; j++){ 
-      var plp =  this.globals.compassdata.object.plps[role][j]
-      if (plp.code=="GDPR"&&plp.validatedDate>expiry) {
-        expiry = plp.validatedDate;
+  var gdpr = {}
+  for(var i=0; i< this.globals.compassuser[0].roles.length; i++){
+    var role = this.globals.compassuser[0].roles[i].roleid;
+    for(var j=0; j< this.globals.compassuser[0].training[role].length; j++){ 
+      var plp =  this.globals.compassuser[0].training[role][j]
+     console.log(plp.courseid,expiry, this.compass_date(plp.validated_on),this.compass_date(plp.validated_on)>expiry)
+     console.log(plp)
+      if (plp.courseid=="GDPR"&&this.compass_date(plp.validated_on)>expiry) {
+           var gdpr = plp;
+           console.log(gdpr)
+        /*var expiry = this.compass_date(plp.validated_on);
+     
+        gdpr.expired = expiry;
+        gdpr.monthnumber = parseInt(expiry(5,7));
+        gdpr.linkedModuleCode = "GDPR";
+        gdpr.mandCode = "GDPR"
+        gdpr.linkedModuleLabel = "GDPR Training";
+         var date = this.formatDate()
+        status =  "ok"
+      
+        if (this.calc_date_value(gdpr.expired)-this.calc_date_value(date)<3) { 
+          status = "du"
+        }
+       if (gdpr.expired < date) {
+        status= "od"; 
+       }
+  
+  
+    if (status=='od') {gdpr.status = 1}
+    if (status=='du') {gdpr.status = 2}
+    if (status=='ok') {gdpr.status = 3}*/
       }
     }
   }
-  //console.log(expiry)
-  if(expiry=="1900-01-01") {expiry=""}
-  return expiry
+  
+  if(expiry="1900-01-01") {
+    return {"expired":"","linkedModuleCode" : "GDPR","linkedModuleLabel" : "GDPR Training"}
+    } else {return gdpr} 
+  return gdpr;
   }
 
  compare(a, b) {
@@ -178,24 +216,16 @@ compass_date(longdate) {
   return comparison;
 }
 get_mandatory(){
- 
-   
+ //var expiry = this.find_gdpr();
+ this.mandlist.push(this.find_gdpr())
 this.mandlist.push(this.return_mandatory("FA",this.fa))
 this.mandlist.push(this.return_mandatory("SA",this.fa))
 this.mandlist.push(this.return_mandatory("SG",this.fa))
+ this.mandlist.sort(this.compare)
 }
   get_mandatory2(){
   this.highman = false;
-  var date = this.formatDate()
-  var expiry = this.find_mandatory("FA");
-  this.fa = this.check_expiry(date,expiry)
-  this.mandlist.push(this.return_mandatory("FA",this.fa))
-  expiry = this.find_mandatory("SA");
-  this.sf =  this.check_expiry(date,expiry)
-   this.mandlist.push(this.return_mandatory("SA",this.sf))
-  expiry = this.find_mandatory("SG");
-  this.sg =  this.check_expiry(date,expiry);
-   this.mandlist.push(this.return_mandatory("SG",this.sg))
+  
   expiry = this.find_gdpr();
   this.gd = this.check_expiry_gdpr(date,expiry);  
   this.mandlist.push(this.return_gdpr(this.gd))
