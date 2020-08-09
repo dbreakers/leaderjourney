@@ -36,11 +36,13 @@ clear() {
   this.globals.compassdata=[];
   this.globals.compassar = [];
     this.globals.compassuser = []; 
+    this.globals.compass_user=""
+    this.globals.compass_password==""
 }
 
 
-getUser(): Observable<any> {
-  if (this.globals.compassuser=="") {
+getUser(): Observable<any> { 
+  if (this.globals.compass_user=="") { 
   return of(this.stubs.user)
   } else {
     let authURL =this.globals.urlroot +"user";

@@ -106,7 +106,7 @@ compass_date(longdate) {
       if (plp.courseid=="GDPR"&&this.compass_date(plp.validated_on)>expiry) {
            var gdpr = plp;
            gdpr.status = 3
-            console.log(gdpr)
+          /  console.log(gdpr)
           gdpr.expired =  "";
           var expiry = this.compass_date(plp.validated_on);
            gdpr.linkedModuleCode = "GDPR";
