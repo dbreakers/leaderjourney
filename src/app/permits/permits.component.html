@@ -5,7 +5,7 @@
 </ons-toolbar>
 <div class="content">
   
-  <ons-card class="headercard"><p class="subhead">{{selected_role.role}}<br>{{selected_role.location}}</p>since {{selected_role.start}}</ons-card>
+  <app-roleheader [role]="selected_role"></app-roleheader>
   <span *ngFor="let o of outer">
   <span *ngFor="let permit of permits">
  

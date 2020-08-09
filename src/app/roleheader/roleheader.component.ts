@@ -12,6 +12,8 @@ import {
   CUSTOM_ELEMENTS_SCHEMA
 } from 'ngx-onsenui';
 
+import { Input } from '@angular/core';
+
 import { Role } from '../role';
 
 @Component({
