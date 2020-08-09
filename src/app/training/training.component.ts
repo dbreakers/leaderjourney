@@ -48,18 +48,18 @@ export class TrainingComponent implements OnInit {
   }
   var nowsum = (new Date()).getFullYear() * 12 + (new Date()).getMonth();
   var targetsum = this.targetyear * 12 + parseInt(this.selected_role.datefrom.substring(5,7))-1;*/
-   
   if ((nowsum-targetsum)<4) {this.status="du"}
   if (this.percent==100) {this.status="ok"} 
    }
   
+
   push() {
     //this.navi.nativeElement.pushPage(RoleSelectComponent);
   }
   
-  ngOnInit() {
+ngOnInit() {
  if (this._params.data) {this.displayuser=this._params.data}    
-this.selected_role = this.displayuser[0].find(r=>r.roleid == this.globals.roleid )
+this.selected_role = this.displayuser[0].roles.find(r=>r.roleid == this.globals.roleid )
 this.plp = this.displayuser[0].training[this.globals.roleid];
 this.mandatory_find();
  
