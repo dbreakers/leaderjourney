@@ -61,7 +61,7 @@ if (test[0] == 0){
     this.error_text="Logon Failed - Check Password and ID"
     this.globals.compass_user = "";
     this.globals.compass_password = "";
-      modal.hide(); 
+      modal.hide();  
 }
 }  
 logon(username2,password2) {
