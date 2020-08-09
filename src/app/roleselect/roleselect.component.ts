@@ -24,21 +24,19 @@ export class RoleSelectComponent implements OnInit{
   }
   get_all(ret) {
     this.globals.compassar =ret;
+    modal2.hide(); 
     this.navi.nativeElement.pushPage(MenuComponent);
-       modal2.hide(); 
   } 
 
   select_role(role) {
     this.globals.roleid = role.roleid;
+     modal2.show()    
      this.callnetworkService.getAllRoles().subscribe(ar=> this.get_all(ar));
-    this.navi.nativeElement.pushPage(MenuComponent);
-       modal2.show(); 
+   // this.navi.nativeElement.pushPage(MenuComponent);
    //   this.navi.nativeElement.replacePage(MenuComponent);
   } 
 ngOnInit() {
-  if (this.globals.compassdata.length ==0){
-   modal2.show(); 
-  }
+  
 }
 
   

@@ -49,14 +49,17 @@ export class LogonPageComponent implements OnInit {
 
 get_roles(test) {
   this.globals.compassdata = test;
-  modal2.hide()
+  modald.hide()
+   this.navi.nativeElement.pushPage(RoleSelectComponent);
 }
 post_logon(test){
 //console.log(test);
 if (test[0] == 0){
    this.error_text="";
+   modal.hide();
+   modald.show()
    this.callnetworkService.getActiveRoles().subscribe(Roles=> this.get_roles(Roles));
-   this.navi.nativeElement.pushPage(RoleSelectComponent);
+  
 } else {
     this.error_text="Logon Failed - Check Password and ID"
     this.globals.compass_user = "";
