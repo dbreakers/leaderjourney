@@ -48,7 +48,7 @@ find_gdpr() {
     for(var j=0; j< this.globals.compassuser[0].training[role].length; j++){ 
       var plp =  this.globals.compassuser[0].training[role][j]
 
-      if (plp.courseid=="GDPR"&&compass_Date(plp.validated_on)>expiry) {
+      if (plp.courseid=="GDPR"&&this.compass_date(plp.validated_on)>expiry) {
         expiry = plp.validatedDate;
       }
     }
@@ -88,6 +88,7 @@ find_mandatory (mantype) {
     if (expiry < date) {
     return "od"; 
   }  
+  
   if (this.calc_date_value(expiry)-this.calc_date_value(date)<3) { 
     return "du"
   }
@@ -100,7 +101,7 @@ find_mandatory (mantype) {
   this.fa = this.find_mandatory ("FA")
   this.sf = this.find_mandatory ("SA")
   this.sg = this.find_mandatory ("SG")
-  this.gd = this.find_gdpr
+  this.gd = this.find_gdpr(); 
    if (this.fa!="ok"||this.sg!="ok"||this.sf!="ok"||this.gd!="ok"){
     this.highman = true;
   }
