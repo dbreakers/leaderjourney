@@ -94,7 +94,7 @@ compass_date(longdate) {
 
   find_gdpr() {
   // For GDPR we need to look at all roles  
-  /debugger;  
+  //debugger;  
   var expiry="1900-01-01"
   var gdpr = {}
   for(var i=0; i< this.globals.compassuser[0].roles.length; i++){

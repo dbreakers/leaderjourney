@@ -22,7 +22,7 @@ import { Role } from '../role';
   styleUrls: ['./roleheader.component.css']
 })
 export class RoleHeaderComponent implements OnInit {
-  @Input() role: Role;
+  @Input() role: Any;
 
   constructor() { }
 

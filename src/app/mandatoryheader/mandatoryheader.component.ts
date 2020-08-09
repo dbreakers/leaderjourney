@@ -24,6 +24,7 @@ import { MandatoryComponent } from '../mandatory/mandatory.component';
 })
 export class MandatoryHeaderComponent implements OnInit {
   //@Input() ;
+  @Input() user: Any;
   fa = "";
   sf = "";
   sg = "";
