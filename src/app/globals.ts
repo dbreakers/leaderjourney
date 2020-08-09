@@ -11,4 +11,5 @@ export class Globals {
   urlroot : string="https://us-central1-leaderjourney-a4c0d.cloudfunctions.net/compass/"
   compass_user : string = "";
   compass_password : string = "";
+  months : Array = ['January','February','March','April','May','June','July','August','September','October','November','December']
 }
