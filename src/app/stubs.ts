@@ -1,6 +1,6 @@
-mport { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class Stubs {
-  roles: ''
+    version: string = '1.0.1';
 }
