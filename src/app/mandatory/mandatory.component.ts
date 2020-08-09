@@ -74,7 +74,7 @@ compass_date(longdate) {
   if (entry.expired < date) {
     status= "od"; 
     }
-  
+  debuggerl
   
     if (status=='od') {entry.status = 1}
     if (status=='du') {entry.status = 2}
@@ -174,13 +174,15 @@ compass_date(longdate) {
            var gdpr = plp;
            gdpr.status = 3
             console.log(gdpr)
+          gdpr.expired =  "";
           var expiry = this.compass_date(plp.validated_on);
+           gdpr.linkedModuleCode = "GDPR";
+        gdpr.mandCode = "GDPR"
+        gdpr.linkedModuleLabel = "GDPR Training";
      /*
         gdpr.expired = expiry;
         gdpr.monthnumber = parseInt(expiry(5,7));
-        gdpr.linkedModuleCode = "GDPR";
-        gdpr.mandCode = "GDPR"
-        gdpr.linkedModuleLabel = "GDPR Training";
+       
          var date = this.formatDate()
         status =  "ok"
       
@@ -199,10 +201,10 @@ compass_date(longdate) {
     }
   }
   
-  if(gdprexpiry=="1900-01-01") { 
+  if(expiry=="1900-01-01") { 
     return {"expired":"","linkedModuleCode" : "GDPR","linkedModuleLabel" : "GDPR Training","status":1}
     } else {return gdpr} 
-  return gdpr;
+  return gdpr; 
   }
 
  compare(a, b) {
