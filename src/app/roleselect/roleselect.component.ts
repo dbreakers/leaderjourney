@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { OnsNavigator, Params } from 'ngx-onsenui';
 import { Globals } from '../globals';
 import { MenuComponent } from '../menu/menu.component';
+import { CallNetworkService } from '../callnetwork.service';
+
 @Component({
   selector: 'ons-page[roleselect]',
   templateUrl: './roleselect.component.html',
@@ -13,6 +15,7 @@ export class RoleSelectComponent implements OnInit{
   constructor(
     private navi: OnsNavigator,
     private globals: Globals,
+     private callnetworkService: CallNetworkService, 
     private params: Params) {
   }
   
