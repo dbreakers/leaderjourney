@@ -37,6 +37,21 @@ clear() {
   this.globals.compassar = [];
 }
 
+
+getUser(): Observable<any> {
+  if (this.globals.compass_user=="") {
+  return of(this.stubs.user)
+  } else {
+    let authURL =this.globals.urlroot +"user";
+    let body = new HttpParams();
+    body = body.set("user", this.globals.compass_user);
+    body = body.set("password", this.globals.compass_password);
+    return this.http
+      .post<any>(authURL, body, httpOptions)
+      .pipe(catchError(error => of(error)));
+  }
+  }
+
 getAllRoles(): Observable<any> {
   if (this.globals.compass_user=="") {
   return of(this.stubs.allroles)

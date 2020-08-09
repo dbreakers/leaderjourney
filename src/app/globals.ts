@@ -5,6 +5,7 @@ export class Globals {
   version: string = '1.0.1';
   compassdata: Array = [];
   compassar : Array = [];
+  compassuser : Array = [];
   roleid: string = "";
   url: string="https://2ndnewhawscouts.org.uk/osmr/compassread2.php";
   urlroot : string="https://us-central1-leaderjourney-a4c0d.cloudfunctions.net/compass/"

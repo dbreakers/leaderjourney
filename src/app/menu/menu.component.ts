@@ -7,6 +7,7 @@ import { MandatoryComponent } from '../mandatory/mandatory.component';
 import { CardComponent } from '../card/card.component';
 import { PermitsComponent } from '../permits/permits.component';
 import { HierComponent } from '../hier/hier.component';
+import { CallNetworkService } from '../callnetwork.service';
 
 @Component({
   selector: 'ons-page[menu]',
@@ -23,6 +24,7 @@ export class MenuComponent implements OnInit {
   highman = false;
   
   constructor(private navi: OnsNavigator,
+              private callnetworkService: CallNetworkService, 
               private globals: Globals,) {
   } 
  
@@ -139,6 +141,9 @@ export class MenuComponent implements OnInit {
   
   ngOnInit() {
 this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
+if (this.globals.compassuser.length==0){
+   this.callnetworkService.getUser().subscribe(ar=> this.get_all(ar));
+}
 //this.plp = this.globals.compassdata.object.plps[this.globals.roleid];
 //this.get_mandatory() 
   
