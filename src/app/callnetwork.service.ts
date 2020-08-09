@@ -34,7 +34,7 @@ export class CallNetworkService {
 
 getRoles(): Observable<any> {
   if (this.globals.compass_user=="") {
-  return of("fdfdf")
+  return of(this.stubs.roles)
   } else {
     let authURL =this.globals.urlroot +"activeroles";
     let body = new HttpParams();
