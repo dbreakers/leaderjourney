@@ -6,7 +6,7 @@
 </ons-toolbar>
 <div class="content">
   
-  <ons-card class="headercard"><p class="subhead">{{selected_role.title}}<br>{{selected_role.location}}</p>since {{selected_role.datefrom.substring(0,4)}}</ons-card>
+  <ons-card class="headercard"><p class="subhead">{{selected_role.role}}<br>{{selected_role.location}}</p>since {{selected_role.start}}</ons-card>
   <ons-card [ngClass]="{'mandatoryh':highman,'mandatory':!highman}" (click)='push2()'>
   <p class="subhead">Mandatory Training Status&nbsp;
   <ons-icon icon="fa-exclamation-triangle" class="dashboard" [ngClass]="{'amber pulse':sf=='du','red pulsered':sf=='od','green':sf=='ok'}"></ons-icon>

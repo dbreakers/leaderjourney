@@ -19,8 +19,13 @@ export class RoleSelectComponent implements OnInit{
   pop() {
    // this.navi.nativeElement.popPage();
   }
+  get_all(ret) {
+    this.globals.compassar =ret;
+  } 
+
   select_role(role) {
     this.globals.roleid = role.roleid;
+     this.callnetworkService.getAllRoles().subscribe(ar=> this.get_all(ar));
     this.navi.nativeElement.pushPage(MenuComponent);
    //   this.navi.nativeElement.replacePage(MenuComponent);
   } 
