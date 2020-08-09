@@ -49,6 +49,7 @@ export class LogonPageComponent implements OnInit {
 
 get_roles(test) {
   this.globals.compassdata = test;
+  modal2.hide()
 }
 post_logon(test){
 //console.log(test);

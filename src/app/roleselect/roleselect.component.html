@@ -7,9 +7,8 @@
 </ons-toolbar>
 <div class="content">
   <span *ngIf="globals.compassdata.length!=0">
-  <ons-card>
-   <script>modal.hide()</script> 
-   Hello {{globals.compassdata[0].name.split(" ")[1]}} 
+  <ons-card class="closedcard">
+   Hello {{globals.compassdata[0].name.split(" ")[1]}}<br>Which role do you want to use for accessing Compa
   </ons-card>  
   
   <span *ngFor="let role of globals.compassdata[0].roles" >
@@ -19,9 +18,7 @@
   </span>
   </span>  
 </div>
-  <ons-modal  id="modal">
-    
-      <ons-icon icon="fa-spinner" spin="true" size="80px"></ons-icon>
-    
-    <p>Logging you on & getting your data</p>
+  <ons-modal  id="modal2">
+    <ons-icon icon="fa-spinner" spin="true" size="80px"></ons-icon>
+    <p>Getting your data</p>
   </ons-modal>

@@ -23,9 +23,9 @@ export class RoleSelectComponent implements OnInit{
           this.globals.roleid = role.id;
        this.navi.nativeElement.pushPage(MenuComponent);
    //    this.navi.nativeElement.replacePage(MenuComponent);
-  }
+  } 
 ngOnInit() {
-   modal.show(); 
+   modal2.show(); 
 }
 
   
