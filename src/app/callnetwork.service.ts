@@ -28,7 +28,7 @@ const httpOptions = {
 export class CallNetworkService {
 
   constructor(private http: HttpClient, 
-              private stubs: Stubs
+              private stubs: Stubs,
               private globals: Globals ) {}
   slowhttp = true;
 
