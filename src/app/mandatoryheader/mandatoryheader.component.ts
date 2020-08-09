@@ -23,10 +23,16 @@ import { Role } from '../role';
 })
 export class MandatoryHeaderComponent implements OnInit {
   //@Input() ;
+  fa = "";
+  sf = "";
+  sg = "";
+  gd = "";
+  highman = false;  
 constructor( private globals: Globals) {}
-  }
+  
    
   ngOnInit() {
+
   
   }
 
