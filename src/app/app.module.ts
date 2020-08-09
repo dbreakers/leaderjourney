@@ -23,6 +23,6 @@ import { Stubs } from './stubs';
   entryComponents: [ MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent ],
   schemas:         [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap:       [ AppComponent ],
-   providers: [ Globals, Stub ]
+   providers: [ Globals, Stubs ]
 })
 export class AppModule { }
