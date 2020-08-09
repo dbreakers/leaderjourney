@@ -20,9 +20,9 @@ export class RoleSelectComponent implements OnInit{
    // this.navi.nativeElement.popPage();
   }
   select_role(role) {
-          this.globals.roleid = role.id;
-       this.navi.nativeElement.pushPage(MenuComponent);
-   //    this.navi.nativeElement.replacePage(MenuComponent);
+    this.globals.roleid = role.roleid;
+    this.navi.nativeElement.pushPage(MenuComponent);
+   //   this.navi.nativeElement.replacePage(MenuComponent);
   } 
 ngOnInit() {
   if (this.globals.compassdata.length ==0){
