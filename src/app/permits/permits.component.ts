@@ -21,9 +21,9 @@ permit_array =[]
 
 
 ngOnInit() {
-this.selected_role = this.globals.compassdata.object.roles.find(r=>r.id == this.globals.roleid );
+this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
 this.permit_array = JSON.parse(this.permit_icons)
-if(!this.globals.compassdata.object.permits[1].hasOwnProperty("icon")){
+if(!this.globals.compassuser[0]['permits'].object.permits[1].hasOwnProperty("icon")){
   for(var i=0;this.globals.compassdata.object.permits.length;i++){
     this.globals.compassdata.object.permits[i]['icon'] =this.permit_array.find(j=> j.name== this.globals.compassdata.object.permits[i].permittype).icon
   }
