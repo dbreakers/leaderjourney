@@ -53,7 +53,7 @@ find_gdpr() {
       }
     }
   }
-   if(expiry!="1900-01-01") {return 'ok'} else {return 'd'}
+   if(expiry!="1900-01-01") {return 'ok'} else {return 'du'}
   
   }
 
@@ -100,7 +100,7 @@ find_mandatory (mantype) {
   this.fa = this.find_mandatory ("FA")
   this.sf = this.find_mandatory ("SA")
   this.sg = this.find_mandatory ("SG")
-
+  this.gd = this.find_gdpr
    if (this.fa!="ok"||this.sg!="ok"||this.sf!="ok"||this.gd!="ok"){
     this.highman = true;
   }
