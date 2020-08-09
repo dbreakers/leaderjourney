@@ -13,7 +13,7 @@
     <span *ngIf="train.mandCode=='SG'"><ons-icon icon="fa-shield-alt" class="dashboard"></ons-icon></span>
     <span *ngIf="train.mandCode=='SA'"><ons-icon icon="fa-exclamation-triangle" class="dashboard"></ons-icon></span>
     <span *ngIf="train.mandCode=='GDPR'"><ons-icon icon="fa-briefcase" class="dashboard"></ons-icon></span>
-     
+    {{train.linkedModuleLabel}}  
     <span *ngIf='train.status!=1&&train.expired!=""'>expires </span>
     <span *ngIf='train.status!=1&&train.expired==""'>completed {{globals.months[train.monthnumber-1]}} {{train.expired.substring(0,4)}}  </span>
     <span *ngIf='train.status==1&&train.expired!=""'>expired in </span>

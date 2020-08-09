@@ -11,13 +11,8 @@ export class MandatoryComponent implements OnInit {
   selected_role = {};
   plp = [];
   mandlist = [];
-  fa = "";
-  sf = "";
-  sg = "";
-  gd = "";
-  highman = false;
-  monthlist = ['January','February','March','April','May','June','July','August','September','October','November','December']
-  
+   
+   
   constructor(private navi: OnsNavigator, 
               private globals: Globals,) {
   } 
@@ -74,7 +69,6 @@ compass_date(longdate) {
   if (entry.expired < date) {
     status= "od"; 
     }
-  debuggerl
   
     if (status=='od') {entry.status = 1}
     if (status=='du') {entry.status = 2}
@@ -86,18 +80,6 @@ compass_date(longdate) {
     return entry;
   }
 
-  find_mandatory (mantype) {
-   var data = this.globals.compassuser[0].mandatory;
-    var expiry="1900-01-01"
-    for(var i=0;i<data.length; i++){
-      var expires = this.compass_date(data[i].expires)
-      if(expires > expiry&&data[i].type==mantype) {
-        expiry = expires;
-      }
-    } 
-    return expiry;
-  }
-
   calc_date_value(d) {
     return (parseInt(d.substring(0,4)))*12 +parseInt(d.substring(5,7))-1;
   }
@@ -106,62 +88,13 @@ compass_date(longdate) {
     var month = 1 + d-(year*12)
     return (year+"-"+month+"-01")
   }
-  check_expiry(date,expiry){
-    if (expiry < date) {
-    return "od"; 
-  }  
-  if (this.calc_date_value(expiry)-this.calc_date_value(date)<3) { 
-    return "du"
-  }
-  return "ok"
-  }
-
-  check_expiry_gdpr(date,expiry){
-
-  //  if (this.calc_date_value(date)-this.calc_date_value(expiry)>36) {
-  //  return "od"; 
-  //}  
-  //if  (this.calc_date_value(date)-this.calc_date_value(expiry)>32) { 
-  //  return "du"
-  //}
-  if(expiry=="") {return "od"}
-  return "ok"
-  }
-  
-  return_gdpr(status) {
-    var expiry="1900-01-01"
-    var entry = {}
-  entry.linkedModuleCode = "GDPR";
-  entry.mandCode = "GDPR"
-  entry.linkedModuleLabel = "GDPR Training";
-  entry.date =""
-  entry.monthnumber ="";
-  entry.expiry = ""
-  entry.status = 1
-  for(var i=0; i< this.globals.compassdata.object.roles.length; i++){
-    var role = this.globals.compassdata.object.roles[i].id;
-    for(var j=0; j< this.globals.compassdata.object.plps[role].length; j++){ 
-      var plp =  this.globals.compassdata.object.plps[role][j]
-      if (plp.code=="GDPR"&&plp.validatedDate>expiry) {
-        expiry = plp.validatedDate;
-        
-        entry.date = plp.validatedDate;
-       // entry.expiry = this.make_date_value(this.calc_date_value(entry.date)+36)
-        if (status=='od') {entry.status = 1}
-        if (status=='du') {entry.status = 2}
-        if (status=='ok') {entry.status = 3}
-        entry.monthnumber = parseInt(entry.date.substring(5,7));
-      }
-    }
-  }
  
-
-  return entry
-  }
+ 
+  
 
   find_gdpr() {
   // For GDPR we need to look at all roles  
-  debugger; 
+  debugger;  
   var expiry="1900-01-01"
   var gdpr = {}
   for(var i=0; i< this.globals.compassuser[0].roles.length; i++){
@@ -179,30 +112,13 @@ compass_date(longdate) {
            gdpr.linkedModuleCode = "GDPR";
         gdpr.mandCode = "GDPR"
         gdpr.linkedModuleLabel = "GDPR Training";
-     /*
-        gdpr.expired = expiry;
-        gdpr.monthnumber = parseInt(expiry(5,7));
-       
-         var date = this.formatDate()
-        status =  "ok"
-      
-        if (this.calc_date_value(gdpr.expired)-this.calc_date_value(date)<3) { 
-          status = "du"
-        }
-       if (gdpr.expired < date) {
-        status= "od"; 
-       }
-  
-  
-    if (status=='od') {gdpr.status = 1}
-    if (status=='du') {gdpr.status = 2}
-    if (status=='ok') {gdpr.status = 3}*/
+     
       }
     }
   }
   
   if(expiry=="1900-01-01") { 
-    return {"expired":"","linkedModuleCode" : "GDPR","linkedModuleLabel" : "GDPR Training","status":1}
+    return {"expired":"","linkedModuleCode" : "GDPR","linkedModuleLabel" : "GDPR Training","status":1, "mandCode":"GDPR"}
     } else {return gdpr} 
   return gdpr; 
   }
@@ -223,20 +139,10 @@ get_mandatory(){
  this.mandlist.push(this.find_gdpr())
 this.mandlist.push(this.return_mandatory("FA",this.fa))
 this.mandlist.push(this.return_mandatory("SA",this.fa))
-this.mandlist.push(this.return_mandatory("SG",this.fa))
+this.mandlist.push(this.return_mandatory("SG",this.fa)) 
  this.mandlist.sort(this.compare)
 }
-  get_mandatory2(){
-  this.highman = false;
-  
-  expiry = this.find_gdpr();
-  this.gd = this.check_expiry_gdpr(date,expiry);  
-  this.mandlist.push(this.return_gdpr(this.gd))
-  if (this.fa!="ok"||this.sg!="ok"||this.sf!="ok"||this.gd!="ok"){
-    this.highman = true;
-  }
-  this.mandlist.sort(this.compare)
-  }
+   
   
   ngOnInit() {
 this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )

@@ -59,7 +59,7 @@ find_gdpr() {
       }
     }
   }
-   if(expiry!="1900-01-01") {return 'ok'} else {return 'du'} 
+   if(expiry!="1900-01-01") {return 'ok'} else {return 'od'} 
   
   }
 
