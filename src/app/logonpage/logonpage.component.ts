@@ -55,7 +55,7 @@ post_logon(test){
 //console.log(test);
 if (test[0] == 0){
    this.error_text="";
-   this.callnetworkService.getRoles().subscribe(Roles=> this.get_roles(Roles));
+   this.callnetworkService.getActiveRoles().subscribe(Roles=> this.get_roles(Roles));
    this.navi.nativeElement.pushPage(RoleSelectComponent);
 } else {
     this.error_text="Logon Failed - Check Password and ID"
