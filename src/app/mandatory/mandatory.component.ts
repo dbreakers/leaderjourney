@@ -65,13 +65,14 @@ compass_date(longdate) {
       entry.expiry = ""; 
       entry.mandCode = mantype;
     }
+    entry.status = ""
     if (status=='od') {entry.status = 1}
     if (status=='du') {entry.status = 2}
     if (status=='ok') {entry.status = 3}
     if (entry.type=="FA"){entry.linkedModuleLabel = "First Aid"}
     if (entry.type=="SG"){entry.linkedModuleLabel = "Safeguarding"}
     if (entry.type=="SA"){entry.linkedModuleLabel = "Safety"}
-    entry.monthnumber = parseInt(entry.expir.substring(5,7));
+    entry.monthnumber = parseInt(entry.expired.substring(5,7));
     return entry;
   }
 
