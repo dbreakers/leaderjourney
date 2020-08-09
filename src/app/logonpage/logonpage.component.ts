@@ -25,7 +25,7 @@ import {
   templateUrl: './logonpage.component.html',
   styleUrls: [ './logonpage.component.css' ]
 })
-export class LogonPageComponent {
+export class LogonPageComponent implements OnInit {
   error_text= "";
 
   constructor(private navi: OnsNavigator,
@@ -46,19 +46,35 @@ export class LogonPageComponent {
   show_cards() {
     this.navi.nativeElement.pushPage(CardComponent);
   }
+
+get_roles(test) {
+  this.globals.compassdata = test;
+}
 post_logon(test){
 //console.log(test);
-if (test.message == "Success"){
+if (test[0] == 0){
    this.error_text="";
-   this.globals.compassdata=test;
+   this.callnetworkService.getRoles().subscribe(Roles=> this.get_roles(Roles));
    this.navi.nativeElement.pushPage(RoleSelectComponent);
 } else {
     this.error_text="Logon Failed - Check Password and ID"
+    this.globals.compass_user = "";
+    this.globals.compass_password = "";
+      modal.hide(); 
 }
 }  
 logon(username2,password2) {
-  this.globals.url = document.getElementById('u').value; 
+//  this.globals.url = document.getElementById('u').value;
+this.globals.compass_user = username2;
+this.globals.compass_password = password2;
+  modal.show();  
  this.callnetworkService.doLogon(username2,password2).subscribe(Security=> this.post_logon(Security));
+}
+
+ngOnInit () {
+  modal.hide();
+  this.globals.compass_user = "";
+  this.globals.compass_password = "";
 }
   
 }

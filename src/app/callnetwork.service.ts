@@ -28,10 +28,20 @@ export class CallNetworkService {
   constructor(private http: HttpClient, private globals: Globals ) {}
   slowhttp = true;
 
-doLogon(user: string, password: string): Observable<any> {
-    let authURL =this.globals.url;
+getRoles(): Observable<any> {
+    let authURL =this.globals.urlroot +"activeroles";
     let body = new HttpParams();
-    body = body.set("userid", user);
+    body = body.set("user", this.globals.compass_user);
+    body = body.set("password", this.globals.compass_password);
+    return this.http
+      .post<any>(authURL, body, httpOptions)
+      .pipe(catchError(error => of(error)));
+  }
+
+doLogon(user: string, password: string): Observable<any> {
+    let authURL =this.globals.urlroot +"logon";
+    let body = new HttpParams();
+    body = body.set("user", user);
     body = body.set("password", password);
     return this.http
       .post<any>(authURL, body, httpOptions)

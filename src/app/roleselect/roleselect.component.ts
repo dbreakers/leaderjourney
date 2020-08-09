@@ -25,7 +25,7 @@ export class RoleSelectComponent implements OnInit{
    //    this.navi.nativeElement.replacePage(MenuComponent);
   }
 ngOnInit() {
-   
+   modal.show(); 
 }
 
   
