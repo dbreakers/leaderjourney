@@ -35,12 +35,12 @@ export class CallNetworkService {
 clear() {
   this.globals.compassdata=[];
   this.globals.compassar = [];
-    this.globals.compassuser = [];
+    this.globals.compassuser = []; 
 }
 
 
 getUser(): Observable<any> {
-  if (this.globals.compass_user=="") {
+  if (this.globals.compassuser=="") {
   return of(this.stubs.user)
   } else {
     let authURL =this.globals.urlroot +"user";

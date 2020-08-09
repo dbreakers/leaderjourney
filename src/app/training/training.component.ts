@@ -25,14 +25,16 @@ export class TrainingComponent implements OnInit {
   mandatory_find() {
   this.count = 0;  
   for (var i=0; i<this.plp.length; i++) {
-    if (this.plp[i].hasOwnProperty('validatedDate')) {this.count++}
+    if (this.plp[i].hasOwnProperty('validated_on')) {this.count++}
   }
   this.percent = Math.floor( 100 * this.count / this.plp.length);
   this.width = Math.floor( 90 * this.count / this.plp.length);
+  this.status = "ok";
+  var nowsum = 0
   //var utc = new Date(this.selected_role.datefrom).toUTCString();
-
-  this.targetyear = parseInt(this.selected_role.datefrom.substring(0,4));
-  this.targetyear = this.targetyear + 3; 
+/*
+   this.targetyear = parseInt(this.selected_role.datefrom.substring(0,4));
+   this.targetyear = this.targetyear + 3; 
   this.targetmonth = this.monthlist[parseInt(this.selected_role.datefrom.substring(5,7))-1];  
   this.status = "ok";
   if ((this.targetyear<(new Date()).getFullYear())){
@@ -44,7 +46,8 @@ export class TrainingComponent implements OnInit {
     this.status = "od";
   }
   var nowsum = (new Date()).getFullYear() * 12 + (new Date()).getMonth();
-  var targetsum = this.targetyear * 12 + parseInt(this.selected_role.datefrom.substring(5,7))-1;
+  var targetsum = this.targetyear * 12 + parseInt(this.selected_role.datefrom.substring(5,7))-1;*/
+   
   if ((nowsum-targetsum)<4) {this.status="du"}
   if (this.percent==100) {this.status="ok"} 
    }
@@ -54,8 +57,8 @@ export class TrainingComponent implements OnInit {
   }
   
   ngOnInit() {
-this.selected_role = this.globals.compassdata.object.roles.find(r=>r.id == this.globals.roleid )
-this.plp = this.globals.compassdata.object.plps[this.globals.roleid];
+this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
+this.plp = this.globals.compassuser[0].training[this.globals.roleid];
 this.mandatory_find();
  
   }
