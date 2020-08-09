@@ -9,6 +9,7 @@ import {
 } from "@angular/common/http";
 
 import { Injectable } from "@angular/core";
+
 import { Observable, forkJoin, of, from } from "rxjs";
 //import { Security } from "./security";
 import { map, concatMap, catchError,tap } from "rxjs/operators";
@@ -29,6 +30,9 @@ export class CallNetworkService {
   slowhttp = true;
 
 getRoles(): Observable<any> {
+  if this.globals.compass_user=="") {
+  return of("fdfdf")
+  } else {
     let authURL =this.globals.urlroot +"activeroles";
     let body = new HttpParams();
     body = body.set("user", this.globals.compass_user);
@@ -36,6 +40,7 @@ getRoles(): Observable<any> {
     return this.http
       .post<any>(authURL, body, httpOptions)
       .pipe(catchError(error => of(error)));
+  }
   }
 
 doLogon(user: string, password: string): Observable<any> {
