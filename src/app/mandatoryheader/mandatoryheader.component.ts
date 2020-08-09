@@ -32,7 +32,30 @@ constructor( private globals: Globals) {}
 
 calc_date_value(d) {
     return (parseInt(d.substring(0,4)))*12 +parseInt(d.substring(5,7))-1;
- }
+}
+
+compass_date(longdate) {
+  return longdate.split(" ")[2]+"-"+
+                    (this.globals.months.indexOf( longdate.split(" ")[1])+1)
+                    + "-" +longdate.split(" ")[0];
+}
+
+find_gdpr() {
+  // For GDPR we need to look at all roles  
+  var expiry="1900-01-01"
+  for(var i=0; i< this.globals.compassuser[0].roles.length; i++){
+    var role = this.globals.compassuser[0].roles[i].roleid;
+    for(var j=0; j< this.globals.compassuser[0].training[role].length; j++){ 
+      var plp =  this.globals.compassuser[0].training[role][j]
+
+      if (plp.courseid=="GDPR"&&compass_Date(plp.validated_on)>expiry) {
+        expiry = plp.validatedDate;
+      }
+    }
+  }
+   if(expiry!="1900-01-01") {return 'ok'} else {return 'd'}
+  
+  }
 
 formatDate() {
     var d = new Date(),
@@ -51,9 +74,7 @@ find_mandatory (mantype) {
     var data = this.globals.compassuser[0].mandatory;
     var expiry="1900-01-01"
     for(var i=0;i<data.length; i++){
-      var expires = data[i].expires.split(" ")[2]+"-"+
-                    (this.globals.months.indexOf( data[i].expires.split(" ")[1])+1)
-                    + "-" +data[i].expires.split(" ")[0];
+      var expires = this.compass_date(data[i].expires)
       if(expires > expiry&&data[i].type==mantype) {
         expiry = expires;
       }
@@ -77,6 +98,12 @@ find_mandatory (mantype) {
   ngOnInit() {
   this.highman = false;
   this.fa = this.find_mandatory ("FA")
+  this.sf = this.find_mandatory ("SA")
+  this.sg = this.find_mandatory ("SG")
+
+   if (this.fa!="ok"||this.sg!="ok"||this.sf!="ok"||this.gd!="ok"){
+    this.highman = true;
+  }
   }
 
 }
