@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { OnsNavigator } from 'ngx-onsenui';
 import { Globals } from '../globals';
  
-
 @Component({
   selector: 'ons-page[mandatory]',
   templateUrl: './mandatory.component.html',
@@ -19,7 +18,7 @@ export class MandatoryComponent implements OnInit {
   highman = false;
   monthlist = ['January','February','March','April','May','June','July','August','September','October','November','December']
   
-  constructor(private navi: OnsNavigator,
+  constructor(private navi: OnsNavigator, 
               private globals: Globals,) {
   } 
  
@@ -29,6 +28,13 @@ export class MandatoryComponent implements OnInit {
  //   this.navi.nativeElement.pushPage(TrainingComponent);
   }
   
+compass_date(longdate) {
+  if (longdate.split(" ").length<3) { return ""}
+  return longdate.split(" ")[2]+"-"+
+                    (this.globals.months.indexOf( longdate.split(" ")[1])+1)
+                    + "-" +longdate.split(" ")[0];
+}
+
  formatDate() {
     var d = new Date(),
         month = '' + (d.getMonth() + 1),
@@ -45,11 +51,14 @@ export class MandatoryComponent implements OnInit {
   return_mandatory (mantype,status) {
     var expiry="1900-01-01"
     var entry = {}
-    for(var i=0;i<this.globals.compassdata.object.mandate.length; i++){
-      var item = this.globals.compassdata.object.mandate[i];
-      if(item.expiry>expiry&&item.mandCode==mantype) {
-         expiry = item.expiry;
-         entry = this.globals.compassdata.object.mandate[i];
+     var data = this.globals.compassuser[0].mandatory;
+    for(var i=0;i<data.length; i++){
+      var item =data[i];
+      var expires = this.compass_date(data[i].expires)
+      if(expires>expiry&&item.type==mantype) {
+         expiry = expires;
+         entry = data[i];
+         entry.expired = expires;
       }
     } 
     if (!entry.hasOwnProperty("mandC")) {
@@ -59,19 +68,20 @@ export class MandatoryComponent implements OnInit {
     if (status=='od') {entry.status = 1}
     if (status=='du') {entry.status = 2}
     if (status=='ok') {entry.status = 3}
-    if (entry.mandCode=="FA"){entry.linkedModuleLabel = "First Aid"}
-    if (entry.mandCode=="SG"){entry.linkedModuleLabel = "Safeguarding"}
-    if (entry.mandCode=="SA"){entry.linkedModuleLabel = "Safety"}
-    entry.monthnumber = parseInt(entry.expiry.substring(5,7));
+    if (entry.type=="FA"){entry.linkedModuleLabel = "First Aid"}
+    if (entry.type=="SG"){entry.linkedModuleLabel = "Safeguarding"}
+    if (entry.type=="SA"){entry.linkedModuleLabel = "Safety"}
+    entry.monthnumber = parseInt(entry.expir.substring(5,7));
     return entry;
   }
 
   find_mandatory (mantype) {
+   var data = this.globals.compassuser[0].mandatory;
     var expiry="1900-01-01"
-    for(var i=0;i<this.globals.compassdata.object.mandate.length; i++){
-      var item = this.globals.compassdata.object.mandate[i];
-      if(item.expiry>expiry&&item.mandCode==mantype) {
-         expiry = item.expiry;
+    for(var i=0;i<data.length; i++){
+      var expires = this.compass_date(data[i].expires)
+      if(expires > expiry&&data[i].type==mantype) {
+        expiry = expires;
       }
     } 
     return expiry;
@@ -166,8 +176,14 @@ export class MandatoryComponent implements OnInit {
   }
   return comparison;
 }
-
-  get_mandatory(){
+get_mandatory(){
+ 
+   
+this.mandlist.push(this.return_mandatory("FA",this.fa))
+this.mandlist.push(this.return_mandatory("SA",this.fa))
+this.mandlist.push(this.return_mandatory("SG",this.fa))
+}
+  get_mandatory2(){
   this.highman = false;
   var date = this.formatDate()
   var expiry = this.find_mandatory("FA");
@@ -190,7 +206,7 @@ export class MandatoryComponent implements OnInit {
   
   ngOnInit() {
 this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
-this.plp = this.globals.compassdata.object.plps[this.globals.roleid];
+//this.plp = this.globals.compassdata.object.plps[this.globals.roleid];
 this.get_mandatory() 
  
   }

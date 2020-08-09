@@ -29,7 +29,7 @@ export class MandatoryHeaderComponent implements OnInit {
   sg = "";
   gd = "";
   highman = false;  
-constructor( private globals: Globals,) {}
+constructor( private globals: Globals, private navi: OnsNavigator,) {}
 
   push2() {
     this.navi.nativeElement.pushPage(MandatoryComponent);

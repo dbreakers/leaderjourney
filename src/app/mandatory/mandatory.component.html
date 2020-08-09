@@ -13,7 +13,7 @@
     <span *ngIf="train.mandCode=='SG'"><ons-icon icon="fa-shield-alt" class="dashboard"></ons-icon></span>
     <span *ngIf="train.mandCode=='SA'"><ons-icon icon="fa-exclamation-triangle" class="dashboard"></ons-icon></span>
     <span *ngIf="train.mandCode=='GDPR'"><ons-icon icon="fa-briefcase" class="dashboard"></ons-icon></span>
-    {{train.linkedModuleLabel}} <span *ngIf='train.status!=1&&train.expiry!=""'>expires </span><span *ngIf='train.status!=1&&train.expiry==""'>completed {{monthlist[train.monthnumber-1]}}  {{train.date.substring(0,4)}} </span><span *ngIf='train.status==1&&train.expiry!=""'>expired in </span><span *ngIf='train.status==1&&train.expiry==""'>not Completed</span><span *ngIf='train.expiry!=""'>{{monthlist[train.monthnumber-1]}} {{train.expiry.substring(0,4)}}</span> 
+    {{train.linkedModuleLabel}} <span *ngIf='train.status!=1&&train.expiry!=""'>expires </span><span *ngIf='train.status!=1&&train.expiry==""'>completed {{globals.months[train.monthnumber-1]}}   </span><span *ngIf='train.status==1&&train.expiry!=""'>expired in </span><span *ngIf='train.status==1&&train.expiry==""'>not Completed</span><span *ngIf='train.expiry!=""'>{{globals.months[train.monthnumber-1]}} {{train.expiry.substring(0,4)}}</span> 
   </ons-card>
 	<br />
     </div>
