@@ -20,10 +20,10 @@
   <ons-card *ngIf="selected_role.hasOwnProperty('ta_name')&&selected_role.ta_name!=''">
   My Training Advisor is {{selected_role.ta_name}}   
   </ons-card>  
-  <ons-card *ngFor="let plpline of plp"><span *ngIf="plpline.hasOwnProperty('validated_on')"> <ons-icon icon="fa-check-circle" class="green"></ons-icon></span>
-  <span *ngIf="!plpline.hasOwnProperty('validated_on')"> <ons-icon icon="fa-times-circle" class="red"></ons-icon></span>
+  <ons-card *ngFor="let plpline of plp"><span *ngIf="plpline.validated_on!=''"> <ons-icon icon="fa-check-circle" class="green"></ons-icon></span>
+  <span *ngIf="plpline.validated_on==''"> <ons-icon icon="fa-times-circle" class="red"></ons-icon></span>
      Module {{plpline.courseid}}:{{plpline.coursename}}<br> 
-     <span *ngIf="plpline.hasOwnProperty('validated_on')">Validated {{plpline.validated_on}}</span>
+     <span *ngIf="plpline.validated_on!=''">Validated {{plpline.validated_on}}</span>
   </ons-card>
 	
 

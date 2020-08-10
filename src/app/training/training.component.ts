@@ -27,7 +27,7 @@ export class TrainingComponent implements OnInit {
   mandatory_find() {
   this.count = 0;  
   for (var i=0; i<this.plp.length; i++) {
-    if (this.plp[i].hasOwnProperty('validated_on')) {this.count++}
+    if (this.plp[i].validated_on!="") {this.count++}
   }
   this.percent = Math.floor( 100 * this.count / this.plp.length);
   this.width = Math.floor( 90 * this.count / this.plp.length);
@@ -59,7 +59,7 @@ export class TrainingComponent implements OnInit {
   }
   
 ngOnInit() {
- if (this._params.data) {this.displayuser=this._params.data.data;this.displayrole==this._params.data.roleid}    
+ if (this._params.data) {this.displayuser=this._params.data.data; this.displayrole=this._params.data.roleid}    
 this.selected_role = this.displayuser[0].roles.find(r=>r.roleid == this.displayrole )
 this.plp = this.displayuser[0].training[this.displayrole];
 this.mandatory_find();
