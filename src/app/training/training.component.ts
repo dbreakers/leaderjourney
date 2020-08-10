@@ -11,6 +11,7 @@ import { Globals } from '../globals';
 export class TrainingComponent implements OnInit {
   selected_role = {};
   displayuser = []; 
+  displayrole = ''
   plp = [];
   percent = 0;
   targetmonth = "";
@@ -58,9 +59,9 @@ export class TrainingComponent implements OnInit {
   }
   
 ngOnInit() {
- if (this._params.data) {this.displayuser=this._params.data}    
-this.selected_role = this.displayuser[0].roles.find(r=>r.roleid == this.globals.roleid )
-this.plp = this.displayuser[0].training[this.globals.roleid];
+ if (this._params.data) {this.displayuser=this._params.data.data;this.displayrole==this._params.data.roleid}    
+this.selected_role = this.displayuser[0].roles.find(r=>r.roleid == this.displayrole )
+this.plp = this.displayuser[0].training[this.displayrole];
 this.mandatory_find();
  
   }

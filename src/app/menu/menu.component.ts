@@ -24,7 +24,7 @@ export class MenuComponent implements OnInit {
  
   
   push() {
-    this.navi.nativeElement.pushPage(TrainingComponent,{data: this.globals.compassuser});
+    this.navi.nativeElement.pushPage(TrainingComponent,{data: {data: this.globals.compassuser, roleid: '2172358'}});
   }
    push2() {
     this.navi.nativeElement.pushPage(MandatoryComponent);
