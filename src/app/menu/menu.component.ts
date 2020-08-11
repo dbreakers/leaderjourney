@@ -25,8 +25,8 @@ export class MenuComponent implements OnInit {
  
   
   push() {
-    this.navi.nativeElement.pushPage(TrainingComponent,{data: {data: this.globals.compassuser, roleid: '2172358'}});
-  }
+    this.navi.nativeElement.pushPage(TrainingComponent,{data: {data: this.globals.compassuser, roleid: this.globals.compassuser[0].roles[0].roleid}});
+  }  
    push2() {
     this.navi.nativeElement.pushPage(MandatoryComponent);
   }
@@ -40,7 +40,7 @@ export class MenuComponent implements OnInit {
     this.navi.nativeElement.pushPage(HierComponent);
   }
 push6() {
- this.navi.nativeElement.pushPage(TrainingComponent);
+ this.navi.nativeElement.pushPage(TrainingCComponent);
 }
   
 
