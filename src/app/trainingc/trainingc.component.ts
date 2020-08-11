@@ -70,10 +70,11 @@ ngOnInit() {
      document.querySelectorAll('.indicators')[event.lastActiveIndex].innerHTML = '○';
      document.querySelectorAll('.indicators')[event.activeIndex].innerHTML = '●';
      
-     var elmnt = document.querySelectorAll('.hc')[event.activeIndex] // let if use typescript
-     elmnt.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}); // this will scroll elem to the top
-   
-      
+     var elmnt = document.querySelectorAll('.training2')[0] // let if use typescript
+    // elmnt.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}); // this will scroll elem to the top
+     elmnt.scrollTo(0,0)
+    
+       
    })
  
   }
