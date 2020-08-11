@@ -38,7 +38,9 @@ export class MenuComponent implements OnInit {
   push5() {
     this.navi.nativeElement.pushPage(HierComponent);
   }
-
+push6() {
+  
+}
   
 
   

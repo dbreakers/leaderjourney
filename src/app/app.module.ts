@@ -10,6 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { RoleSelectComponent } from './roleselect/roleselect.component';
 import { LogonPageComponent } from './logonpage/logonpage.component';
 import { TrainingComponent } from './training/training.component';
+import { Training2Component } from './training2/training2.component';
 import { MandatoryComponent } from './mandatory/mandatory.component';
 import { CardComponent } from './card/card.component';
 import { PermitsComponent } from './permits/permits.component';
@@ -21,7 +22,7 @@ import {MandatoryHeaderComponent } from './mandatoryheader/mandatoryheader.compo
 
 @NgModule({
   imports:         [ BrowserModule, FormsModule, OnsenModule, HttpClientModule ],
-  declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent,RoleHeaderComponent,MandatoryHeaderComponent ],
+  declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, Training2Component, MandatoryComponent, CardComponent,PermitsComponent,HierComponent,RoleHeaderComponent,MandatoryHeaderComponent ],
   entryComponents: [ MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent ],
   schemas:         [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap:       [ AppComponent ],
