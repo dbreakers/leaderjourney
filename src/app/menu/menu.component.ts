@@ -3,6 +3,7 @@ import { OnsNavigator } from 'ngx-onsenui';
 import { Globals } from '../globals';
 //import { RoleSelectComponent } from '../roleselect/roleselect.component';
 import { TrainingComponent } from '../training/training.component';
+import { Training2Component } from '../training2/training2.component';
 import { MandatoryComponent } from '../mandatory/mandatory.component';
 import { CardComponent } from '../card/card.component';
 import { PermitsComponent } from '../permits/permits.component';
@@ -39,7 +40,7 @@ export class MenuComponent implements OnInit {
     this.navi.nativeElement.pushPage(HierComponent);
   }
 push6() {
-  
+ this.navi.nativeElement.pushPage(TrainingComponent);
 }
   
 
