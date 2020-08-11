@@ -3,7 +3,7 @@ import { OnsNavigator } from 'ngx-onsenui';
 import { Globals } from '../globals';
 //import { RoleSelectComponent } from '../roleselect/roleselect.component';
 import { TrainingComponent } from '../training/training.component';
-import { Training2Component } from '../training2/training2.component';
+import { TrainingCComponent } from '../trainingc/trainingc.component';
 import { MandatoryComponent } from '../mandatory/mandatory.component';
 import { CardComponent } from '../card/card.component';
 import { PermitsComponent } from '../permits/permits.component';

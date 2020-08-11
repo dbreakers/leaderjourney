@@ -8,7 +8,7 @@ import { Globals } from '../globals';
   templateUrl: './training2.component.html',
   styleUrls: [ './training2.component.css' ]
 })
-export class Training2Component implements OnInit {
+export class TrainingCComponent implements OnInit {
   selected_role = {};
   displayuser = []; 
   displayrole = ''
