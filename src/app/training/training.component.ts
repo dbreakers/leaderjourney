@@ -49,12 +49,12 @@ export class TrainingComponent implements OnInit {
     this.status = "od";
   }
 
-  if (this.targetyear==(new Date()).getFullYear()&&parseInt(this.selected_role.datefrom.substring(5,7))-1<(new Date()).getMonth())
+  if (this.targetyear==(new Date()).getFullYear()&&parseInt(this.compass_date(this.selected_role.start).substring(5,7))-1<(new Date()).getMonth())
   {
     this.status = "od";
   }
   var nowsum = (new Date()).getFullYear() * 12 + (new Date()).getMonth();
-  var targetsum = this.targetyear * 12 + parseInt(this.selected_role.datefrom.substring(5,7))-1;
+  var targetsum = this.targetyear * 12 + parseInt(this.compass_date(this.selected_role.start).substring(5,7))-1;
   if ((nowsum-targetsum)<4) {this.status="du"}
   if (this.percent==100) {this.status="ok"} 
    }
