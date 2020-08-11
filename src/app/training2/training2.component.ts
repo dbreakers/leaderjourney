@@ -65,10 +65,7 @@ export class Training2Component implements OnInit {
   }
   
 ngOnInit() {
- if (this._params.data) {this.displayuser=this._params.data.data; this.displayrole=this._params.data.roleid}    
-this.selected_role = this.displayuser[0].roles.find(r=>r.roleid == this.displayrole )
-this.plp = this.displayuser[0].training[this.displayrole];
-this.mandatory_find();
+  
  
   }
 }

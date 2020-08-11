@@ -40,7 +40,7 @@ export class MenuComponent implements OnInit {
     this.navi.nativeElement.pushPage(HierComponent);
   }
 push6() {
- this.navi.nativeElement.pushPage(TrainingComponent);
+ this.navi.nativeElement.pushPage(Training2Component);
 }
   
 

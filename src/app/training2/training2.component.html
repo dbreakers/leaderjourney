@@ -4,4 +4,11 @@
 	<div class="center">My Training</div>
 </ons-toolbar>
 <div class="content">
-<  
+  <ons-carousel #carousel fullscreen swipeable auto-scroll overscrollable id="carousel">
+<ons-carousel-item style="background-color: #085078;" *ngFor="let role of globals.compassuser[0].roles">
+  <ons-card *ngFor="let plpline of globals.compassuser[0].training[role.roleid]">
+     Module {{plpline.courseid}}:{{plpline.coursename}}
+  </ons-card>  
+   </ons-carousel-item> 
+  </ons-carousel>  
+</div>  
