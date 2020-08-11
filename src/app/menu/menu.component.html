@@ -7,16 +7,7 @@
 <div class="content">
   <app-roleheader [role]="selected_role"></app-roleheader>
   <span *ngIf="globals.compassuser.length>0">
-  <!--<ons-card [ngClass]="{'mandatoryh':highman,'mandatory':!highman}" (click)='push2()'>
-  <p class="subhead">Mandatory Training Status&nbsp;
-  <ons-icon icon="fa-exclamation-triangle" class="dashboard" [ngClass]="{'amber pulse':sf=='du','red pulsered':sf=='od','green':sf=='ok'}"></ons-icon>
  
-  <ons-icon icon="fa-shield-alt" class="dashboard" [ngClass]="{'amber pulse':sg=='du','red pulsered':sg=='od','green':sg=='ok'}"></ons-icon>
-    
-  <ons-icon icon="fa-briefcase" class="dashboard" [ngClass]="{'amber pulse':gd=='du','red pulsered':gd=='od','green':gd=='ok'}"></ons-icon>
-
-  <ons-icon icon="fa-comment-medical" class="dashboard" [ngClass]="{'amber pulse':fa=='du','red pulsered':fa=='od','green':fa=='ok'}"></ons-icon></p>
-  </ons-card > -->
   <app-mandatoryheader [user]="globals.compassuser"></app-mandatoryheader>
   <ons-card class="menugrid">
   <div (click)="push()" class="menubutton"><ons-icon class="menuicon" icon="fa-chalkboard-teacher"></ons-icon></div>
