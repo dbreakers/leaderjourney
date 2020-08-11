@@ -68,7 +68,6 @@ export class TrainingCComponent implements OnInit {
    this.carousel.nativeElement.setActiveIndex(i);
   }
 ngOnInit() {
-   
    document.querySelector('ons-carousel').addEventListener('postchange', function() { 
      document.querySelectorAll('.indicators')[event.lastActiveIndex].innerHTML = '○';
      document.querySelectorAll('.indicators')[event.activeIndex].innerHTML = '●';

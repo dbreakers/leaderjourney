@@ -7,8 +7,8 @@
    <div class="sticky"> 
   <ons-card>
       <span  *ngFor="let role of globals.compassuser[0].roles; let i=index">
-        <span *ngIf="i>0" (click)="g2(index)" class="indicators">○</span>
-        <span *ngIf="i==0" (click)="g2(index)" class="indicators">●</span>
+        <span *ngIf="i>0" (click)="g2(i)" class="indicators">○</span>
+        <span *ngIf="i==0" (click)="g2(i)" class="indicators">●</span> 
       </span>
   </ons-card>
  </div>
