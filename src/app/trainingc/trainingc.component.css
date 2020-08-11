@@ -4,6 +4,7 @@
 .green {color: var(--scoutgreen)}
 .amber {color: var(--scoutyellow)}
 .red {color: var(--scoutred)}
+.indicators {font-size: 30pt;}
 .sticky {
   background: white;
   position: sticky;

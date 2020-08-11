@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, ViewChild, OnInit} from '@angular/core';
 import { OnsNavigator,  Params, } from 'ngx-onsenui';
 import { Globals } from '../globals';
  
@@ -19,6 +19,7 @@ export class TrainingCComponent implements OnInit {
   count = 0;
   width = 0;
   status = "";
+   @ViewChild('carousel') carousel;
   constructor(private navi: OnsNavigator,
               private _params: Params,
               private globals: Globals,) {
@@ -63,16 +64,17 @@ export class TrainingCComponent implements OnInit {
   push() {
     //this.navi.nativeElement.pushPage(RoleSelectComponent);
   }
-  
+  g2(i) {
+   this.carousel.nativeElement.setActiveIndex(i);
+  }
 ngOnInit() {
    
    document.querySelector('ons-carousel').addEventListener('postchange', function() { 
      document.querySelectorAll('.indicators')[event.lastActiveIndex].innerHTML = '○';
      document.querySelectorAll('.indicators')[event.activeIndex].innerHTML = '●';
      
-     var elmnt = document.querySelectorAll('.training2')[0] // let if use typescript
-    // elmnt.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}); // this will scroll elem to the top
-     elmnt.scrollTo(0,0)
+     var elmnt = document.querySelectorAll('.training2')[0].scrollTo(0,0)
+      
     
        
    })
