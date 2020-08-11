@@ -52,7 +52,7 @@ export class MenuComponent implements OnInit {
 
 
   get_role() {
-    return this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
+    return this.selected_role = this.globals.compassuser[0].rolss.find(r=>r.roleid == this.globals.roleid )
   }
 
   get_user(user){ 
@@ -60,7 +60,7 @@ export class MenuComponent implements OnInit {
   }
   
   ngOnInit() {
-this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
+this.selected_role = this.globals.compassuser[0].roles.find(r=>r.roleid == this.globals.roleid )
 if (this.globals.compassuser.length==0){
    this.callnetworkService.getUser().subscribe(user=> this.get_user(user));
 }
