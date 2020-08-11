@@ -5,12 +5,12 @@
 	<div class="center">My Training</div>
 </ons-toolbar>
 <div class="content">
-  <app-roleheader [role]="selected_role"></app-roleheader>
+  <app-roleheader [role]="selected_role"></app-roleheader> 
   <ons-card>
    <p class="subhead">Wood Badge Training</p>
    <span *ngIf="this.percent!=100">Target Completion {{targetmonth}} {{targetyear}}</span>
    <span *ngIf="this.percent==100">Wood Badge awarded 
-    <!--{{this.selected_role.completiondate.substring(0,4)}}--></span>  
+    {{this.selected_role.completed}}</span>
    <div class="barbox">
    <div class="outer" class="backchart">&nbsp;</div>  
    <div id="barchart" [ngClass]="{'barchart_du':status=='du','barchart_od':status=='od','barchart_ok':status=='ok'}" class="barchart"  [style.width.%]="width"  ></div><br>{{count}}/{{ plp.length}} Modules Completed
