@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { OnsNavigator,  Params, } from 'ngx-onsenui';
 import { Globals } from '../globals';
  
@@ -69,6 +69,11 @@ ngOnInit() {
    document.querySelector('ons-carousel').addEventListener('postchange', function() { 
      document.querySelectorAll('.indicators')[event.lastActiveIndex].innerHTML = '○';
      document.querySelectorAll('.indicators')[event.activeIndex].innerHTML = '●';
+     
+     var elmnt = document.querySelectorAll('.hc')[event.activeIndex] // let if use typescript
+     elmnt.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"}); // this will scroll elem to the top
+   
+      
    })
  
   }

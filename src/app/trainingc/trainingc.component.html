@@ -4,16 +4,18 @@
 	<div class="center">My Training</div>
 </ons-toolbar>
 <div class="content">
+   <div class="sticky"> 
   <ons-card>
       <span  *ngFor="let role of globals.compassuser[0].roles; let i=index">
         <span *ngIf="i>0" class="indicators">○</span>
         <span *ngIf="i==0" class="indicators">●</span>
       </span>
   </ons-card>
- 
+ </div>
   <ons-carousel  swipeable auto-scroll id="carousel">
 <ons-carousel-item   *ngFor="let role of globals.compassuser[0].roles">
  <!--  <ons-scroller>-->
+  <div class="hc"></div>
   <ons-card class="headercard">
     {{role.role}}
   </ons-card>  

@@ -4,3 +4,9 @@
 .green {color: var(--scoutgreen)}
 .amber {color: var(--scoutyellow)}
 .red {color: var(--scoutred)}
+.sticky {
+  background: white;
+  position: sticky;
+  top: 0px;
+  z-index: 9999;
+}
