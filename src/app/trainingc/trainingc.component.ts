@@ -65,7 +65,15 @@ export class TrainingCComponent implements OnInit {
     //this.navi.nativeElement.pushPage(RoleSelectComponent);
   }
   g2(i) {
+  if (i>=0) {
    this.carousel.nativeElement.setActiveIndex(i);
+  }
+  if (i==-1) {
+   this.carousel.nativeElement.prev();
+  }
+   if (i==-2) {
+   this.carousel.nativeElement.next();
+  }
   }
 ngOnInit() {
    document.querySelector('ons-carousel').addEventListener('postchange', function() { 

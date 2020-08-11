@@ -6,10 +6,11 @@
 <div class="content training2">
    <div class="sticky"> 
   <ons-card>
+      <ons-icon (click)="g2(-1)" class="chevron"  icon="fa-chevron-left"></ons-icon>
       <span  *ngFor="let role of globals.compassuser[0].roles; let i=index">
         <span *ngIf="i>0" (click)="g2(i)" class="indicators">○</span>
         <span *ngIf="i==0" (click)="g2(i)" class="indicators">●</span> 
-      </span>
+      </span><ons-icon (click)="g2(-2)"  class="chevron" icon="fa-chevron-right"></ons-icon>
   </ons-card>
  </div>
   <ons-carousel  swipeable auto-scroll id="carousel" #carousel>
