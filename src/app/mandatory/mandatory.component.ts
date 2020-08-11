@@ -145,7 +145,7 @@ this.mandlist.push(this.return_mandatory("SG",this.fa))
    
   
   ngOnInit() {
-this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
+this.selected_role = this.globals.compassuser[0].roles.find(r=>r.roleid == this.globals.roleid )
 //this.plp = this.globals.compassdata.object.plps[this.globals.roleid];
 this.get_mandatory() 
  
