@@ -6,7 +6,7 @@ import { Globals } from '../globals';
 @Component({
   selector: 'ons-page[training2]',
   templateUrl: './trainingc.component.html',
-  styleUrls: [ './training.component.css' ]
+  styleUrls: [ './trainingc.component.css' ]
 })
 export class TrainingCComponent implements OnInit {
   selected_role = {};
