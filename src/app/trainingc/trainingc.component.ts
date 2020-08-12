@@ -94,7 +94,8 @@ debugger;
      }
      document.querySelectorAll('.indicators')[event.activeIndex].innerHTML = '●';
      
-     var elmnt = document.querySelectorAll('.training2')[0].scrollTo(0,0)
+     var elmnt = document.querySelectorAll('.training2')[0].scrollTo({
+  top: 0,  left: 0,  behavior: 'auto' })
       
     
        
