@@ -4,7 +4,7 @@
 	<div class="center">My Training</div>
 </ons-toolbar>
 <div class="content training2">
-   <div class="sticky"> 
+   <div class="sticky" *ngIf="globals.compassuser[0].roles.length>1"> 
   <div class="selector_bar">
     <div class="ticks">
       <ons-icon (click)="g2(-1)" class="chevron"  icon="fa-chevron-left"></ons-icon>
@@ -27,6 +27,7 @@
   <div class="hc"></div>
   <ons-card class="headercard">
     {{role.role}}
+    {{role.start}} {{role.end}}
   </ons-card>  
   <ons-card>
    <p class="subhead">Wood Badge Training</p>

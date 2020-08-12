@@ -9,6 +9,9 @@
   background: white;
   position: sticky;
   top: 0px;
+  border-top-width: 10px;
+  border-style: solid;
+  border-color: var(--scoutteal);
   z-index: 9999;
 }
 .chevron {font-size: 18pt; padding : 10px;color: var(--scoutteal)}
