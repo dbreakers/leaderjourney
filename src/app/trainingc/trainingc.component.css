@@ -4,14 +4,14 @@
 .green {color: var(--scoutgreen)}
 .amber {color: var(--scoutyellow)}
 .red {color: var(--scoutred)}
-.indicators {font-size: 20pt; padding : 10px;}
+.indicators {font-size: 20pt; padding : 10px;color: var(--scoutteal)}
 .sticky {
   background: white;
   position: sticky;
   top: 0px;
   z-index: 9999;
 }
-.chevron {font-size: 18pt; padding : 10px;}
+.chevron {font-size: 18pt; padding : 10px;color: var(--scoutteal)}
 .barchart {height: 10px; position:absolute;}
 .barchart_ok {background: var(--scoutgreen);}
 .barchart_od {background: var(--scoutred);}

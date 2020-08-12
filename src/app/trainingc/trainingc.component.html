@@ -37,6 +37,7 @@
     <span *ngIf="plpline.validated_on!=''"> <ons-icon icon="fa-check-circle" class="green"></ons-icon></span>
   <span *ngIf="plpline.validated_on==''"> <ons-icon icon="fa-times-circle" class="red"></ons-icon></span>
      Module {{plpline.courseid}}:{{plpline.coursename}}
+      <span *ngIf="plpline.validated_on!=''"><br>Validated {{plpline.validated_on}}</span>
   </ons-card>  
   <!-- </ons-scroller>-->
    </ons-carousel-item> 
