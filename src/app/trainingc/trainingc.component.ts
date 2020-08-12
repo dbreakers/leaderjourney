@@ -33,7 +33,7 @@ export class TrainingCComponent implements OnInit {
                     + "-" +longdate.split(" ")[0];
 } 
 
-  get_plp_head(plp) {
+  get_plp_head(plp,role) {
   this.count = 0;  
   for (var i=0; i< plp.length; i++) {
     if (plp[i].validated_on!="") {this.count++}
