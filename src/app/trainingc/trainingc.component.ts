@@ -83,8 +83,8 @@ ngOnInit() {
   for (var j=0;j<this.globals.compassuser[0].roles.length;j++){
     var r = this.globals.compassuser[0].roles[j].roleid;
    for (var i=0; i< this.globals.compassuser[0].training[r].length; i++){
-    this.plphead[this.globals.compassuser[0].training[r][i].roleid]
-      = this.get_plp_head(this.globals.compassuser[0].training[i]);
+    this.plphead[r]
+      = this.get_plp_head(this.globals.compassuser[0].training[r]); 
 
    }}
 
