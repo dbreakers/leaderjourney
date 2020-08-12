@@ -22,7 +22,7 @@ permit_array =[]
 
 
 ngOnInit() {
-this.selected_role = this.globals.compassar[0].find(r=>r.roleid == this.globals.roleid )
+this.selected_role = this.globals.compassuser[0].rolfind(r=>r.roleid == this.globals.roleid )
 this.permit_array = JSON.parse(this.permit_icons)
 this.permits = this.globals.compassuser[0]['permits'];
 if(!this.permits.hasOwnProperty("icon")){
