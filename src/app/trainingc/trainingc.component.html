@@ -20,6 +20,17 @@
   <ons-card class="headercard">
     {{role.role}}
   </ons-card>  
+  <ons-card>
+   <p class="subhead">Wood Badge Training</p>
+   <span *ngIf="plphead[role.roleid].percent!=100">Target Completion {{plphead[role.roleid].targetmonth}} {{plphead[role.roleid].targetyear}}</span>
+   <span *ngIf="plphead[role.roleid].percent==100">Wood Badge awarded 
+    {{plphead[role.roleid].completed}}</span>
+   <div class="barbox">
+   <div class="outer" class="backchart">&nbsp;</div>  
+   <div id="barchart" [ngClass]="{'barchart_du':plphead[role.roleid].status=='du','barchart_od':plphead[role.roleid].status=='od','barchart_ok':plphead[role.roleid].status=='ok'}" class="barchart"  [style.width.%]="plphead[role.roleid].width" ></div><br>{{plphead[role.roleid].count}}/{{ globals.compassuser[0].training[role.roleid].length}} Modules Completed
+
+   </div>
+  </ons-card> 
   <ons-card *ngFor="let plpline of globals.compassuser[0].training[role.roleid]">
     <span *ngIf="plpline.validated_on!=''"> <ons-icon icon="fa-check-circle" class="green"></ons-icon></span>
   <span *ngIf="plpline.validated_on==''"> <ons-icon icon="fa-times-circle" class="red"></ons-icon></span>

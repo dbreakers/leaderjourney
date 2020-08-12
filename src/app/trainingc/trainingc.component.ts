@@ -42,24 +42,24 @@ export class TrainingCComponent implements OnInit {
   this.width = Math.floor( 90 * this.count / plp.length);
   this.status = "ok";
   var nowsum = 0
-  var utc = new Date(this.compass_date(this.selected_role.start)).toUTCString();
-  this.targetyear = parseInt(this.compass_date(this.selected_role.start).substring(0,4));
+  var utc = new Date(this.compass_date(role.start)).toUTCString();
+  this.targetyear = parseInt(this.compass_date(role.start).substring(0,4));
    this.targetyear = this.targetyear + 3; 
-  this.targetmonth = this.globals.months[parseInt(this.compass_date(this.selected_role.start).substring(5,7))-1];  
+  this.targetmonth = this.globals.months[parseInt(this.compass_date(role.start).substring(5,7))-1];  
   this.status = "ok";
   if ((this.targetyear<(new Date()).getFullYear())){
     this.status = "od";
   }
 
-  if (this.targetyear==(new Date()).getFullYear()&&parseInt(this.compass_date(this.selected_role.start).substring(5,7))-1<(new Date()).getMonth())
+  if (this.targetyear==(new Date()).getFullYear()&&parseInt(this.compass_date(role.start).substring(5,7))-1<(new Date()).getMonth())
   {
     this.status = "od";
   }
   var nowsum = (new Date()).getFullYear() * 12 + (new Date()).getMonth();
-  var targetsum = this.targetyear * 12 + parseInt(this.compass_date(this.selected_role.start).substring(5,7))-1;
+  var targetsum = this.targetyear * 12 + parseInt(this.compass_date( role.start).substring(5,7))-1;
   if ((nowsum-targetsum)<4) {this.status="du"}
   if (this.percent==100) {this.status="ok"} 
-  return {percent: this.percent, width: this.width, status: this.status
+  return {count: this.count, percent: this.percent, width: this.width, status: this.status, targetyear: this.targetyear, targetmonth: this.targetmonth
   }
    }
   
@@ -79,15 +79,15 @@ export class TrainingCComponent implements OnInit {
   }
   }
 ngOnInit() {
-  debugger;
+  //debugger;
   for (var j=0;j<this.globals.compassuser[0].roles.length;j++){
     var r = this.globals.compassuser[0].roles[j].roleid;
    for (var i=0; i< this.globals.compassuser[0].training[r].length; i++){
     this.plphead[r]
-      = this.get_plp_head(this.globals.compassuser[0].training[r]); 
+      = this.get_plp_head(this.globals.compassuser[0].training[r],this.globals.compassuser[0].roles[j]); 
 
    }}
-
+debugger;
    document.querySelector('ons-carousel').addEventListener('postchange', function() {
       
      document.querySelectorAll('.indicators')[event.lastActiveIndex].innerHTML = '○';
