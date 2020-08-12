@@ -11,6 +11,7 @@ import { Globals } from '../globals';
 export class TrainingCComponent implements OnInit {
   selected_role = {};
   displayuser = []; 
+  plphead = new Object;
   displayrole = ''
   plp = [];
   percent = 0;
@@ -32,13 +33,13 @@ export class TrainingCComponent implements OnInit {
                     + "-" +longdate.split(" ")[0];
 } 
 
-  mandatory_find() {
+  get_plp_head(plp) {
   this.count = 0;  
-  for (var i=0; i<this.plp.length; i++) {
-    if (this.plp[i].validated_on!="") {this.count++}
+  for (var i=0; i< plp.length; i++) {
+    if (plp[i].validated_on!="") {this.count++}
   }
-  this.percent = Math.floor( 100 * this.count / this.plp.length);
-  this.width = Math.floor( 90 * this.count / this.plp.length);
+  this.percent = Math.floor( 100 * this.count / plp.length);
+  this.width = Math.floor( 90 * this.count / plp.length);
   this.status = "ok";
   var nowsum = 0
   var utc = new Date(this.compass_date(this.selected_role.start)).toUTCString();
@@ -58,6 +59,8 @@ export class TrainingCComponent implements OnInit {
   var targetsum = this.targetyear * 12 + parseInt(this.compass_date(this.selected_role.start).substring(5,7))-1;
   if ((nowsum-targetsum)<4) {this.status="du"}
   if (this.percent==100) {this.status="ok"} 
+  return {percent: this.percent, width: this.width, status: this.status
+  }
    }
   
 
@@ -76,7 +79,17 @@ export class TrainingCComponent implements OnInit {
   }
   }
 ngOnInit() {
-   document.querySelector('ons-carousel').addEventListener('postchange', function() { 
+  debugger;
+  for (var j=0;j<this.globals.compassuser[0].roles.length;j++){
+    var r = this.globals.compassuser[0].roles[j].roleid;
+   for (var i=0; i< this.globals.compassuser[0].training[r].length; i++){
+    this.plphead[this.globals.compassuser[0].training[r][i].roleid]
+      = this.get_plp_head(this.globals.compassuser[0].training[i]);
+
+   }}
+
+   document.querySelector('ons-carousel').addEventListener('postchange', function() {
+      
      document.querySelectorAll('.indicators')[event.lastActiveIndex].innerHTML = '○';
      document.querySelectorAll('.indicators')[event.activeIndex].innerHTML = '●';
      
