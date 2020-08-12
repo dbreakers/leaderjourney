@@ -18,3 +18,5 @@
 .barchart_du {background: var(--scoutyellow);}
 .backchart {background:grey; height: 10px; position:absolute;width:90%}
 .barbox {margin-top: 10px;text-align: right;}
+.ticks {text-align:center}
+.selector_bar {margin-top:10px}
