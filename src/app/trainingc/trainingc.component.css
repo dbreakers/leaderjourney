@@ -16,7 +16,7 @@
 .barchart_ok {background: var(--scoutgreen);}
 .barchart_od {background: var(--scoutred);}
 .barchart_du {background: var(--scoutyellow);}
-.backchart {background:grey; height: 10p x; position:absolute;width:90%}
+.backchart {background:grey; height: 10px; position:absolute;width:90%}
 .barbox {margin-top: 10px;text-align: right;}
 .ticks {text-align:center}
 .selector_bar {margin-top:10px}

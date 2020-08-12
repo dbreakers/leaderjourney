@@ -8,10 +8,16 @@
   <div class="selector_bar">
     <div class="ticks">
       <ons-icon (click)="g2(-1)" class="chevron"  icon="fa-chevron-left"></ons-icon>
+      <span *ngIf="globals.compassuser[0].roles.length <5">
       <span  *ngFor="let role of globals.compassuser[0].roles; let i=index">
         <span *ngIf="i>0" (click)="g2(i)" class="indicators">○</span>
         <span *ngIf="i==0" (click)="g2(i)" class="indicators">●</span> 
-      </span><ons-icon (click)="g2(-2)"  class="chevron" icon="fa-chevron-right"></ons-icon>
+      </span>
+      </span>
+      <span *ngIf="globals.compassuser[0].roles.length >4"> Role 
+      {{carousel.getActiveIndex()+1}} of {{carousel.itemCount}}
+      </span>
+      <ons-icon (click)="g2(-2)"  class="chevron" icon="fa-chevron-right"></ons-icon>
       </div>
   </div>
  </div>
