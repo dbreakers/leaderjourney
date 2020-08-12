@@ -89,8 +89,9 @@ ngOnInit() {
    }}
 debugger;
    document.querySelector('ons-carousel').addEventListener('postchange', function() {
-      
-     document.querySelectorAll('.indicators')[event.lastActiveIndex].innerHTML = '○';
+     for (var k=0;k<event.carousel.itemCount; k++){ 
+     document.querySelectorAll('.indicators')[k].innerHTML = '○';
+     }
      document.querySelectorAll('.indicators')[event.activeIndex].innerHTML = '●';
      
      var elmnt = document.querySelectorAll('.training2')[0].scrollTo(0,0)
