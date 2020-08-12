@@ -79,7 +79,7 @@ export class TrainingCComponent implements OnInit {
   }
   }
 ngOnInit() {
-  //debugger;
+  
   for (var j=0;j<this.globals.compassuser[0].roles.length;j++){
     var r = this.globals.compassuser[0].roles[j].roleid;
    for (var i=0; i< this.globals.compassuser[0].training[r].length; i++){
@@ -87,9 +87,9 @@ ngOnInit() {
       = this.get_plp_head(this.globals.compassuser[0].training[r],this.globals.compassuser[0].roles[j]); 
 
    }}
-debugger;
+ 
    document.querySelector('ons-carousel').addEventListener('postchange', function() {
-     for (var k=0;k<event.carousel.itemCount; k++){ 
+     for (var k=0;k<event.carousel.itemCount; k++){  
      document.querySelectorAll('.indicators')[k].innerHTML = '○';
      }
      document.querySelectorAll('.indicators')[event.activeIndex].innerHTML = '●';
