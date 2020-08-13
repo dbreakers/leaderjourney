@@ -7,7 +7,7 @@
 <div class="content">
   
   <app-roleheader [role]="selected_role"></app-roleheader>
-  <app-mandatoryheader {user:globals.compassuser,click:false}></app-mandatoryheader>
+  <app-mandatoryheader [user]="{user:globals.compassuser,click:false}"></app-mandatoryheader>
   <ons-card class="trainingcard" *ngFor="let train of mandlist" [ngClass]="{'carddue':train.status==2,'cardoverdue':train.status==1,'cardok':train.status==3}">
     <span *ngIf="train.mandCode=='FA'"><ons-icon icon="fa-comment-medical" class="dashboard"></ons-icon></span>
     <span *ngIf="train.mandCode=='SG'"><ons-icon icon="fa-shield-alt" class="dashboard"></ons-icon></span>

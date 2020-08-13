@@ -33,7 +33,10 @@ export class MandatoryHeaderComponent implements OnInit {
 constructor( private globals: Globals, private navi: OnsNavigator,) {}
 
   push2() {
+   
+    if (this.user.click) {
     this.navi.nativeElement.pushPage(MandatoryComponent);
+    }
   }
 
 calc_date_value(d) { 
