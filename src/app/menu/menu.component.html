@@ -5,10 +5,9 @@
 	<div class="center">My Leadership</div>
 </ons-toolbar>
 <div class="content">
-  <app-roleheader [role]="selected_role"></app-roleheader>
-  <span *ngIf="globals.compassuser.length>0">
- 
-  <app-mandatoryheader [user]="globals.compassuser"></app-mandatoryheader>
+  <app-roleheader  [role]="selected_role"></app-roleheader>
+  <span *ngIf="globals.compassuser.length>0"> 
+  <app-mandatoryheader  [user]="{user:globals.compassuser,click:true}"></app-mandatoryheader> 
   <ons-card class="menugrid">
   <div (click)="push()" class="menubutton"><ons-icon class="menuicon" icon="fa-chalkboard-teacher"></ons-icon></div>
   <div (click)="push6()" class="menubutton"><ons-icon class="menuicon" icon="fa-chalkboard-teacher"></ons-icon></div>

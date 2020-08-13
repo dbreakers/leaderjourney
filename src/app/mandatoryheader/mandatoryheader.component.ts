@@ -36,7 +36,7 @@ constructor( private globals: Globals, private navi: OnsNavigator,) {}
     this.navi.nativeElement.pushPage(MandatoryComponent);
   }
 
-calc_date_value(d) {
+calc_date_value(d) { 
     return (parseInt(d.substring(0,4)))*12 +parseInt(d.substring(5,7))-1;
 }
 
@@ -47,13 +47,13 @@ compass_date(longdate) {
                     + "-" +longdate.split(" ")[0];
 }
 
-find_gdpr() {
+find_gdpr() { 
   // For GDPR we need to look at all roles  
   var expiry="1900-01-01"
-  for(var i=0; i< this.user[0].roles.length; i++){
-    var role = this.user[0].roles[i].roleid;
-    for(var j=0; j< this.user[0].training[role].length; j++){ 
-      var plp =  this.user[0].training[role][j]
+  for(var i=0; i< this.user.user[0].roles.length; i++){
+    var role = this.user.user[0].roles[i].roleid;
+    for(var j=0; j< this.user.user[0].training[role].length; j++){ 
+      var plp =  this.user.user[0].training[role][j]
 
       if (plp.courseid=="GDPR"&&this.compass_date(plp.validated_on)>expiry) {
         expiry = this.compass_date(plp.validated_on);
@@ -78,7 +78,7 @@ formatDate() {
 }
 
 find_mandatory (mantype) {
-    var data = this.user[0].mandatory;
+    var data = this.user.user[0].mandatory;
     var expiry="1900-01-01"
     for(var i=0;i<data.length; i++){
       var expires = this.compass_date(data[i].expires)
