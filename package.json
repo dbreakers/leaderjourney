@@ -112,14 +112,14 @@
     "@angular/platform-browser": "7.2.9",
     "@angular/platform-browser-dynamic": "7.2.9",
     "@angular/router": "7.2.9",
+    "angular-mydatepicker": "^0.10.2",
     "core-js": "2.6.5",
-    "express": "^4.17.1",
-    "firebase-admin": "^9.0.0",
-    "firebase-functions": "^3.8.0",
-    "ngx-onsenui": "^7.0.0",
+    "firebase-admin": "9.1.0",
+    "firebase-functions": "3.9.1",
+    "ngx-onsenui": "7.0.0",
     "onsenui": "2.10.10",
-    "puppeteer": "^5.2.1",
     "rxjs": "6.6.0",
+    "rxjs-compat": "^6.6.2",
     "zone.js": "0.10.3"
   }
 }

@@ -21,16 +21,18 @@
         Logon using your Compass account
   </p>
       
-  <div style="text-align: center"> 
+  <div id="1" style="text-align: center"  > 
    <form>
-    <p>
-   
+ 
+ <p>
+    
       <ons-input  id="c"  modifier="underbar" placeholder="Username" float #username (keyup.enter)="validate(username.value,password.value)" (blur)="validate(username.value,password.value)"></ons-input>
     </p>
     
     <p>
       <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float (keyup.enter)="logon(username.value,password.value)" (keydown.tab)="logon(username.value,password.value)"  #password></ons-input>
     </p>
+     
   </form>
     <div id="error">{{error_text}}</div>
     <p style="margin-top: 30px;">

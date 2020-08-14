@@ -17,8 +17,10 @@ import { PermitsComponent } from './permits/permits.component';
 import { HierComponent } from './hier/hier.component';
 import { Globals } from './globals';
 import { Stubs } from './stubs';
+ 
 import {RoleHeaderComponent } from './roleheader/roleheader.component';
 import {MandatoryHeaderComponent } from './mandatoryheader/mandatoryheader.component';
+ 
 
 @NgModule({
   imports:         [ BrowserModule, FormsModule, OnsenModule, HttpClientModule ],
@@ -28,4 +30,6 @@ import {MandatoryHeaderComponent } from './mandatoryheader/mandatoryheader.compo
   bootstrap:       [ AppComponent ],
    providers: [ Globals, Stubs ]
 })
-export class AppModule { }
+export class AppModule {
+  
+ }

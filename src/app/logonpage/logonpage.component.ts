@@ -4,8 +4,7 @@ import { RoleSelectComponent } from '../roleselect/roleselect.component';
 import { CardComponent } from '../card/card.component';
 import { Globals } from '../globals';
 import { CallNetworkService } from '../callnetwork.service';
-
-
+ 
 import {
   Component,
   Injector,
@@ -27,8 +26,8 @@ import {
 })
 export class LogonPageComponent implements OnInit {
   error_text= "";
-
-  constructor(private navi: OnsNavigator,
+ 
+  constructor(private navi: OnsNavigator,  
               private callnetworkService: CallNetworkService, 
               private globals: Globals) {
   } 
@@ -80,6 +79,8 @@ ngOnInit () {
   modal.hide();
   this.globals.compass_user = "";
   this.globals.compass_password = "";
+     var myapp = angular.module('myapp', ['angular-datepicker']);
+     
 }
   
 }
