@@ -112,7 +112,6 @@
     "@angular/platform-browser": "7.2.9",
     "@angular/platform-browser-dynamic": "7.2.9",
     "@angular/router": "7.2.9",
-    "angular-mydatepicker": "^0.10.2",
     "core-js": "2.6.5",
     "firebase-admin": "9.1.0",
     "firebase-functions": "3.9.1",
