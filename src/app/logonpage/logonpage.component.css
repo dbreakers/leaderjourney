@@ -1,3 +1,21 @@
  #version {padding:20px;}
  .ql {background-color:var(--scoutdarkblue)}
+.pulsered {animation: pulsered 2s infinite }
+
+ @keyframes pulsered {
+	0% {
+		transform: scale(0.7);
+	}
+
+ 
+70% {
+		transform: scale(1);
+	 
+	}
+   
+	100% {
+		transform: scale(0.7);
+	 
+	}
+}
  
