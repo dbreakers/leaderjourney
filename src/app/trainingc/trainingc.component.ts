@@ -20,6 +20,7 @@ export class TrainingCComponent implements OnInit {
   count = 0;
   width = 0;
   status = "";
+  max_c = 0;
    @ViewChild('carousel') carousel;
   constructor(private navi: OnsNavigator,
               private _params: Params,
@@ -79,7 +80,7 @@ export class TrainingCComponent implements OnInit {
   }
   }
 ngOnInit() {
-  
+  this.max_c = (window.innerWidth - 50) / 40;
    if (this._params.data) {this.displayuser=this._params.data.data[0]; this.displayrole=this._params.data.roleid}    
 
   for (var j=0;j<this.displayuser.roles.length;j++){

@@ -11,13 +11,13 @@
   <div class="selector_bar">
     <div class="ticks">
       <ons-icon (click)="g2(-1)" class="chevron"  icon="fa-chevron-left"></ons-icon>
-      <span *ngIf="displayuser.roles.length <9">
+      <span *ngIf="displayuser.roles.length < max_c">
       <span  *ngFor="let role of displayuser.roles; let i=index">
         <span *ngIf="i>0" (click)="g2(i)" class="indicators">○</span>
         <span *ngIf="i==0" (click)="g2(i)" class="indicators">●</span> 
       </span>
       </span>
-      <span *ngIf="displayuser.roles.length >8">Role 
+      <span *ngIf="displayuser.roles.length > (max_c-1)">Role 
       {{carousel.getActiveIndex()+1}} of {{carousel.itemCount}}
       </span>
       <ons-icon (click)="g2(-2)"  class="chevron" icon="fa-chevron-right"></ons-icon>
