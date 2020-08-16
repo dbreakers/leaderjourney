@@ -17,6 +17,8 @@ import { CallNetworkService } from '../callnetwork.service';
 })
 export class MenuComponent implements OnInit {
   selected_role = {};
+  modal1=""
+  modal2=""
   
   constructor(private navi: OnsNavigator,
               private callnetworkService: CallNetworkService, 
@@ -45,10 +47,14 @@ push6() {
 
 push7_2(u) {
  this.globals.last_read = u 
+   menu_modal.hide()
  this.navi.nativeElement.pushPage(TrainingCComponent,{data: {data: u, roleid: this.globals.compassuser[0].roles[0].roleid}});
 }  
 
 push7() {
+  this.modal1 = "Getting data for"
+  this.modal2 = "Dawn Holmwood"
+  menu_modal.show()
   if (this.globals.last_read.length==0) {
   this.callnetworkService.getRoleUser("481187","00401261").subscribe(user=> this.push7_2(user));} else 
   {
