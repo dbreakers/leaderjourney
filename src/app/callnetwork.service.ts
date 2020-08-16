@@ -38,6 +38,7 @@ clear() {
     this.globals.compassuser = []; 
     this.globals.compass_user=""
     this.globals.compass_password==""
+  this.globals.last_read = [];
 }
 
 getRoleUser(r,u): Observable<any> { 
