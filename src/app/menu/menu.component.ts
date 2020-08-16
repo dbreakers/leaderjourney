@@ -38,8 +38,13 @@ export class MenuComponent implements OnInit {
     push4() {
     this.navi.nativeElement.pushPage(PermitsComponent);
   }
-  push5() {
+
+  push5_2(h) {
     this.navi.nativeElement.pushPage(HierComponent);
+  }
+  push5() {
+    this.callnetworkService.getHierarchy(this.globals.roleid,this.globals.userid).subscribe(hier=> this.push5_2(hier)); 
+    
   }
 push6() {
  this.navi.nativeElement.pushPage(TrainingCComponent,{data: {data: this.globals.compassuser, roleid: this.globals.compassuser[0].roles[0].roleid}});
@@ -53,7 +58,7 @@ push7_2(u) {
 
 push7() {
   this.modal1 = "Getting data for"
-  this.modal2 = "Dawn Holmwood"
+  this.modal2 = "Scouter"
   menu_modal.show()
   if (this.globals.last_read.length==0) {
   this.callnetworkService.getRoleUser("481187","00401261").subscribe(user=> this.push7_2(user));} else 

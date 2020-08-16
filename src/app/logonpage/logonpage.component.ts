@@ -48,13 +48,14 @@ export class LogonPageComponent implements OnInit {
 
 get_roles(test) {
   this.globals.compassuser = test;
+  this.globals.userid = this.globals.compassuser[0].name.split(" ")[0];
   modald.hide()
    this.navi.nativeElement.pushPage(RoleSelectComponent);
 }
 post_logon(test){
 //console.log(test);
 if (test[0] == 0){
-   this.error_text="";
+   this.error_text=""; 
    modal.hide();
    modald.show()
    this.callnetworkService.getUser().subscribe(Roles=> this.get_roles(Roles));
