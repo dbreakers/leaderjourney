@@ -79,7 +79,7 @@ ngOnInit () {
   modal.hide();
   this.globals.compass_user = "";
   this.globals.compass_password = "";
-     var myapp = angular.module('myapp', ['angular-datepicker']);
+   //  var myapp = angular.module('myapp', ['angular-datepicker']);
      
 }
   
