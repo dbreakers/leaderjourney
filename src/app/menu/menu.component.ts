@@ -67,6 +67,22 @@ push7() {
   }
 }
 
+push8_2(ul) {
+ this.globals.last_directory = ul 
+   menu_modal.hide()
+ this.navi.nativeElement.pushPage(TrainingCComponent,{data: {data: u, roleid: this.globals.compassuser[0].roles[0].roleid}});
+}  
+
+push8() {
+  this.modal1 = "Getting User List"
+  this.modal2 = ""
+  menu_modal.show()
+  if (this.globals.last_directory.length==0) {
+  this.callnetworkService.getRoleUsers(this.globals.roleid).subscribe(user=> this.push8_2(user));} else 
+  {
+    this.push8_2(this.globals.last_read)
+  }
+}
   
 
    

@@ -6,6 +6,7 @@ export class Globals {
   compassdata: Array = [];
   compassar : Array = [];
   compassuser : Array = [];
+  last_directory : Array = [];
   roleid: string = "";
   userid: string = "";
   url: string="https://2ndnewhawscouts.org.uk/osmr/compassread2.php";
