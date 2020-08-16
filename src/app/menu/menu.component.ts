@@ -44,11 +44,16 @@ push6() {
 }
 
 push7_2(u) {
+ this.globals.last_read = u 
  this.navi.nativeElement.pushPage(TrainingCComponent,{data: {data: u, roleid: this.globals.compassuser[0].roles[0].roleid}});
 }  
 
 push7() {
-  this.callnetworkService.getRoleUser("481187","00401261").subscribe(user=> this.push7_2(user));
+  if (this.globals.last_read.length==0) {
+  this.callnetworkService.getRoleUser("481187","00401261").subscribe(user=> this.push7_2(user));} else
+  {
+    this.push7_2(this.globals.last_read)
+  }
 }
 
   
