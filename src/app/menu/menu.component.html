@@ -2,13 +2,15 @@
 <div class="background"></div>
 <ons-toolbar>
   <div class="left"><ons-back-button> </ons-back-button></div>
-	<div class="center">My Leadership</div>
+	<div class="center">Homepage</div>
 </ons-toolbar>
 <div class="content">
   <app-roleheader  [role]="selected_role"></app-roleheader>
   <span *ngIf="globals.compassuser.length>0"> 
   <app-mandatoryheader  [user]="{user:globals.compassuser, click:true}"></app-mandatoryheader> 
-  <ons-card class="menugrid">
+  <ons-card >
+  <div class="subhead">Your Details</div><br>  
+  <div class="menugrid">  
   <div (click)="push()" class="menubutton"><ons-icon class="menuicon" icon="fa-chalkboard-teacher"></ons-icon></div>
   <div (click)="push6()" class="menubutton"><ons-icon class="menuicon" icon="fa-chalkboard-teacher"></ons-icon></div>
   <div (click)="push2()" class="menubutton"><ons-icon class="far menuicon" icon="fa-thumbs-up"></ons-icon></div>
@@ -16,44 +18,14 @@
  
     <div (click)="push3()" class="menubutton"><ons-icon class="far menuicon" icon="fa-map"></ons-icon></div>
     <div (click)="push5()" class="menubutton"><ons-icon class="menuicon" icon="fa-sitemap"></ons-icon></div>
-  
+  </div>
+  </ons-card>
+  <ons-card >
+  <div class="subhead">Your Role</div><br>  
+  <div class="menugrid">  
+  <div (click)="push()" class="menubutton"><ons-icon class="menuicon" icon="fa-chalkboard-teacher"></ons-icon></div>
+  </div>
   </ons-card>
   </span>
-    <span *ngIf="globals.compassuser.length==0">
-      <ons-card>
-        <div style="text-align:centre">
-         <ons-icon icon="fa-compass" spin="true" size="20px"></ons-icon>
-    
-    Getting your User Details
-    </div>
-      </ons-card>  
-    </span>  
-  <!--
-  <ons-card>
-   <p class="subhead">Wood Badge Training</p>
-   <span *ngIf="this.percent!=100">Target Completion {{targetmonth}} {{targetyear}}</span>
-   <span *ngIf="this.percent==100">Wood Badge awarded {{this.selected_role.completiondate.substring(0,4)}}</span>  
-   <div class="barbox">
-   <div class="outer" class="backchart">&nbsp;</div>  
-   <div id="barchart" [ngClass]="{'barchart_du':status=='du','barchart_od':status=='od','barchart_ok':status=='ok'}" class="barchart"  [style.width.%]="width"  ></div><br>{{count}}/{{ plp.length}} Modules Completed
-
-   </div>
-  </ons-card> 
-  <ons-card *ngIf="selected_role.hasOwnProperty('ta_name')&&selected_role.ta_name!=''">
-  My Training Advisor is {{selected_role.ta_name}}  
-  </ons-card>  
-  <ons-card *ngFor="let plpline of plp"><span *ngIf="plpline.hasOwnProperty('validatedDate')"> <ons-icon icon="fa-check-circle" class="green"></ons-icon></span>
-  <span *ngIf="!plpline.hasOwnProperty('validatedDate')"> <ons-icon icon="fa-times-circle" class="red"></ons-icon></span>
-     Module {{plpline.code}}:{{plpline.name}}<br> 
-     <span *ngIf="plpline.hasOwnProperty('validatedDate')">{{plpline.validatedDate}}</span>
-  </ons-card>
-	<ons-list>
-		<ons-list-header>Tappable / Ripple</ons-list-header>
-		<ons-list-item tappable><ons-icon icon="fa-chalkboard-teacher"></ons-icon>&nbsp;My Training</ons-list-item>
-
-		<ons-list-header>Chevron</ons-list-header>
-		<ons-list-item modifier="chevron" tappable (click)="push()">Chevron</ons-list-item>
-	</ons-list>-->
-
-	<br />
+ 
     </div>
