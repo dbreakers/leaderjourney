@@ -80,7 +80,7 @@ export class TrainingCComponent implements OnInit {
   }
   }
 ngOnInit() {
-  this.max_c = (window.innerWidth - 50) / 40;
+  this.max_c = (window.innerWidth - 75) / 40; 
    if (this._params.data) {this.displayuser=this._params.data.data[0]; this.displayrole=this._params.data.roleid}    
 
   for (var j=0;j<this.displayuser.roles.length;j++){
