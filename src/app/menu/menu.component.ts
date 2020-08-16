@@ -50,7 +50,7 @@ push7_2(u) {
 
 push7() {
   if (this.globals.last_read.length==0) {
-  this.callnetworkService.getRoleUser("481187","00401261").subscribe(user=> this.push7_2(user));} else
+  this.callnetworkService.getRoleUser("481187","00401261").subscribe(user=> this.push7_2(user));} else 
   {
     this.push7_2(this.globals.last_read)
   }

@@ -12,5 +12,5 @@ export class Globals {
   compass_user : string = "";
   compass_password : string = "";
   months : Array = ['January','February','March','April','May','June','July','August','September','October','November','December']
-  last_read : Array = []
+  last_read : Array = [] 
 }

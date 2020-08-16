@@ -1,10 +1,10 @@
 <div class="background"></div>
 <ons-toolbar>
   <div class="left"><ons-back-button> </ons-back-button></div>
-<span *ngIf="displayuser.hasOwnProperty(name)" >
+ 
 	<div class="center" *ngIf="globals.compassuser[0].name==displayuser.name">My Training</div>
-  <div class="center" *ngIf="globals.compassuser[0].name!=displayuser.name">{{displayuser.name}}</div>
-  </span>
+  <div class="center" *ngIf="globals.compassuser[0].name!=displayuser.name">{{displayuser.name.split(" ")[1]}}&nbsp;{{displayuser.name.split(" ")[2]}}</div>
+ 
 </ons-toolbar>
 <div class="content training2">
    <div class="sticky" *ngIf="displayuser.roles.length>1"> 
