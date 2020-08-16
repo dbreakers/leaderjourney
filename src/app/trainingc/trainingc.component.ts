@@ -80,11 +80,13 @@ export class TrainingCComponent implements OnInit {
   }
 ngOnInit() {
   
-  for (var j=0;j<this.globals.compassuser[0].roles.length;j++){
-    var r = this.globals.compassuser[0].roles[j].roleid;
-   for (var i=0; i< this.globals.compassuser[0].training[r].length; i++){
+   if (this._params.data) {this.displayuser=this._params.data.data[0]; this.displayrole=this._params.data.roleid}    
+
+  for (var j=0;j<this.displayuser.roles.length;j++){
+    var r = this.displayuser.roles[j].roleid;
+   for (var i=0; i< this.displayuser.training[r].length; i++){
     this.plphead[r]
-      = this.get_plp_head(this.globals.compassuser[0].training[r],this.globals.compassuser[0].roles[j]); 
+      = this.get_plp_head(this.displayuser.training[r],this.displayuser.roles[j]); 
 
    }}
  

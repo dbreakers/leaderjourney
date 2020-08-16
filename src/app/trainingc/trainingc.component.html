@@ -1,20 +1,23 @@
 <div class="background"></div>
 <ons-toolbar>
   <div class="left"><ons-back-button> </ons-back-button></div>
-	<div class="center">My Training</div>
+<span *ngIf="displayuser.hasOwnProperty(name)" >
+	<div class="center" *ngIf="globals.compassuser[0].name==displayuser.name">My Training</div>
+  <div class="center" *ngIf="globals.compassuser[0].name!=displayuser.name">{{displayuser.name}}</div>
+  </span>
 </ons-toolbar>
 <div class="content training2">
-   <div class="sticky" *ngIf="globals.compassuser[0].roles.length>1"> 
+   <div class="sticky" *ngIf="displayuser.roles.length>1"> 
   <div class="selector_bar">
     <div class="ticks">
       <ons-icon (click)="g2(-1)" class="chevron"  icon="fa-chevron-left"></ons-icon>
-      <span *ngIf="globals.compassuser[0].roles.length <9">
-      <span  *ngFor="let role of globals.compassuser[0].roles; let i=index">
+      <span *ngIf="displayuser.roles.length <9">
+      <span  *ngFor="let role of displayuser.roles; let i=index">
         <span *ngIf="i>0" (click)="g2(i)" class="indicators">○</span>
         <span *ngIf="i==0" (click)="g2(i)" class="indicators">●</span> 
       </span>
       </span>
-      <span *ngIf="globals.compassuser[0].roles.length >8">Role 
+      <span *ngIf="displayuser.roles.length >8">Role 
       {{carousel.getActiveIndex()+1}} of {{carousel.itemCount}}
       </span>
       <ons-icon (click)="g2(-2)"  class="chevron" icon="fa-chevron-right"></ons-icon>
@@ -22,7 +25,7 @@
   </div>
  </div>
   <ons-carousel  swipeable  overscrollable  auto-scroll id="carousel" #carousel>
-<ons-carousel-item   *ngFor="let role of globals.compassuser[0].roles">
+<ons-carousel-item   *ngFor="let role of displayuser.roles">
  <!--  <ons-scroller>-->
   <div class="hc"></div>
   <ons-card class="headercard">
@@ -36,11 +39,16 @@
     {{plphead[role.roleid].completed}}</span>
    <div class="barbox">
    <div class="outer" class="backchart">&nbsp;</div>  
-   <div id="barchart" [ngClass]="{'barchart_du':plphead[role.roleid].status=='du','barchart_od':plphead[role.roleid].status=='od','barchart_ok':plphead[role.roleid].status=='ok'}" class="barchart"  [style.width.%]="plphead[role.roleid].width" ></div><br>{{plphead[role.roleid].count}}/{{ globals.compassuser[0].training[role.roleid].length}} Modules Completed
+   <div id="barchart" [ngClass]="{'barchart_du':plphead[role.roleid].status=='du','barchart_od':plphead[role.roleid].status=='od','barchart_ok':plphead[role.roleid].status=='ok'}" class="barchart"  [style.width.%]="plphead[role.roleid].width" ></div><br>{{plphead[role.roleid].count}}/{{ displayuser.training[role.roleid].length}} Modules Completed 
 
    </div>
   </ons-card> 
-  <ons-card *ngFor="let plpline of globals.compassuser[0].training[role.roleid]">
+  <ons-card>
+    <span *ngIf="1==1">
+
+    </span>
+  </ons-card>  
+  <ons-card *ngFor="let plpline of displayuser.training[role.roleid]">
     <span *ngIf="plpline.validated_on!=''"> <ons-icon icon="fa-check-circle" class="green"></ons-icon></span>
   <span *ngIf="plpline.validated_on==''"> <ons-icon icon="fa-times-circle" class="red"></ons-icon></span>
      Module {{plpline.courseid}}:{{plpline.coursename}}

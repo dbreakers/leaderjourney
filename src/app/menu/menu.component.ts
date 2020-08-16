@@ -40,9 +40,16 @@ export class MenuComponent implements OnInit {
     this.navi.nativeElement.pushPage(HierComponent);
   }
 push6() {
- this.navi.nativeElement.pushPage(TrainingCComponent);
+ this.navi.nativeElement.pushPage(TrainingCComponent,{data: {data: this.globals.compassuser, roleid: this.globals.compassuser[0].roles[0].roleid}});
 }
-  
+
+push7_2(u) {
+ this.navi.nativeElement.pushPage(TrainingCComponent,{data: {data: u, roleid: this.globals.compassuser[0].roles[0].roleid}});
+}  
+
+push7() {
+  this.callnetworkService.getRoleUser("481187","00401261").subscribe(user=> this.push7_2(user));
+}
 
   
 
