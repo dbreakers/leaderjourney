@@ -35,7 +35,7 @@
   <ons-card class="alertcard" *ngIf="role.status=='Closed'">
   <ons-icon class="alertfont" icon="fa-info-circle"></ons-icon>&nbsp;This role is closed
   </ons-card>  
-  <ons-card>
+  <ons-card *ngIf="role.status!='Closed'">
    <p class="subhead">Training</p>
    <span *ngIf="plphead[role.roleid].percent!=100">Target Completion {{plphead[role.roleid].targetmonth}} {{plphead[role.roleid].targetyear}}</span>
    <span *ngIf="plphead[role.roleid].percent==100">Wood Badge awarded 
