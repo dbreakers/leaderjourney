@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OnsNavigator,  Params, } from 'ngx-onsenui';
 import { Globals } from '../globals';
 import { AddressCardComponent } from '../addresscard/addresscard.component'; 
+import { CallNetworkService } from '../callnetwork.service';
 
 @Component({
   selector: 'ons-page[directory]',
@@ -11,9 +12,12 @@ import { AddressCardComponent } from '../addresscard/addresscard.component';
 export class DirectoryComponent implements OnInit {
 
 namefilter = "";
+modal1 = ""
+modal2 = ""
 
   constructor(private navi: OnsNavigator,
               private _params: Params,
+               private callnetworkService: CallNetworkService, 
               private globals: Globals,) {
   } 
 
@@ -30,9 +34,13 @@ return finditem
 
 goto_card2(u) {
 this.navi.nativeElement.pushPage(AddressCardComponent,{data: {data: u[0] , roleid: this.globals.compassuser[0].roles[0].roleid}});
+ directory_modal.hide()
 }
 
 goto_card(id) {
+  this.modal1 = "Getting data"
+  this.modal2 = ""
+ directory_modal.show()
 this.callnetworkService.getRoleUserAddress(this.globals.roleid,id).subscribe(user=> this.goto_card2(user));
 }
 
