@@ -7,6 +7,7 @@ import { TrainingCComponent } from '../trainingc/trainingc.component';
 import { MandatoryComponent } from '../mandatory/mandatory.component';
 import { CardComponent } from '../card/card.component';
 import { PermitsComponent } from '../permits/permits.component';
+import { AddressCardComponent } from '../addresscard/addresscard.component'; 
 import { HierComponent } from '../hier/hier.component';
 import { CallNetworkService } from '../callnetwork.service';
 
@@ -82,6 +83,9 @@ push8() {
   }
 }
   
+push9() {
+    this.navi.nativeElement.pushPage(AddressCardComponent,{data: {data: this.globals.compassuser[0] , roleid: this.globals.compassuser[0].roles[0].roleid}});
+ }
 
    
  

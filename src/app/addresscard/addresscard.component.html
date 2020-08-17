@@ -1,0 +1,20 @@
+<div class="background"></div>
+<ons-toolbar>
+  <div class="left"><ons-back-button> </ons-back-button></div>
+ 
+	<div class="center" *ngIf="globals.compassuser[0].name==displayuser.name">My Details</div>
+  <div class="center" *ngIf="globals.compassuser[0].name!=displayuser.name">{{displayuser.name.split(" ")[1]}}&nbsp;{{displayuser.name.split(" ")[2]}}</div>
+ 
+</ons-toolbar>
+<ons-card class="headercard">
+<span class="name">{{displayuser.general.forenames}}&nbsp;{{displayuser.general.surname}}</span><br>
+<span *ngIf="displayuser.general.known_as!=''">(Known as {{displayuser.general.known_as}})</span>
+</ons-card>
+<ons-card>
+<p class="cardhead">Basic Information</p>  
+<p><span class="label">Date of Birth:</span> {{displayuser.general.dob}}</p>
+<p><span class="label">Gender:</span> {{displayuser.general.gender}}</p>
+<p><span class="label">Nationality:</span> {{displayuser.general.type_nationality}}</p>
+<p><span class="label">Ethnicity</span><br>{{displayuser.general.type_ethnicity}}</p>
+<p><span class="label">Faith</span><br>{{displayuser.general.type_faith}}</p>
+</ons-card>

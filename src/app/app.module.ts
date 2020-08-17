@@ -10,6 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { RoleSelectComponent } from './roleselect/roleselect.component';
 import { LogonPageComponent } from './logonpage/logonpage.component';
 import { DirectoryComponent } from './directory/directory.component';
+import { AddressCardComponent } from './addresscard/addresscard.component';
 import { TrainingCComponent } from './trainingc/trainingc.component';
 import { MandatoryComponent } from './mandatory/mandatory.component';
 import { CardComponent } from './card/card.component';
@@ -24,8 +25,8 @@ import {MandatoryHeaderComponent } from './mandatoryheader/mandatoryheader.compo
 
 @NgModule({
   imports:         [ BrowserModule, FormsModule, OnsenModule, HttpClientModule ],
-  declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, LogonPageComponent, DirectoryComponent, TrainingCComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent,RoleHeaderComponent,MandatoryHeaderComponent ],
-  entryComponents: [ MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingCComponent, DirectoryComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent ],
+  declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, AddressCardComponent, LogonPageComponent, DirectoryComponent, TrainingCComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent,RoleHeaderComponent,MandatoryHeaderComponent ],
+  entryComponents: [ MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingCComponent, DirectoryComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent, AddressCardComponent ],
   schemas:         [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap:       [ AppComponent ],
    providers: [ Globals, Stubs ]
