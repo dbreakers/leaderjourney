@@ -47,8 +47,10 @@ export class MenuComponent implements OnInit {
       this.modal1 = "Getting Hierarchies"
   this.modal2 = ""
   menu_modal.show()
+  if (this.globals.compasshier.length==0) {
     this.callnetworkService.getHierarchy(this.globals.roleid,this.globals.userid).subscribe(hier=> this.push5_2(hier)); 
     
+  } else {this.push5_2(this.globals.compasshier)}
   }
 push6() {
  this.navi.nativeElement.pushPage(TrainingCComponent,{data: {data: this.globals.compassuser, roleid: this.globals.compassuser[0].roles[0].roleid}});
