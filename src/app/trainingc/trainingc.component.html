@@ -36,10 +36,10 @@
   <ons-icon class="alertfont" icon="fa-info-circle"></ons-icon>&nbsp;This role is closed
   </ons-card>  
   <ons-card *ngIf="role.status!='Closed'">
-   <p class="subhead">Training</p>
+   <p *ngIf="plphead[role.roleid].percent!=100" class="subhead">Training</p>
+   <p *ngIf="plphead[role.roleid].percent==100" class="subhead">Training Completed</p>
    <span *ngIf="plphead[role.roleid].percent!=100">Target Completion {{plphead[role.roleid].targetmonth}} {{plphead[role.roleid].targetyear}}</span>
-   <span *ngIf="plphead[role.roleid].percent==100">Wood Badge awarded 
-    {{role.completed}}</span>
+   <span *ngIf="role.completed!=''">{{role.completed}}</span>
    <div class="barbox">
    <div class="outer" class="backchart">&nbsp;</div>  
    <div id="barchart" [ngClass]="{'barchart_du':plphead[role.roleid].status=='du','barchart_od':plphead[role.roleid].status=='od','barchart_ok':plphead[role.roleid].status=='ok'}" class="barchart"  [style.width.%]="plphead[role.roleid].width" ></div><br>{{plphead[role.roleid].count}}/{{ displayuser.training[role.roleid].length}} Modules Completed  
