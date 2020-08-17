@@ -1,0 +1,15 @@
+
+<div class="background"></div>
+<ons-toolbar>
+  <div class="left"><ons-back-button> </ons-back-button></div>
+	<div class="center">Contact List</div>
+</ons-toolbar>
+<div class="content">
+  
+  <ons-card *ngFor="let contact of globals.last_directory[0]">
+   {{contact.name}}
+  </ons-card> 
+   
+	
+ 
+    </div>

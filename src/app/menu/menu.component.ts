@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { OnsNavigator } from 'ngx-onsenui';
 import { Globals } from '../globals';
 //import { RoleSelectComponent } from '../roleselect/roleselect.component';
-import { TrainingComponent } from '../training/training.component';
+import { DirectoryComponent } from '../directory/directory.component';
 import { TrainingCComponent } from '../trainingc/trainingc.component';
 import { MandatoryComponent } from '../mandatory/mandatory.component';
 import { CardComponent } from '../card/card.component';
@@ -26,9 +26,7 @@ export class MenuComponent implements OnInit {
   } 
  
   
-  push() {
-    this.navi.nativeElement.pushPage(TrainingComponent,{data: {data: this.globals.compassuser, roleid: this.globals.compassuser[0].roles[0].roleid}});
-  }  
+  
    push2() {
     this.navi.nativeElement.pushPage(MandatoryComponent);
   }
@@ -70,7 +68,7 @@ push7() {
 push8_2(ul) {
  this.globals.last_directory = ul 
    menu_modal.hide()
- this.navi.nativeElement.pushPage(TrainingCComponent,{data: {data: u, roleid: this.globals.compassuser[0].roles[0].roleid}});
+ this.navi.nativeElement.pushPage(DirectoryComponent,{data: {data: ul, roleid: this.globals.compassuser[0].roles[0].roleid}});
 }  
 
 push8() {
@@ -80,7 +78,7 @@ push8() {
   if (this.globals.last_directory.length==0) {
   this.callnetworkService.getRoleUsers(this.globals.roleid).subscribe(user=> this.push8_2(user));} else 
   {
-    this.push8_2(this.globals.last_read)
+    this.push8_2(this.globals.last_directory)
   }
 }
   
