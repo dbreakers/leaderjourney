@@ -34,7 +34,7 @@ return finditem
 
 goto_card2(u) {
 this.navi.nativeElement.pushPage(AddressCardComponent,{data: {data: u[0] , roleid: this.globals.compassuser[0].roles[0].roleid}});
- directory_modal.hide()
+ directory_modal.hide() 
 }
 
 goto_card(id) {
