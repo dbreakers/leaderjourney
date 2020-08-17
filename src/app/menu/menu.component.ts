@@ -39,9 +39,14 @@ export class MenuComponent implements OnInit {
   }
 
   push5_2(h) {
+    this.globals.compasshier = h;
     this.navi.nativeElement.pushPage(HierComponent);
+     menu_modal.hide()
   }
   push5() {
+      this.modal1 = "Getting data for"
+  this.modal2 = "Scouter"
+  menu_modal.show()
     this.callnetworkService.getHierarchy(this.globals.roleid,this.globals.userid).subscribe(hier=> this.push5_2(hier)); 
     
   }

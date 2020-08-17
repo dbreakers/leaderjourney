@@ -6,6 +6,7 @@ export class Globals {
   compassdata: Array = [];
   compassar : Array = [];
   compassuser : Array = [];
+  compasshier : Array = [];
   last_directory : Array = [];
   roleid: string = "";
   userid: string = "";
