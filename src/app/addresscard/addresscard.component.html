@@ -14,9 +14,6 @@
 <p class="cardhead">Basic Information</p>  
 <p><span class="label">Date of Birth:</span> {{displayuser.general.dob}}</p>
 <p><span class="label">Gender:</span> {{displayuser.general.gender}}</p>
-<p><span class="label">Nationality:</span> {{displayuser.general.type_nationality}}</p>
-<p><span class="label">Ethnicity</span><br>{{displayuser.general.type_ethnicity}}</p>
-<p><span class="label">Faith</span><br>{{displayuser.general.type_faith}}</p>
 </ons-card>
 <ons-card>
 <p class="cardhead">Telephone</p>
@@ -28,3 +25,19 @@
 <p><span class="label">
   <span *ngIf="displayuser.contact.default_tel!='tel3'"><ons-icon icon="fa-circle" class="far"></ons-icon></span><span *ngIf="displayuser.contact.default_tel=='tel3'"><ons-icon icon="fa-dot-circle" class="far"></ons-icon></span>{{displayuser.contact.type_tel3}}</span>{{displayuser.contact.tel3}}</p>
 </ons-card>  
+<ons-card>
+<p class="cardhead">Email</p>
+<p><span class="label">
+  <span *ngIf="displayuser.contact.default_mail!='email1'"><ons-icon icon="fa-circle" class="far"></ons-icon></span>
+  <span *ngIf="displayuser.contact.default_mail=='email1'"><ons-icon icon="fa-dot-circle" class="far"></ons-icon></span>{{displayuser.contact.type_contact_type1}}</span>{{displayuser.contact.email1}}</p>
+<p><span class="label">
+  <span *ngIf="displayuser.contact.default_mail!='email2'"><ons-icon icon="fa-circle" class="far"></ons-icon></span><span *ngIf="displayuser.contact.default_mail=='email2'"><ons-icon icon="fa-dot-circle" class="far"></ons-icon></span>{{displayuser.contact.type_contact_type2}}</span>{{displayuser.contact.email2}}</p>
+<p><span class="label">
+  <span *ngIf="displayuser.contact.default_mail!='email3'"><ons-icon icon="fa-circle" class="far"></ons-icon></span><span *ngIf="displayuser.contact.default_mail=='email3'"><ons-icon icon="fa-dot-circle" class="far"></ons-icon></span>{{displayuser.contact.type_contact_type3}}</span>{{displayuser.contact.email3}}</p>
+</ons-card>  
+<ons-card>
+  <p class="cardhead">Other Information</p>
+  <p><span class="label">Nationality:</span> {{displayuser.general.type_nationality}}</p>
+<p><span class="label">Ethnicity</span><br>{{displayuser.general.type_ethnicity}}</p>
+<p><span class="label">Faith</span><br>{{displayuser.general.type_faith}}</p>
+</ons-card>
