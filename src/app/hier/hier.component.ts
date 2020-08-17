@@ -34,7 +34,9 @@ this.hier_array = JSON.parse(this.hier_icons)
       entry.description = this.hier2[i][1]
       entry.icon = this.hier_array[entry.level].icon;
       entry.level = this.hier_array[entry.level].level;
+      if (entry.description!='--- Not Selected ---') {
       this.hier.push(entry) 
+      }
     }
   
   } 
