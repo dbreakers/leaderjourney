@@ -33,8 +33,7 @@
     {{role.start}}
   </ons-card>  
   <ons-card class="alertcard" *ngIf="role.status=='Closed'">
-  <ons-icon class="alertfont" icon="fa-info-circle"></ons-icon>&nbsp;This role is closed
-  </ons-card>  
+  <ons-icon class="alertfont" icon="fa-info-circle"></ons-icon>&nbsp;This role is closed  </ons-card>  
   <ons-card *ngIf="role.status!='Closed'">
    <p *ngIf="plphead[role.roleid].percent!=100" class="subhead">Training</p>
    <p *ngIf="plphead[role.roleid].percent==100" class="subhead">Training Completed</p>
