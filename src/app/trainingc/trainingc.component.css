@@ -1,9 +1,11 @@
 .headercard {color: white; background-color: var(--scoutpurple)}
+.alertcard {color: white; background-color: var(--scoutdarkblue)}
 .subhead {font-weight:600; margin: 0px;}
 .background {background-color: var(--scoutteal)}
 .green {color: var(--scoutgreen)}
 .amber {color: var(--scoutyellow)}
 .red {color: var(--scoutred)}
+.alertfont {font-size: 20pt}
 .indicators {font-size: 20pt; padding : 10px;color: var(--scoutteal)}
 .sticky {
   background: white;

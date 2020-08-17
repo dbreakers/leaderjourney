@@ -32,8 +32,8 @@
     {{role.role}}<br>
     {{role.start}}
   </ons-card>  
-  <ons-card class="hc" *ngIf="role.status=='Closed'">
-     This Role is closed
+  <ons-card class="alertcard" *ngIf="role.status=='Closed'">
+  <ons-icon class="alertfont" icon="fa-info-circle"></ons-icon>&nbsp;This role is closed
   </ons-card>  
   <ons-card>
    <p class="subhead">Training</p>
@@ -46,9 +46,9 @@
 
    </div>
   </ons-card> 
-  <ons-card *ngIf="role.completed==''">
-    <span *ngIf="role.ta==''">You do not have a Training Advisor for this role</span>
-    <span *ngIf="role.ta!=''">Your Training Advisor for this role is {{role.ta}}</span>
+  <ons-card *ngIf="role.completed==''&&role.status!='Closed'">
+    <span *ngIf="role.ta==''"> <ons-icon class="alertfont" icon="fa-exclamation-triangle"></ons-icon>&nbsp;You do not have a Training Advisor for this role</span>
+    <span *ngIf="role.ta!=''">Your Training Advisor for this role is {{role.ta.split(" ")[1]}}&nbsp;{{role.ta.split(" ")[2]}}</span>
   </ons-card>
   
   <ons-card *ngFor="let plpline of displayuser.training[role.roleid]">
