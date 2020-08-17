@@ -29,25 +29,28 @@
  <!--  <ons-scroller>-->
   <div class="hc"></div>
   <ons-card class="headercard">
-    {{role.role}}
-    {{role.start}} {{role.end}}
+    {{role.role}}<br>
+    {{role.start}}
+  </ons-card>  
+  <ons-card class="hc" *ngIf="role.status=='Closed'">
+     This Role is closed
   </ons-card>  
   <ons-card>
-   <p class="subhead">Wood Badge Training</p>
+   <p class="subhead">Training</p>
    <span *ngIf="plphead[role.roleid].percent!=100">Target Completion {{plphead[role.roleid].targetmonth}} {{plphead[role.roleid].targetyear}}</span>
    <span *ngIf="plphead[role.roleid].percent==100">Wood Badge awarded 
-    {{plphead[role.roleid].completed}}</span>
+    {{role.completed}}</span>
    <div class="barbox">
    <div class="outer" class="backchart">&nbsp;</div>  
-   <div id="barchart" [ngClass]="{'barchart_du':plphead[role.roleid].status=='du','barchart_od':plphead[role.roleid].status=='od','barchart_ok':plphead[role.roleid].status=='ok'}" class="barchart"  [style.width.%]="plphead[role.roleid].width" ></div><br>{{plphead[role.roleid].count}}/{{ displayuser.training[role.roleid].length}} Modules Completed 
+   <div id="barchart" [ngClass]="{'barchart_du':plphead[role.roleid].status=='du','barchart_od':plphead[role.roleid].status=='od','barchart_ok':plphead[role.roleid].status=='ok'}" class="barchart"  [style.width.%]="plphead[role.roleid].width" ></div><br>{{plphead[role.roleid].count}}/{{ displayuser.training[role.roleid].length}} Modules Completed  
 
    </div>
   </ons-card> 
-  <ons-card>
-    <span *ngIf="1==1">
-
-    </span>
-  </ons-card>  
+  <ons-card *ngIf="role.completed==''">
+    <span *ngIf="role.ta==''">You do not have a Training Advisor for this role</span>
+    <span *ngIf="role.ta!=''">Your Training Advisor for this role is {{role.ta}}</span>
+  </ons-card>
+  
   <ons-card *ngFor="let plpline of displayuser.training[role.roleid]">
     <span *ngIf="plpline.validated_on!=''"> <ons-icon icon="fa-check-circle" class="green"></ons-icon></span>
   <span *ngIf="plpline.validated_on==''"> <ons-icon icon="fa-times-circle" class="red"></ons-icon></span>
