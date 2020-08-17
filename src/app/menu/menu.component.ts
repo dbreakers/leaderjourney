@@ -44,8 +44,8 @@ export class MenuComponent implements OnInit {
      menu_modal.hide()
   }
   push5() {
-      this.modal1 = "Getting data for"
-  this.modal2 = "Scouter"
+      this.modal1 = "Getting Hierarchies"
+  this.modal2 = ""
   menu_modal.show()
     this.callnetworkService.getHierarchy(this.globals.roleid,this.globals.userid).subscribe(hier=> this.push5_2(hier)); 
     
