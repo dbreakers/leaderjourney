@@ -25,7 +25,7 @@ searchObj(member) {
 var search_strings = this.namefilter.split(" ");
 var finditem = true;
   for (var i=0; i<search_strings.length;i++){
-    if (member.name.indexOf(search_strings[i])==-1) {
+    if (member.name.toUpperCase().indexOf(search_strings[i].toUpperCase())==-1) {
      finditem = false;
     }
   }
