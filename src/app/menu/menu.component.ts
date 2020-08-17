@@ -51,8 +51,9 @@ push6() {
 
 push7_2(u) {
  this.globals.last_read = u 
-   menu_modal.hide()
+
  this.navi.nativeElement.pushPage(TrainingCComponent,{data: {data: u, roleid: this.globals.compassuser[0].roles[0].roleid}});
+    menu_modal.hide()
 }  
 
 push7() {
@@ -68,8 +69,9 @@ push7() {
 
 push8_2(ul) {
  this.globals.last_directory = ul 
-   menu_modal.hide()
+   
  this.navi.nativeElement.pushPage(DirectoryComponent,{data: {data: ul, roleid: this.globals.compassuser[0].roles[0].roleid}});
+ menu_modal.hide()
 }  
 
 push8() {

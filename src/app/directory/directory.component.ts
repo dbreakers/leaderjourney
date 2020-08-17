@@ -3,7 +3,7 @@ import { OnsNavigator,  Params, } from 'ngx-onsenui';
 import { Globals } from '../globals';
 import { AddressCardComponent } from '../addresscard/addresscard.component'; 
 import { CallNetworkService } from '../callnetwork.service';
-
+import * as ons from 'onsenui';
 @Component({
   selector: 'ons-page[directory]',
   templateUrl: './directory.component.html',
@@ -63,8 +63,11 @@ update_search($event) {
     }
  
   }
-  
+
+ 
+
 ngOnInit() {
-  
+menu_modal.show()
+document.addEventListener('init', function(event) {menu_modal.hide()}, false);
   }
 }
