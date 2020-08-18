@@ -27,9 +27,9 @@ constructor(private navi: OnsNavigator,
 this.hier2 = this.globals.compassuser[0].hierarchy[this.globals.roleid];
 this.hier_array = JSON.parse(this.hier_icons)
 //if(!this.hier[1].hasOwnProperty("icon")){
-  for(var i=0;this.hier2.length;i++){   
-    if (typeof this.hier2[i][0] == 'string') {
-    if (this.hier2[i][0].indexOf("ctl00_workarea_cbo_p1_location_")==0) {
+  for(var i=0; i<this.hier2.length;i++){   
+    if (typeof this.hier2[i][0] == 'string') { 
+    if (this.hier2[i][0].indexOf("ctl00_workarea_cbo_p1_location_")==0) { 
       var entry = new Object 
       entry.level = this.hier2[i][0].substring(this.hier2[i][0].length-1)
       entry.description = this.hier2[i][2]
