@@ -93,7 +93,7 @@ ngOnInit() {
  
    document.querySelector('ons-carousel').addEventListener('postchange', function() {
      if(document.querySelectorAll('.indicators').length>0 ){
-     for (var k=0;k<event.carousel.itemCount; k++){  
+     for (var k=0;k<event.carousel.itemCount; k++){ 
      document.querySelectorAll('.indicators')[k].innerHTML = '○';
      }
      document.querySelectorAll('.indicators')[event.activeIndex].innerHTML = '●';

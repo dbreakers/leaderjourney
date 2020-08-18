@@ -24,7 +24,7 @@ constructor(private navi: OnsNavigator,
 
   ngOnInit() {
     this.selected_role = this.globals.compassuser[0].roles.find(r=>r.roleid == this.globals.roleid )
-this.hier2 = this.globals.compasshier[0][this.globals.roleid];
+this.hier2 = this.globals.compassus[0].hierarchy[this.globals.roleid];
 this.hier_array = JSON.parse(this.hier_icons)
 //if(!this.hier[1].hasOwnProperty("icon")){
   for(var i=0;this.hier2.length;i++){ 

@@ -38,19 +38,10 @@ export class MenuComponent implements OnInit {
     this.navi.nativeElement.pushPage(PermitsComponent);
   }
 
-  push5_2(h) {
-    this.globals.compasshier = h;
-    this.navi.nativeElement.pushPage(HierComponent);
-     menu_modal.hide()
-  }
+ 
   push5() {
-      this.modal1 = "Getting Hierarchies"
-  this.modal2 = ""
-  menu_modal.show()
-  if (this.globals.compasshier.length==0) {
-    this.callnetworkService.getHierarchy(this.globals.roleid,this.globals.userid).subscribe(hier=> this.push5_2(hier)); 
-    
-  } else {this.push5_2(this.globals.compasshier)}
+    // this.globals.compasshier = this.globals.compassdata[0].hierarchy;
+    this.navi.nativeElement.pushPage(HierComponent);
   }
 push6() {
  this.navi.nativeElement.pushPage(TrainingCComponent,{data: {data: this.globals.compassuser, roleid: this.globals.compassuser[0].roles[0].roleid}});
