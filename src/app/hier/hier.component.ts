@@ -31,7 +31,7 @@ this.hier_array = JSON.parse(this.hier_icons)
     if (this.hier2[i][0].indexOf("ctl00_workarea_cbo_p1_location_")==0) {
       var entry = new Object 
       entry.level = this.hier2[i][0].substring(this.hier2[i][0].length-1)
-      entry.description = this.hier2[i][]
+      entry.description = this.hier2[i][2]
       entry.icon = this.hier_array[entry.level].icon;
       entry.level = this.hier_array[entry.level].level;
       if (entry.description!='--- Not Selected ---') {
