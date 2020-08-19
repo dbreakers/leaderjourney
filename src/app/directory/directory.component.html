@@ -13,7 +13,10 @@
   <ons-list >
     <ons-list-item (click)="goto_card(contact.contact_number)" id="{{contact.contact_number}}"  class="show" *ngFor="let contact of globals.last_directory[0]">
     <span class="list-item__title">{{contact.name}}</span><span class="list-item__subtitle">{{contact.role}}<br>{{contact.location}}</span>
-   
+   <span class="fa-stack" style="vertical-align: top;">
+  <i class="far fa-bookmark fa-stack-2x"></i>
+  <i class="fas fa-phone-squ fa-stack-1x"></i>
+</span>
    </ons-list-item>
   </ons-list> 
    
