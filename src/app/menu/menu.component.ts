@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OnsNavigator } from 'ngx-onsenui';
- import { Papa } from 'ngx-papaparse';
+import { Papa } from 'ngx-papaparse';
 import { Globals } from '../globals';
 //import { RoleSelectComponent } from '../roleselect/roleselect.component';
 import { DirectoryComponent } from '../directory/directory.component';
@@ -8,7 +8,7 @@ import { TrainingCComponent } from '../trainingc/trainingc.component';
 import { MandatoryComponent } from '../mandatory/mandatory.component';
 import { CardComponent } from '../card/card.component';
 import { PermitsComponent } from '../permits/permits.component';
-import { AddressCardComponent } from '../addresscard/addresscard.component';//import { PapaParseModule } from 'ngx-papaparse'; 
+import { AddressCardComponent } from '../addresscard/addresscard.component';
 import { HierComponent } from '../hier/hier.component';
 import { CallNetworkService } from '../callnetwork.service';
 
@@ -90,7 +90,7 @@ push9() {
  }
 
 push10_2(r) {
-console.log(papa.parse(r))
+console.log(this.papa.parse(r[0]))
 }
 
 push10() {
