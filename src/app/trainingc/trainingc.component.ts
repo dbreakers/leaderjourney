@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit} from '@angular/core';
-import { OnsNavigator,  Params, } from 'ngx-onsenui';
+import { OnsNavigator,  Params, OnsenModule, } from 'ngx-onsenui';
 import { Globals } from '../globals';
  
 
@@ -26,6 +26,15 @@ export class TrainingCComponent implements OnInit {
               private _params: Params,
               private globals: Globals,) {
   } 
+
+showPopover = function(t)  
+{  
+    document.getElementById('popoverta').show(t);  
+};
+hidePopover = function()  
+{  
+    document.getElementById('popoverta').hide();  
+};
 
   compass_date(longdate) {
   if (longdate.split(" ").length<3) { return ""}
