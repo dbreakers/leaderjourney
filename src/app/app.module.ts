@@ -18,13 +18,13 @@ import { PermitsComponent } from './permits/permits.component';
 import { HierComponent } from './hier/hier.component';
 import { Globals } from './globals';
 import { Stubs } from './stubs';
- 
+import { PapaParseModule } from 'ngx-papaparse';  
 import {RoleHeaderComponent } from './roleheader/roleheader.component';
 import {MandatoryHeaderComponent } from './mandatoryheader/mandatoryheader.component';
  
 
 @NgModule({
-  imports:         [ BrowserModule, FormsModule, OnsenModule, HttpClientModule ],
+  imports:         [ BrowserModule, FormsModule, OnsenModule, HttpClientModule,PapaParseModule   ],
   declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, AddressCardComponent, LogonPageComponent, DirectoryComponent, TrainingCComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent,RoleHeaderComponent,MandatoryHeaderComponent ],
   entryComponents: [ MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingCComponent, DirectoryComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent, AddressCardComponent ],
   schemas:         [ CUSTOM_ELEMENTS_SCHEMA ],

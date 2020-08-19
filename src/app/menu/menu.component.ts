@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OnsNavigator } from 'ngx-onsenui';
+ import { Papa } from 'ngx-papaparse';
 import { Globals } from '../globals';
 //import { RoleSelectComponent } from '../roleselect/roleselect.component';
 import { DirectoryComponent } from '../directory/directory.component';
@@ -7,7 +8,7 @@ import { TrainingCComponent } from '../trainingc/trainingc.component';
 import { MandatoryComponent } from '../mandatory/mandatory.component';
 import { CardComponent } from '../card/card.component';
 import { PermitsComponent } from '../permits/permits.component';
-import { AddressCardComponent } from '../addresscard/addresscard.component'; 
+import { AddressCardComponent } from '../addresscard/addresscard.component';//import { PapaParseModule } from 'ngx-papaparse'; 
 import { HierComponent } from '../hier/hier.component';
 import { CallNetworkService } from '../callnetwork.service';
 
@@ -22,6 +23,7 @@ export class MenuComponent implements OnInit {
   modal2=""
   
   constructor(private navi: OnsNavigator,
+              private papa: Papa,
               private callnetworkService: CallNetworkService, 
               private globals: Globals,) {
   } 
@@ -87,7 +89,13 @@ push9() {
     this.navi.nativeElement.pushPage(AddressCardComponent,{data: {data: this.globals.compassuser[0] , roleid: this.globals.compassuser[0].roles[0].roleid}});
  }
 
-   
+push10_2(r) {
+console.log(papa.parse(r))
+}
+
+push10() {
+ this.callnetworkService.getReport(this.globals.roleid,5).subscribe(report=> this.push10_2(report));
+}   
  
 
 
