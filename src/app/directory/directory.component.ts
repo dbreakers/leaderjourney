@@ -3,6 +3,8 @@ import { OnsNavigator,  Params, } from 'ngx-onsenui';
 import { Globals } from '../globals';
 import { AddressCardComponent } from '../addresscard/addresscard.component'; 
 import { CallNetworkService } from '../callnetwork.service';
+import { LocalStorageService } from '../localstorage.service';
+import { Pipe, PipeTransform } from '@angular/core';
 import * as ons from 'onsenui';
 @Component({
   selector: 'ons-page[directory]',
@@ -14,9 +16,11 @@ export class DirectoryComponent implements OnInit {
 namefilter = "";
 modal1 = ""
 modal2 = ""
+bookmarks = [];
 
   constructor(private navi: OnsNavigator,
               private _params: Params,
+              private ls: LocalStorageService,
                private callnetworkService: CallNetworkService, 
               private globals: Globals,) {
   } 
@@ -64,10 +68,13 @@ update_search($event) {
  
   }
 
- 
+ isbookmarked(u) {
+   return this.bookmarks.findIndex(a=>a.user_id==u)>-1
+ }
 
 ngOnInit() {
 //menu_modal.show()
 document.addEventListener('init', function(event) {menu_modal.hide()}, false);
+this.bookmarks = this.ls.get_people();
   }
 }
