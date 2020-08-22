@@ -41,6 +41,10 @@ clear() {
   this.globals.last_read = [];
 }
 
+clear_role() {
+  
+}
+
 getReport(r,n): Observable<any> { 
 if (this.globals.compass_user=="") { 
   return of(this.stubs.user)
