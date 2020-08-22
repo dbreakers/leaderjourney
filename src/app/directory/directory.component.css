@@ -12,5 +12,5 @@
   top: 0px;
   z-index: 9999;
 }
-.show { display: block}
+.show { display: flex}
 .hidden { display: none}
