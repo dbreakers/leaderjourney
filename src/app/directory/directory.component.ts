@@ -67,7 +67,7 @@ update_search($event) {
  
 
 ngOnInit() {
-menu_modal.show()
+//menu_modal.show()
 document.addEventListener('init', function(event) {menu_modal.hide()}, false);
   }
 }
