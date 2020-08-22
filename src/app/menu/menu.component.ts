@@ -11,6 +11,7 @@ import { PermitsComponent } from '../permits/permits.component';
 import { AddressCardComponent } from '../addresscard/addresscard.component';
 import { HierComponent } from '../hier/hier.component';
 import { CallNetworkService } from '../callnetwork.service';
+import { LocalStorageService } from '../localstorage.service';
 
 @Component({
   selector: 'ons-page[menu]',
@@ -21,9 +22,11 @@ export class MenuComponent implements OnInit {
   selected_role = {};
   modal1=""
   modal2=""
+  bookmarks=[];
   
   constructor(private navi: OnsNavigator,
               private papa: Papa,
+               private ls: LocalStorageService,
               private callnetworkService: CallNetworkService, 
               private globals: Globals,) {
   } 
@@ -56,15 +59,16 @@ push7_2(u) {
     menu_modal.hide()
 }  
 
-push7() {
+push7(uid) {
   this.modal1 = "Getting data for"
   this.modal2 = "Scouter"
   menu_modal.show()
-  if (this.globals.last_read.length==0) {
-  this.callnetworkService.getRoleUser("481187","00401261").subscribe(user=> this.push7_2(user));} else 
-  {
-    this.push7_2(this.globals.last_read)
-  }
+ // if (this.globals.last_read.length==0) {
+  this.callnetworkService.getRoleUser(this.globals.roleid,uid).subscribe(user=> this.push7_2(user));
+ // } else 
+ // {
+ //   this.push7_2(this.globals.last_read)
+ // }
 }
 
 push8_2(ul) {
@@ -116,8 +120,9 @@ this.selected_role = this.globals.compassuser[0].roles.find(r=>r.roleid == this.
 if (this.globals.compassuser.length==0){
    this.callnetworkService.getUser().subscribe(user=> this.get_user(user));
 }
+this.bookmarks = this.ls.get_people();
 //this.plp = this.globals.compassdata.object.plps[this.globals.roleid];
 //this.get_mandatory() 
-  
+  document.addEventListener('init', function(event) {menu_modal.hide()}, false);
   }
 }

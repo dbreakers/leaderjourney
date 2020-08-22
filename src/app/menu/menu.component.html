@@ -23,18 +23,27 @@
   <ons-card >
   <div class="subhead">My Role</div><br>
   <div class="menugrid">  
-  <div (click)="push7()" class="menubutton"><ons-icon class="menuicon" icon="fa-chalkboard-teacher"></ons-icon></div>
+  
   <div (click)="push8()" class="menubutton"><ons-icon class="far menuicon" icon="fa-address-book"></ons-icon></div>
    <div (click)="push3()" class="menubutton"><ons-icon class="far menuicon" icon="fa-map"></ons-icon></div>
    <div (click)="push10()" class="menubutton"><ons-icon class="far menuicon" icon="fa-file-alt"></ons-icon></div>
   </div>
   
   </ons-card>
+  <ons-card *ngIf="bookmarks.length>0">
+  <div class="subhead">Bookmarked Members</div><br>
+  <ons-list>
+  <ons-list-item *ngFor="let contact of bookmarks" (click)="push7(contact.userid)">
+  <span class="left"></span>
+  <span class="list-item__title">{{contact.name}}</span>  
+  </ons-list-item>    
+  </ons-list>    
+  </ons-card>  
   </span>
  
     </div>
   <ons-modal  id="menu_modal">
       <ons-icon class="far" icon="fa-compass" spin="true" size="80px"></ons-icon>  
     <p>{{modal1}}</p>
-    <p>{{modal2}}</p>
+    <p>{{modal2}}</p> 
   </ons-modal>

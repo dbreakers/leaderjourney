@@ -73,7 +73,7 @@ update_search($event) {
   }
 
 add_person(contact_number,contact_name) {
-if(!isbookmarked(contact_number) {
+if(!this.isbookmarked(contact_number)) {
   this.bookmarks = this.ls.add_person(contact_number,contact_name)
 } else {
   this.bookmarks = this.ls.remove_person(contact_number)
@@ -89,5 +89,6 @@ ngOnInit() {
 //menu_modal.show()
 //document.addEventListener('init', function(event) {menu_modal.hide()}, false);
 this.bookmarks = this.ls.get_people();
+ 
   }
 }

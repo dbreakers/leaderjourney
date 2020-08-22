@@ -19,7 +19,7 @@ export class LocalStorageService {
     } 
     if (bookmarks[this.globals.roleid].find(a=>a.userid==userid)) {
     var i = bookmarks[this.globals.roleid].findIndex(a=>a.userid==userid);
-    bookmarks.splice(i,1)
+    bookmarks[this.globals.roleid].splice(i,1)
     //bookmarks[this.globals.roleid].push({userid,name})
     localStorage.setItem(this.person_root,JSON.stringify(bookmarks))
     }
