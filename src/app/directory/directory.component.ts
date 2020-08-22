@@ -17,6 +17,7 @@ namefilter = "";
 modal1 = ""
 modal2 = ""
 bookmarks = [];
+navigate = true;
 
   constructor(private navi: OnsNavigator,
               private _params: Params,
@@ -44,8 +45,11 @@ this.navi.nativeElement.pushPage(AddressCardComponent,{data: {data: u[0] , rolei
 goto_card(id) {
   this.modal1 = "Getting data"
   this.modal2 = ""
+if (this.navigate) {
  directory_modal.show()
 this.callnetworkService.getRoleUserAddress(this.globals.roleid,id).subscribe(user=> this.goto_card2(user));
+}
+this.navigate = true;
 }
 
 update_search($event) {
@@ -68,13 +72,22 @@ update_search($event) {
  
   }
 
+add_person(contact_number,contact_name) {
+if(!isbookmarked(contact_number) {
+  this.bookmarks = this.ls.add_person(contact_number,contact_name)
+} else {
+  this.bookmarks = this.ls.remove_person(contact_number)
+}
+ this.navigate = false;
+}
+
  isbookmarked(u) {
-   return this.bookmarks.findIndex(a=>a.user_id==u)>-1
+   return this.bookmarks.findIndex(a=>a.userid==u)>-1;
  }
 
 ngOnInit() {
 //menu_modal.show()
-document.addEventListener('init', function(event) {menu_modal.hide()}, false);
+//document.addEventListener('init', function(event) {menu_modal.hide()}, false);
 this.bookmarks = this.ls.get_people();
   }
 }
