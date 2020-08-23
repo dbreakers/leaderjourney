@@ -22,7 +22,7 @@ constructor(private navi: OnsNavigator,
   } 
 
 is_hier(s,t){
-  debugger;
+ // debugger;
   if (t!="--- Not Selected ---"&&t!="--- No Items Available ---") { 
   return s.substring(0,31)=='ctl00_workarea_cbo_p1_location_' } else return false
 }
