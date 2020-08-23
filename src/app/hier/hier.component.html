@@ -5,9 +5,9 @@
 </ons-toolbar>
 <div class="content">
   <ons-carousel  swipeable  overscrollable  auto-scroll id="carousel" #carousel>
-    <ons-carousel-item   *ngFor="let role of displayuser.roles">
+    <ons-carousel-item   *ngFor="let role of displayuser.roles"> 
   <ons-card class="headercard"><p class="subhead">{{role.role}}<br>{{role.location}}</p> </ons-card>
-  <ons-card >
+  <ons-card *ngIf="displayuser.roledetail.hasOwnProperty(role.roleid)" >
   <span  *ngFor="let level of displayuser.roledetail[role.roleid][0]">
    
     <div class="level" *ngIf="is_hier(level[0] , level[2])">
