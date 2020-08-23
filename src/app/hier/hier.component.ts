@@ -28,7 +28,7 @@ is_hier(s,t){
 }
   ngOnInit() {
     this.displayuser=this.globals.compassuser[0];
-    this.selected_role = this.globals.compassuser[0].roles.find(r=>r.roleid == this.globals.roleid )
+  /*  this.selected_role = this.globals.compassuser[0].roles.find(r=>r.roleid == this.globals.roleid )
 this.hier2 = this.globals.compassuser[0].hierarchy[this.globals.roleid];
 this.hier_array = JSON.parse(this.hier_icons)
 //if(!this.hier[1].hasOwnProperty("icon")){
@@ -47,7 +47,7 @@ this.hier_array = JSON.parse(this.hier_icons)
       }
     }
     }
-  } 
+  } */
 }
   }
 
