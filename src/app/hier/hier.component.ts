@@ -9,7 +9,7 @@ import { Globals } from '../globals';
   styleUrls: [ './hier.component.css' ]
 })
 export class HierComponent implements OnInit {
-  
+  display_user = []
   selected_role={}
   hier = [];
    hier2 = [];
@@ -23,6 +23,7 @@ constructor(private navi: OnsNavigator,
 
 
   ngOnInit() {
+    this.displayuser=this.globals.data.compassuser[0]
     this.selected_role = this.globals.compassuser[0].roles.find(r=>r.roleid == this.globals.roleid )
 this.hier2 = this.globals.compassuser[0].hierarchy[this.globals.roleid];
 this.hier_array = JSON.parse(this.hier_icons)

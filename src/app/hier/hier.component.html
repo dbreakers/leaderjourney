@@ -4,10 +4,11 @@
 	<div class="center">Role Hierarchies</div>
 </ons-toolbar>
 <div class="content">
-  
-  <ons-card class="headercard"><p class="subhead">{{selected_role.title}}<br>{{selected_role.location}}</p> </ons-card>
-  <ons-card>
-  <span  *ngFor="let level of hier">
+  <ons-carousel  swipeable  overscrollable  auto-scroll id="carousel" #carousel>
+    <ons-carousel-item   *ngFor="let role of displayuser.roles">
+  <ons-card class="headercard"><p class="subhead">{{role.role}}<br>{{role.location}}</p> </ons-card>
+  <ons-card >
+  <span  *ngFor="let level of displayuser.roledetail[role.roleid][0]">
     <div class="level" *ngIf="level.key!=''">
     <span *ngIf='level.key!=""'>  
       <div class="levelflex">
@@ -17,6 +18,9 @@
     </div>
     </span>
     </div>
+    
     </span>  
   </ons-card>  
+    </ons-carousel-item>
+  </ons-carousel>
   </div>

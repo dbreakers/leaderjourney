@@ -23,7 +23,6 @@
   <ons-card >
   <div class="subhead">My Role</div><br>
   <div class="menugrid">  
-  
   <div (click)="push8()" class="menubutton"><ons-icon class="far menuicon" icon="fa-address-book"></ons-icon></div>
    <div (click)="push3()" class="menubutton"><ons-icon class="far menuicon" icon="fa-map"></ons-icon></div>
    <div (click)="push10()" class="menubutton"><ons-icon class="far menuicon" icon="fa-file-alt"></ons-icon></div>
@@ -34,7 +33,7 @@
   <div class="subhead">Bookmarked Members</div><br>
   <ons-list>
   <ons-list-item *ngFor="let contact of bookmarks" (click)="push7(contact.userid)">
-  <span class="left"></span>
+  <span class="left"></span> 
   <span class="list-item__title">{{contact.name}}</span>  
   </ons-list-item>    
   </ons-list>    
