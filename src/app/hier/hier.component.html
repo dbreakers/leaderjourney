@@ -10,14 +10,14 @@
   <ons-card >
   <span  *ngFor="let level of displayuser.roledetail[role.roleid][0]">
    
-    <div class="level" *ngIf="(level[0].indexOf('ctl00_workarea_cbo_p1_location_')==0)">
-    <span *ngIf='(level[2]!="--- No Items Available ---"&&level[2]}!="--- No Role Selected ---")'>  
+    <div class="level" *ngIf="is_hier(level[0] , level[2])">
+    
       <div class="levelflex">
       <div  class="levelbutton"><ons-icon [attr.icon]="level.icon" class="levelicon"></ons-icon></div>
     <div ><p class="subhead">{{level[2]}}</p>  
     </div>
     </div>
-    </span>
+    
     </div>
     
     </span>  

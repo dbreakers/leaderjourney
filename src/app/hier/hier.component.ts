@@ -21,7 +21,11 @@ constructor(private navi: OnsNavigator,
               private globals: Globals,) {
   } 
 
-
+is_hier(s,t){
+  debugger;
+  if (t!="--- Not Selected ---"&&t!="--- No Items Available ---") { 
+  return s.substring(0,31)=='ctl00_workarea_cbo_p1_location_' } else return false
+}
   ngOnInit() {
     this.displayuser=this.globals.compassuser[0];
     this.selected_role = this.globals.compassuser[0].roles.find(r=>r.roleid == this.globals.roleid )
