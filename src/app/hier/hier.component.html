@@ -8,7 +8,7 @@
     <ons-carousel-item   *ngFor="let role of displayuser.roles"> 
   <ons-card class="headercard"><p class="subhead">{{role.role}}<br>{{role.location}}</p> </ons-card>
   <ons-card *ngIf="displayuser.roledetail.hasOwnProperty(role.roleid)" >
-  <span  *ngFor="let level of displayuser.roledetail[role.roleid][0]">
+  <!--<span  *ngFor="let level of displayuser.roledetail[role.roleid][0]">
    
     <div class="level" *ngIf="is_hier(level[0] , level[2])">
     
@@ -20,8 +20,11 @@
     
     </div>
     
+    </span>  -->
+    <span  *ngFor="let level of displayuser.roledetail[role.roleid][0]">
+       
     </span>  
-  </ons-card>  
+  </ons-card>  --> 
     </ons-carousel-item>
   </ons-carousel>
   </div>

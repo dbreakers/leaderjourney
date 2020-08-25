@@ -9,7 +9,7 @@ import { Globals } from '../globals';
   styleUrls: [ './hier.component.css' ]
 })
 export class HierComponent implements OnInit {
-  display_user = []
+  displayuser = {}
   selected_role={}
   hier = [];
    hier2 = [];
@@ -28,6 +28,19 @@ is_hier(s,t){
 }
   ngOnInit() {
     this.displayuser=this.globals.compassuser[0];
+    this.hier=[]
+    this.hier_array = JSON.parse(this.hier_icons)
+    for(var i=0; i<this.displayuser.roles;i++){ 
+      if (this.displayuser.roledetail.hasOwnProperty(role.roleid)){
+        this.hier2 = this.displayuser.roledetail[role.roleid];
+         for(var j=0; i<this.hier2.length;j++){
+         if (typeof this.hier2[j][0] == 'string') {
+           if (this.hier2[j][0].indexOf("ctl00_workarea_cbo_p1_location_")==0) { 
+           }
+         }      
+      }
+    } 
+  }
   /*  this.selected_role = this.globals.compassuser[0].roles.find(r=>r.roleid == this.globals.roleid )
 this.hier2 = this.globals.compassuser[0].hierarchy[this.globals.roleid];
 this.hier_array = JSON.parse(this.hier_icons)
