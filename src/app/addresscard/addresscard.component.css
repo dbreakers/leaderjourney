@@ -3,3 +3,6 @@
 .name {font-weight: 600; color: white; font-size: 1.5em}
 .headercard {color: white; background-color: var(--scoutpurple)}
 .cardhead {color: var(--scoutpurple); font-weight: 600; font-size:1.2em; margin: 0}
+.left {width: 50%}
+.right { color:black }
+.line {display:flex;padding-top: 10px}
