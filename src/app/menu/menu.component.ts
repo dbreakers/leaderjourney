@@ -114,7 +114,20 @@ push10() {
   get_user(user){ 
     this.globals.compassuser  = user;
   }
+
+  delete_bookmark(u) {
+    this.ls.remove_person(u);
+    this.bookmarks = this.ls.get_people();
+  }
+
+  refreshbm() {
+     this.bookmarks = this.ls.get_people();
+  }
   
+  addbm() {
+    this.push8()
+    this.bookmarks = this.ls.get_people();
+  }
   ngOnInit() {
 this.selected_role = this.globals.compassuser[0].roles.find(r=>r.roleid == this.globals.roleid )
 if (this.globals.compassuser.length==0){
@@ -123,6 +136,6 @@ if (this.globals.compassuser.length==0){
 this.bookmarks = this.ls.get_people();
 //this.plp = this.globals.compassdata.object.plps[this.globals.roleid];
 //this.get_mandatory() 
-/document.addEventListener('init', function(event) {menu_modal.hide()}, false);
+//document.addEventListener('init', function(event) {menu_modal.hide()}, false);
   }
 }

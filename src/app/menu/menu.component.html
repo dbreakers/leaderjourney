@@ -30,11 +30,12 @@
   
   </ons-card>
   <ons-card *ngIf="bookmarks.length>0">
-  <div class="subhead">Bookmarked Members</div><br>
+  <div class="bookmark_head"><div class="subhead">Bookmarked Members</div><div><span (click)="addbm()" class="bookbutton"><ons-icon icon="fa-plus"></ons-icon></span><span class="bookbutton" (click)="refreshbm()"><ons-icon icon="fa-sync"></ons-icon></span></div></div><br>
   <ons-list>
   <ons-list-item *ngFor="let contact of bookmarks" (click)="push7(contact.userid)">
   <span class="left"></span> 
-  <span class="list-item__title">{{contact.name}}</span>  
+  <span class="list-item__title">{{contact.name}}</span>
+  <span (click)="delete_bookmark(contact.userid)" class="right"><ons-icon icon="fa-trash-alt"></ons-icon> </span> 
   </ons-list-item>    
   </ons-list>    
   </ons-card>  

@@ -55,3 +55,5 @@
 	 
 	}
 }
+.bookmark_head {display:flex;justify-content: space-between}
+.bookbutton {padding-left: 10px; padding-right: 10px}
