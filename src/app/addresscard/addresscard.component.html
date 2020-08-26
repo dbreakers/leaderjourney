@@ -19,16 +19,25 @@
  
 </ons-card>
 <ons-card>
+<p class="cardhead">Address</p>
+<span>{{displayuser.contact.addressline1}}<br></span>
+<span *ngIf="displayuser.contact.addressline2!=''">{{displayuser.contact.addressline2}}<br></span>
+<span *ngIf="displayuser.contact.addressline3!=''">{{displayuser.contact.addressline3}}<br></span>
+<span *ngIf="displayuser.contact.town!=''">{{displayuser.contact.town}}<br></span>
+<span *ngIf="displayuser.contact.county!=''">{{displayuser.contact.county}}<br></span>
+<span>{{displayuser.contact.postcode}}</span>
+</ons-card>
+<ons-card>
 <p class="cardhead">Telephone</p>
 <div class="line"><div class="left">
 <span class="label">
   <span *ngIf="displayuser.contact.default_tel!='tel1'"><ons-icon icon="fa-circle" class="far"></ons-icon></span>
   <span *ngIf="displayuser.contact.default_tel=='tel1'"><ons-icon icon="fa-dot-circle" class="far"></ons-icon></span>&nbsp;{{displayuser.contact.type_tel1}}</span></div><div class="right">{{displayuser.contact.tel1}}</div></div>
- <div class="line"><div class="left">
+ <div class="line" *ngIf='displayuser.contact.type_tel2!="--- Select ---"'><div class="left">
   <span class="label">
   <span *ngIf="displayuser.contact.default_tel!='tel2'"><ons-icon icon="fa-circle" class="far"></ons-icon></span>
   <span *ngIf="displayuser.contact.default_tel=='tel2'"><ons-icon icon="fa-dot-circle" class="far"></ons-icon></span>&nbsp;{{displayuser.contact.type_tel2}}</span></div><div class="right">{{displayuser.contact.tel2}}</div></div>
-  <div class="line"><div class="left">
+  <div class="line" *ngIf='displayuser.contact.type_tel3!="--- Select ---"'><div class="left">
   <span class="label">
   <span *ngIf="displayuser.contact.default_tel!='tel3'"><ons-icon icon="fa-circle" class="far"></ons-icon></span>
   <span *ngIf="displayuser.contact.default_tel=='tel3'"><ons-icon icon="fa-dot-circle" class="far"></ons-icon></span>&nbsp;{{displayuser.contact.type_tel3}}</span></div><div class="right">{{displayuser.contact.tel3}}</div></div>
@@ -39,11 +48,11 @@
 <span class="label">
   <span *ngIf="displayuser.contact.default_mail!='email1'"><ons-icon icon="fa-circle" class="far"></ons-icon></span>
   <span *ngIf="displayuser.contact.default_mail=='email1'"><ons-icon icon="fa-dot-circle" class="far"></ons-icon></span>&nbsp;{{displayuser.contact.type_contact_type1}}</span></div><div class="right">{{displayuser.contact.email1}}</div></div>
- <div class="line"><div class="left">
+ <div class="line" *ngIf='displayuser.contact.type_contact_type2!="--- Select ---"'><div class="left">
   <span class="label">
   <span *ngIf="displayuser.contact.default_mail!='email2'"><ons-icon icon="fa-circle" class="far"></ons-icon></span>
   <span *ngIf="displayuser.contact.default_mail=='email2'"><ons-icon icon="fa-dot-circle" class="far"></ons-icon></span>&nbsp;{{displayuser.contact.type_contact_type2}}</span></div><div class="right">{{displayuser.contact.email2}}</div></div>
-  <div class="line"><div class="left">
+  <div class="line" *ngIf='displayuser.contact.type_contact_type3!="--- Select ---"'><div class="left">
   <span class="label">
   <span *ngIf="displayuser.contact.default_mail!='email3'"><ons-icon icon="fa-circle" class="far"></ons-icon></span>
   <span *ngIf="displayuser.contact.default_mail=='email3'"><ons-icon icon="fa-dot-circle" class="far"></ons-icon></span>&nbsp;{{displayuser.contact.type_contact_type3}}</span></div><div class="right">{{displayuser.contact.email3}}</div></div>
