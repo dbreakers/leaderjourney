@@ -123,6 +123,6 @@ if (this.globals.compassuser.length==0){
 this.bookmarks = this.ls.get_people();
 //this.plp = this.globals.compassdata.object.plps[this.globals.roleid];
 //this.get_mandatory() 
-  document.addEventListener('init', function(event) {menu_modal.hide()}, false);
+/document.addEventListener('init', function(event) {menu_modal.hide()}, false);
   }
 }

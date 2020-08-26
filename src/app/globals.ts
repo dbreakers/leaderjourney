@@ -11,8 +11,8 @@ export class Globals {
   roleid: string = "";
   userid: string = "";
   url: string="https://2ndnewhawscouts.org.uk/osmr/compassread2.php";
- //urlroot : string="https://us-central1-leaderjourney-a4c0d.cloudfunctions.net/compass/"
- urlroot : string="http://localhost:5001/leaderjourney-a4c0d/us-central1/compass/"
+ urlroot : string="https://us-central1-leaderjourney-a4c0d.cloudfunctions.net/compass/"
+ //urlroot : string="http://localhost:5001/leaderjourney-a4c0d/us-central1/compass/"
   compass_user : string = "";
   compass_password : string = "";
   months : Array = ['January','February','March','April','May','June','July','August','September','October','November','December']
