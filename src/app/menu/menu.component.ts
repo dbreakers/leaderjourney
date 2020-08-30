@@ -60,8 +60,8 @@ push7_2(u) {
 }  
 
 push7(uid) {
-  this.modal1 = "Getting data for"
-  this.modal2 = "Scouter"
+  this.modal1 = "Getting data"
+  this.modal2 = ""
   menu_modal.show()
  // if (this.globals.last_read.length==0) {
   this.callnetworkService.getRoleUser(this.globals.roleid,uid).subscribe(user=> this.push7_2(user));
