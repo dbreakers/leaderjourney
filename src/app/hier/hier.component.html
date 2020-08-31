@@ -22,9 +22,11 @@
     
     </span>  -->
     <span  *ngFor="let level of displayuser.roledetail[role.roleid][0]">
-       
+      <span *ngIf="level.label!=''&&level.description!='--- Not Selected ---'&&level.description!='--- No Items Available ---'">
+       {{level.description}}<br>
+      </span> 
     </span>  
-  </ons-card>  --> 
+  </ons-card>   
     </ons-carousel-item>
   </ons-carousel>
   </div>

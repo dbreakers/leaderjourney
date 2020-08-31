@@ -30,37 +30,18 @@ is_hier(s,t){
     this.displayuser=this.globals.compassuser[0];
     this.hier=[]
     this.hier_array = JSON.parse(this.hier_icons)
-    for(var i=0; i<this.displayuser.roles;i++){ 
-      if (this.displayuser.roledetail.hasOwnProperty(role.roleid)){
-        this.hier2 = this.displayuser.roledetail[role.roleid];
+    for(var i=0; i<this.displayuser.allroles.length;i++){ 
+      if (this.displayuser.roledetail.hasOwnProperty(this.displayuser.allroles[i].roleid)){
+        this.hier2 = this.displayuser.roledetail[this.displayuser.allroles[i].roleid][0];
          for(var j=0; i<this.hier2.length;j++){
-         if (typeof this.hier2[j][0] == 'string') {
-           if (this.hier2[j][0].indexOf("ctl00_workarea_cbo_p1_location_")==0) { 
+         
+           if (this.hier2[j].screenid.indexOf("ctl00_workarea_cbo_p1_location_")==0) { 
+
            }
          }      
       }
     } 
   }
-  /*  this.selected_role = this.globals.compassuser[0].roles.find(r=>r.roleid == this.globals.roleid )
-this.hier2 = this.globals.compassuser[0].hierarchy[this.globals.roleid];
-this.hier_array = JSON.parse(this.hier_icons)
-//if(!this.hier[1].hasOwnProperty("icon")){
-  for(var i=0; i<this.hier2.length;i++){   
-    if (typeof this.hier2[i][0] == 'string') { 
-    if (this.hier2[i][0].indexOf("ctl00_workarea_cbo_p1_location_")==0) { 
-      var entry = new Object 
-      entry.level = this.hier2[i][0].substring(this.hier2[i][0].length-1)
-      entry.description = this.hier2[i][2]
-      entry.icon = this.hier_array[entry.level].icon;
-      entry.level = this.hier_array[entry.level].level;
-      if (entry.description!='--- Not Selected ---') {
-         if (entry.description!='--- No Items Available ---') {
-      this.hier.push(entry);
-         }
-      }
-    }
-    }
-  } */
+  
 }
-  }
 
