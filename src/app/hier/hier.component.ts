@@ -21,6 +21,9 @@ constructor(private navi: OnsNavigator,
               private globals: Globals,) {
   } 
 
+get_icon(d) {
+  return "fa_"+this.hier_array.find(a=>a.level==d).icon
+}
 is_hier(s,t){
  // debugger;
   if (t!="--- Not Selected ---"&&t!="--- No Items Available ---") { 
@@ -30,17 +33,7 @@ is_hier(s,t){
     this.displayuser=this.globals.compassuser[0];
     this.hier=[]
     this.hier_array = JSON.parse(this.hier_icons)
-    for(var i=0; i<this.displayuser.allroles.length;i++){ 
-      if (this.displayuser.roledetail.hasOwnProperty(this.displayuser.allroles[i].roleid)){
-        this.hier2 = this.displayuser.roledetail[this.displayuser.allroles[i].roleid][0];
-         for(var j=0; i<this.hier2.length;j++){
-         
-           if (this.hier2[j].screenid.indexOf("ctl00_workarea_cbo_p1_location_")==0) { 
-
-           }
-         }      
-      }
-    } 
+     
   }
   
 }

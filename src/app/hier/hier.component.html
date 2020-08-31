@@ -7,7 +7,7 @@
   <ons-carousel  swipeable  overscrollable  auto-scroll id="carousel" #carousel>
     <ons-carousel-item   *ngFor="let role of displayuser.roles"> 
   <ons-card class="headercard"><p class="subhead">{{role.role}}<br>{{role.location}}</p> </ons-card>
-  <ons-card *ngIf="displayuser.roledetail.hasOwnProperty(role.roleid)" >
+  <span *ngIf="displayuser.roledetail.hasOwnProperty(role.roleid)" >
   <!--<span  *ngFor="let level of displayuser.roledetail[role.roleid][0]">
    
     <div class="level" *ngIf="is_hier(level[0] , level[2])">
@@ -22,11 +22,11 @@
     
     </span>  -->
     <span  *ngFor="let level of displayuser.roledetail[role.roleid][0]">
-      <span *ngIf="level.label!=''&&level.description!='--- Not Selected ---'&&level.description!='--- No Items Available ---'">
-       {{level.description}}<br>
-      </span> 
+      <ons-card *ngIf="level.label!=''&&level.description!='--- Not Selected ---'&&level.description!='--- No Items Available ---'">
+       <ons-icon icon='get_icon(level.label)'></ons-icon>{{level.description}}<br>
+      </ons-card> 
     </span>  
-  </ons-card>   
+  </span>   
     </ons-carousel-item>
   </ons-carousel>
   </div>
