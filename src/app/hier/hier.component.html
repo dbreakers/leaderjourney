@@ -23,9 +23,10 @@
     </span>  -->
     <span  *ngFor="let level of displayuser.roledetail[role.roleid][0]">
       <ons-card *ngIf="level.label!=''&&level.description!='--- Not Selected ---'&&level.description!='--- No Items Available ---'">
-       <ons-icon [attr.icon]="get_icon(level.label)"></ons-icon>{{level.description}}<br>
+     <!--  <ons-icon [attr.icon]="get_icon(level.label)"></ons-icon>-->{{level.label}}:{{level.description}}<br>
       </ons-card> 
     </span>  
+    <ons-card *ngIf='displayuser.roledetail[role.roleid][0].length==0'>No Hierarchy available</ons-card>
   </span>   
     </ons-carousel-item>
   </ons-carousel>

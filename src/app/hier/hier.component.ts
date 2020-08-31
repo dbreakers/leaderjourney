@@ -22,7 +22,9 @@ constructor(private navi: OnsNavigator,
   } 
 
 get_icon(d) {
-  var i = this.hier_array.find(a=>a.level==d);
+  if (d.indexOf('Region')==0) {d='Region'} 
+  var i = this.hier_array.find(a => (a.level == d));
+ if (i==undefined) { return ""} 
   return "fa_"+i.icon;
 }
 is_hier(s,t){
