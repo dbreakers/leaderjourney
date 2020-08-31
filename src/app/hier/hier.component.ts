@@ -23,7 +23,7 @@ constructor(private navi: OnsNavigator,
 
 get_icon(d) {
   var i = this.hier_array.find(a=>a.level==d);
-  return "fa_"+i.icon
+  return "fa_"+i.icon;
 }
 is_hier(s,t){
  // debugger;
