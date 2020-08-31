@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { OnsNavigator } from 'ngx-onsenui';
+import { OnsNavigator,  Params } from 'ngx-onsenui';
 import { Globals } from '../globals';
  
 
@@ -19,7 +19,8 @@ export class HierComponent implements OnInit {
   hier_icons= '[{"level":"Organisation","icon":"building"},{"level":"Country","icon":"globe"},{"level":"Region","icon":"compass"},{"level":"County / Area / Scottish Region / Overseas Branch","icon":"map-marker-alt"},{"level":"District","icon":"map-marked-alt"},{"level":"Group","icon":"users"},{"level":"Section","icon":"user-friends"} ]'
 
 constructor(private navi: OnsNavigator,
-              private globals: Globals,) {
+            private _params: Params,
+            private globals: Globals,) {
   } 
 
  g2(i) {
@@ -41,6 +42,7 @@ is_hier(s,t){
   ngOnInit() {
      this.max_c = (window.innerWidth - 75) / 40; 
     this.displayuser=this.globals.compassuser[0];
+      if (this._params.data) {this.displayuser=this._params.data.data[0]; this.displayrole=this._params.data.roleid}    
     this.hier=[]
     this.hier_array = JSON.parse(this.hier_icons)
      

@@ -46,7 +46,7 @@ export class MenuComponent implements OnInit {
  
   push5() {
     // this.globals.compasshier = this.globals.compassdata[0].hierarchy;
-    this.navi.nativeElement.pushPage(HierComponent);
+    this.navi.nativeElement.pushPage(HierComponent,{data: {data: this.globals.compassuser, roleid: this.globals.compassuser[0].roles[0].roleid}});
   }
 push6() {
  this.navi.nativeElement.pushPage(TrainingCComponent,{data: {data: this.globals.compassuser, roleid: this.globals.compassuser[0].roles[0].roleid}});
