@@ -19,8 +19,8 @@ export class HierComponent implements OnInit {
   hier_icons= '[{"level":"Organisation","icon":"building"},{"level":"Country","icon":"globe"},{"level":"Region","icon":"compass"},{"level":"County / Area / Scottish Region / Overseas Branch","icon":"map-marker-alt"},{"level":"District","icon":"map-marked-alt"},{"level":"Group","icon":"users"},{"level":"Section","icon":"user-friends"} ]'
 
 constructor(private navi: OnsNavigator,
-            private _params: Params,
-            private globals: Globals,) {
+             private _params: Params,
+              private globals: Globals,) {
   } 
 
  g2(i) {
