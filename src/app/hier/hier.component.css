@@ -5,3 +5,16 @@
 .levelflex {display:flex;}
 .levelbutton { background-color: var(--scoutdarkblue); border-radius: 10%; line-height: 50px; height: 50px;  width:50px; text-align: center; margin-right: 10px; margin-bottom: 10px; }
 .levelicon {color:white;font-size: 1.5em;}
+.ticks {text-align:center}
+.selector_bar {margin-top:10px}
+.indicators {font-size: 20pt; padding : 10px;color: var(--scoutteal)}
+.sticky {
+  background: white;
+  position: sticky;
+  top: 0px;
+  border-top-width: 10px;
+  border-style: solid;
+  border-color: var(--scoutteal);
+  z-index: 9999;
+}
+.chevron {font-size: 18pt; padding : 10px;color: var(--scoutteal)}

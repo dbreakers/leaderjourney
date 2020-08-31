@@ -4,8 +4,25 @@
 	<div class="center">Role Hierarchies</div>
 </ons-toolbar>
 <div class="content">
-  <ons-carousel  swipeable  overscrollable  auto-scroll id="carousel" #carousel>
-    <ons-carousel-item   *ngFor="let role of displayuser.roles"> 
+   <div class="sticky" *ngIf="displayuser.allroles.length>1"> 
+  <div class="selector_bar">
+    <div class="ticks">
+      <ons-icon (click)="g2(-1)" class="chevron"  icon="fa-chevron-left"></ons-icon>
+      <span *ngIf="displayuser.allroles.length < max_c">
+      <span  *ngFor="let role of displayuser.allroles; let i=index">
+        <span *ngIf="i>0" (click)="g2(i)" class="indicators">○</span>
+        <span *ngIf="i==0" (click)="g2(i)" class="indicators">●</span> 
+      </span>
+      </span>
+      <span *ngIf="displayuser.allroles.length > (max_c-1)">Role 
+      {{carousel.getActiveIndex()+1}} of {{carousel.itemCount}}
+      </span>
+      <ons-icon (click)="g2(-2)"  class="chevron" icon="fa-chevron-right"></ons-icon>
+      </div>
+  </div>
+ </div>
+  <ons-carousel  swipeable  overscrollable  auto-scroll id="carousel_hier" #carousel_hier>
+    <ons-carousel-item   *ngFor="let role of displayuser.allroles"> 
   <ons-card class="headercard"><p class="subhead">{{role.role}}<br>{{role.location}}</p> </ons-card>
   <span *ngIf="displayuser.roledetail.hasOwnProperty(role.roleid)" >
   <!--<span  *ngFor="let level of displayuser.roledetail[role.roleid][0]">
@@ -28,6 +45,7 @@
     </span>  
     <ons-card *ngIf='displayuser.roledetail[role.roleid][0].length==0'>No Hierarchy available</ons-card>
   </span>   
+   <span *ngIf="!displayuser.roledetail.hasOwnProperty(role.roleid)" ><ons-card>No Hierarchy available</ons-card></span>
     </ons-carousel-item>
   </ons-carousel>
   </div>
