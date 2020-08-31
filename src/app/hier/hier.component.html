@@ -23,7 +23,7 @@
     </span>  -->
     <span  *ngFor="let level of displayuser.roledetail[role.roleid][0]">
       <ons-card *ngIf="level.label!=''&&level.description!='--- Not Selected ---'&&level.description!='--- No Items Available ---'">
-       <ons-icon icon='get_icon(level.label)'></ons-icon>{{level.description}}<br>
+       <ons-icon [attr.icon]="get_icon(level.label)"></ons-icon>{{level.description}}<br>
       </ons-card> 
     </span>  
   </span>   
