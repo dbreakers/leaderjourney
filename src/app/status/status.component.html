@@ -1,0 +1,18 @@
+<div class="background"></div>
+<ons-toolbar>
+  <div class="left"><ons-back-button> </ons-back-button></div>
+	<div class="center">Role Hierarchies</div>
+</ons-toolbar>
+<div class="content">
+
+
+ <span  *ngFor="let role of displayuser.allroles">
+ <span *ngIf="displayuser.roledetail.hasOwnProperty(role.roleid)" >
+   <ons-card>
+    <p class="subhead">{{role.role}}<br>{{role.location}}</p>
+    <p *ngIf="displayuser.roledetail[role.roleid][2].hasOwnProperty('status')&&displayuser.roledetail[role.roleid][2].status=='Full'">{{displayuser.roledetail[role.roleid][2].status}}</p> 
+   </ons-card> 
+ </span>  
+ </span>  
+
+</div>

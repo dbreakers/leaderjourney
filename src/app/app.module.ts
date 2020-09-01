@@ -13,6 +13,7 @@ import { DirectoryComponent } from './directory/directory.component';
 import { AddressCardComponent } from './addresscard/addresscard.component';
 import { TrainingCComponent } from './trainingc/trainingc.component';
 import { MandatoryComponent } from './mandatory/mandatory.component';
+import { StatusComponent } from './status/status.component';
 import { CardComponent } from './card/card.component';
 import { PermitsComponent } from './permits/permits.component';
 import { HierComponent } from './hier/hier.component';
@@ -25,8 +26,8 @@ import {MandatoryHeaderComponent } from './mandatoryheader/mandatoryheader.compo
 
 @NgModule({
   imports:         [ BrowserModule, FormsModule, OnsenModule, HttpClientModule,PapaParseModule   ],
-  declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, AddressCardComponent, LogonPageComponent, DirectoryComponent, TrainingCComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent,RoleHeaderComponent,MandatoryHeaderComponent ],
-  entryComponents: [ MenuComponent, RoleSelectComponent, LogonPageComponent, TrainingCComponent, DirectoryComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent, AddressCardComponent ],
+  declarations:    [ AppComponent, MenuComponent, RoleSelectComponent, AddressCardComponent, LogonPageComponent, DirectoryComponent, TrainingCComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent,RoleHeaderComponent,MandatoryHeaderComponent, StatusComponent ],
+  entryComponents: [ MenuComponent, RoleSelectComponent, LogonPageComponent, StatusComponent, TrainingCComponent, DirectoryComponent, MandatoryComponent, CardComponent,PermitsComponent,HierComponent, AddressCardComponent ],
   schemas:         [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap:       [ AppComponent ],
    providers: [ Globals, Stubs ]

@@ -8,7 +8,7 @@ import { Globals } from '../globals';
   templateUrl: './status.component.html',
   styleUrls: [ './status.component.css' ]
 })
-export class HierComponent implements OnInit {
+export class StatusComponent implements OnInit {
   displayuser = {}
   displayrole=""
   
@@ -18,13 +18,20 @@ constructor(private navi: OnsNavigator,
             private globals: Globals,) {
   } 
 
+  compass_date(longdate) {
+  if (longdate.split(" ").length<3) { return ""}
+  return longdate.split(" ")[2]+"-"+
+                    (this.globals.months.indexOf( longdate.split(" ")[1])+1)
+                    + "-" +longdate.split(" ")[0];
+  }
+
 
   ngOnInit() {
      
      
       if (this._params.data) {this.displayuser=this._params.data.data[0]; this.displayrole=this._params.data.roleid}    
-  
-     
+         
+
 
   }
   

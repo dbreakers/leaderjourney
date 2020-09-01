@@ -10,6 +10,7 @@ import { CardComponent } from '../card/card.component';
 import { PermitsComponent } from '../permits/permits.component';
 import { AddressCardComponent } from '../addresscard/addresscard.component';
 import { HierComponent } from '../hier/hier.component';
+import { StatusComponent } from '../status/status.component';
 import { CallNetworkService } from '../callnetwork.service';
 import { LocalStorageService } from '../localstorage.service';
 
@@ -101,7 +102,10 @@ push10() {
  this.callnetworkService.getReport(this.globals.roleid,5).subscribe(report=> this.push10_2(report));
 }   
  
-
+ push11() {
+    // this.globals.compasshier = this.globals.compassdata[0].hierarchy;
+    this.navi.nativeElement.pushPage(StatusComponent,{data: {data: this.globals.compassuser, roleid: this.globals.compassuser[0].roles[0].roleid}});
+  }
 
   
 
