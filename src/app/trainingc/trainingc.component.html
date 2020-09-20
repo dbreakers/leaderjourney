@@ -25,16 +25,18 @@
   </div>
  </div>
   <ons-carousel  swipeable  overscrollable  auto-scroll id="carousel" #carousel>
+   
 <ons-carousel-item   *ngFor="let role of displayuser.roles">
+   <app-mandatoryheader  [user]="{user:[displayuser], click:true}" *ngIf="role.hasOwnProperty('training')"></app-mandatoryheader> 
  <!--  <ons-scroller>-->
   <div class="hc"></div>
   <ons-card class="headercard">
-    {{role.role}}<br>
+    {{role.role}}<br> 
     {{role.start}}
   </ons-card>  
   <ons-card class="alertcard" *ngIf="role.status=='Closed'">
   <ons-icon class="alertfont" icon="fa-info-circle"></ons-icon>&nbsp;This role is closed  </ons-card>  
-  <ons-card *ngIf="role.status!='Closed'">
+  <ons-card *ngIf="role.status!='Closed'&&role.hasOwnProperty('training')">
    <p *ngIf="plphead[role.roleid].percent!=100" class="subhead">Training</p>
    <p *ngIf="plphead[role.roleid].percent==100" class="subhead">Training Completed</p>
    <span *ngIf="plphead[role.roleid].percent!=100">Target Completion {{plphead[role.roleid].targetmonth}} {{plphead[role.roleid].targetyear}}</span>
