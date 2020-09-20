@@ -36,6 +36,8 @@
   </ons-card>  
   <ons-card class="alertcard" *ngIf="role.status=='Closed'">
   <ons-icon class="alertfont" icon="fa-info-circle"></ons-icon>&nbsp;This role is closed  </ons-card>  
+  <ons-card class="alertcard" *ngIf="!role.hasOwnProperty('training')">
+  <ons-icon class="alertfont" icon="fa-info-circle"></ons-icon>&nbsp;This role has no training requirement  </ons-card>  
   <ons-card *ngIf="role.status!='Closed'&&role.hasOwnProperty('training')">
    <p *ngIf="plphead[role.roleid].percent!=100" class="subhead">Training</p>
    <p *ngIf="plphead[role.roleid].percent==100" class="subhead">Training Completed</p>
@@ -47,7 +49,7 @@
 
    </div>
   </ons-card> 
-  <ons-card *ngIf="role.completed==''&&role.status!='Closed'">
+  <ons-card *ngIf="role.completed==''&&role.status!='Closed'&&role.hasOwnProperty('training')">
     <span *ngIf="role.ta==''"><ons-icon id="taalert" class="alertfont" #taalert icon="fa-exclamation-triangle" (click)="showPopover('#taalert')"></ons-icon>&nbsp;You don't have a training advisor for this role</span>
     <span *ngIf="role.ta!=''">Your Training Advisor for this role is {{role.ta.split(" ")[1]}}&nbsp;{{role.ta.split(" ")[2]}}</span>
   </ons-card>
