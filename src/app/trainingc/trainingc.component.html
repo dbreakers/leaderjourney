@@ -36,9 +36,9 @@
   </ons-card>  
   <ons-card class="alertcard" *ngIf="role.status=='Closed'">
   <ons-icon class="alertfont" icon="fa-info-circle"></ons-icon>&nbsp;This role is closed  </ons-card>  
-  <ons-card class="alertcard" *ngIf="!role.hasOwnProperty('training')">
+  <ons-card class="alertcard" *ngIf="displayuser.training[role.roleid].length==0">
   <ons-icon class="alertfont" icon="fa-info-circle"></ons-icon>&nbsp;This role has no training requirement  </ons-card>  
-  <ons-card *ngIf="role.status!='Closed'&&role.hasOwnProperty('training')">
+  <ons-card *ngIf="role.status!='Closed'&&displayuser.training[role.roleid].length>0">
    <p *ngIf="plphead[role.roleid].percent!=100" class="subhead">Training</p>
    <p *ngIf="plphead[role.roleid].percent==100" class="subhead">Training Completed</p>
    <span *ngIf="plphead[role.roleid].percent!=100">Target Completion {{plphead[role.roleid].targetmonth}} {{plphead[role.roleid].targetyear}}</span>
