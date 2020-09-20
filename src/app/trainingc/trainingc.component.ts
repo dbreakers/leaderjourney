@@ -9,6 +9,8 @@ import { Globals } from '../globals';
   styleUrls: [ './trainingc.component.css' ]
 })
 export class TrainingCComponent implements OnInit {
+  mandatory = ['001','01EX','SAFE','SFTY','GDPR','TRST','X001','003'
+  ]
   selected_role = {};
   displayuser = []; 
   plphead = new Object;
